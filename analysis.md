@@ -15,10 +15,41 @@
 | First 24 hours of strikes | ~$779 million | Anadolu Agency via Al Jazeera |
 | Pre-strike military buildup | ~$630 million | Center for New American Security est. |
 | Daily carrier strike group ops (per group) | ~$6.5 million/day | Center for New American Security |
-| **Active operations burn rate** | **~$200 million/day** | IranWarCost.com (anchored at $43B on March 2) |
+| **Phase 2 sustained operations rate** | **~$220 million/day** | Iran War Cost Tracker (Days 3-10 phase) |
 | Broader deployment cost estimate | ~$30 million/day | Mishpacha / Brown University comparable est. |
-| Total cumulative spending (as of Mar 2, 2026) | ~$43 billion | IranWarCost.com (includes all appropriations since April 2024) |
-| Per-second burn rate (active ops) | ~$2,315/second | IranWarCost.com |
+| Total cumulative spending (as of Mar 2, 2026) | ~$43 billion | Iran War Cost Tracker (includes all appropriations since April 2024) |
+| Per-second burn rate (active ops) | ~$2,546/second | Iran War Cost Tracker |
+
+### Phased Cost Model
+
+The Iran War Cost Tracker employs a three-phase model reflecting operational intensity:
+
+| Phase | Duration | Daily Cost | Operational Profile |
+|-------|----------|-----------|-------------------|
+| Phase 1: Initial Strikes | Days 0–3 | ~$380 million/day | Intensive air campaign, rapid munitions deployment |
+| Phase 2: Sustained Operations | Days 3–10 | ~$220 million/day | Continuous air operations, logistics surge |
+| Phase 3: Air Dominance/ISR | Day 10+ | ~$155 million/day | Intelligence, surveillance, reconnaissance focus |
+
+### Seven Component Cost Breakdown (Base Rate, Phase 2)
+
+| Component | Daily Cost | Notes |
+|-----------|-----------|-------|
+| Personnel | $40 million/day | ~50,000 deployed personnel |
+| Naval Forces | $22 million/day | 2 Carrier Strike Groups, 7 Destroyers, 6 Littoral Combat Ships |
+| Aircraft Operations | $48 million/day | 12 airframe types in rotation |
+| Fuel & Logistics | $15 million/day | Transport, basing, supply chain |
+| Non-tracked Ordnance | $35 million/day | Munitions not individually itemized |
+| C4ISR/Cyber/Space | $10 million/day | Communications, cyberwarfare, satellite ops |
+| Overhead & Unmodeled | $50 million/day | Administrative, maintenance, contingencies |
+| **Total (Phase 2)** | **~$220 million/day** | Confirmed March 2, 2026 |
+
+### Projections
+
+| Metric | Cost | Source |
+|--------|------|--------|
+| Penn Wharton Economic Impact (if <2 months) | ~$210 billion total | Penn Wharton Budget Model / Fortune (March 2, 2026) |
+| — Direct Military Costs | ~$65 billion | Subset of above |
+| — Broader Economic Fallout | ~$115+ billion | Indirect costs, market disruption, energy shocks |
 
 ### Context: Total Conflict-Related Spending Since Oct 7, 2023
 
@@ -188,42 +219,42 @@ All costs reflect 2024–2026 U.S. estimates unless otherwise noted.
 
 ## 5. Comparative Calculations: Healthcare
 
-### 5A. What $200 Million Per Day Could Buy (Active Ops Rate)
+### 5A. What $220 Million Per Day Could Buy (Phase 2 Sustained Operations Rate)
 
-> **Base figure:** $200,000,000/day — the estimated active operations burn rate since Operation Epic Fury began on February 28, 2026.
+> **Base figure:** $220,000,000/day — the Phase 2 sustained operations burn rate since Operation Epic Fury began on February 28, 2026.
 
 #### Durable Medical Equipment
 
 | Item | Unit Cost Used | Units Purchasable Per Day | Annualized (365 days) |
 |------|---------------|--------------------------|----------------------|
-| Insulin Pumps | $6,000 | **33,333** | 12,166,667 |
-| Insulin Pump + 1yr Supplies | $10,000 | **20,000** | 7,300,000 |
-| Annual Insulin Supply | $5,000 | **40,000** | 14,600,000 |
-| CPAP Machines | $1,500 | **133,333** | 48,666,667 |
-| Power Wheelchairs | $3,500 | **57,143** | 20,857,143 |
-| Manual Wheelchairs | $1,000 | **200,000** | 73,000,000 |
-| Hearing Aid Pairs (mid-range) | $4,000 | **50,000** | 18,250,000 |
-| Prosthetic Legs (below-knee) | $10,000 | **20,000** | 7,300,000 |
-| Prosthetic Legs (above-knee, advanced) | $45,000 | **4,444** | 1,622,222 |
-| Hospital Beds | $2,000 | **100,000** | 36,500,000 |
-| Walkers | $200 | **1,000,000** | 365,000,000 |
-| Nebulizers | $300 | **666,667** | 243,333,333 |
+| Insulin Pumps | $6,000 | **36,667** | 13,383,333 |
+| Insulin Pump + 1yr Supplies | $10,000 | **22,000** | 8,030,000 |
+| Annual Insulin Supply | $5,000 | **44,000** | 16,060,000 |
+| CPAP Machines | $1,500 | **146,667** | 53,533,333 |
+| Power Wheelchairs | $3,500 | **62,857** | 22,942,857 |
+| Manual Wheelchairs | $1,000 | **220,000** | 80,300,000 |
+| Hearing Aid Pairs (mid-range) | $4,000 | **55,000** | 20,075,000 |
+| Prosthetic Legs (below-knee) | $10,000 | **22,000** | 8,030,000 |
+| Prosthetic Legs (above-knee, advanced) | $45,000 | **4,889** | 1,784,444 |
+| Hospital Beds | $2,000 | **110,000** | 40,150,000 |
+| Walkers | $200 | **1,100,000** | 401,500,000 |
+| Nebulizers | $300 | **733,333** | 267,666,667 |
 
 #### Medical Services
 
 | Service | Unit Cost Used | Units Fundable Per Day | Annualized (365 days) |
 |---------|---------------|----------------------|----------------------|
-| ER Visits | $2,700 | **74,074** | 27,037,037 |
-| Ambulance Rides | $1,200 | **166,667** | 60,833,333 |
-| Therapy Sessions | $150 | **1,333,333** | 486,666,667 |
-| Annual Therapy (52 wks) | $7,800 | **25,641** | 9,358,974 |
-| Knee Replacements | $35,000 | **5,714** | 2,085,714 |
-| Heart Bypass Surgeries | $57,000 | **3,509** | 1,280,702 |
-| Hip Replacements | $35,000 | **5,714** | 2,085,714 |
-| Cataract Surgeries | $3,500 | **57,143** | 20,857,143 |
-| Childbirths (hospital) | $18,000 | **11,111** | 4,055,556 |
-| MRI Scans | $1,200 | **166,667** | 60,833,333 |
-| Hospital Stay Days | $3,000 | **66,667** | 24,333,333 |
+| ER Visits | $2,700 | **81,481** | 29,740,741 |
+| Ambulance Rides | $1,200 | **183,333** | 66,916,667 |
+| Therapy Sessions | $150 | **1,466,667** | 535,333,333 |
+| Annual Therapy (52 wks) | $7,800 | **28,205** | 10,294,872 |
+| Knee Replacements | $35,000 | **6,286** | 2,294,286 |
+| Heart Bypass Surgeries | $57,000 | **3,860** | 1,408,772 |
+| Hip Replacements | $35,000 | **6,286** | 2,294,286 |
+| Cataract Surgeries | $3,500 | **62,857** | 22,942,857 |
+| Childbirths (hospital) | $18,000 | **12,222** | 4,461,111 |
+| MRI Scans | $1,200 | **183,333** | 66,916,667 |
+| Hospital Stay Days | $3,000 | **73,333** | 26,766,667 |
 
 ---
 
@@ -259,45 +290,45 @@ All costs reflect 2024–2026 U.S. estimates unless otherwise noted.
 
 ## 6. Comparative Calculations: Education
 
-### 6A. What $200 Million Per Day Could Buy in Education
+### 6A. What $220 Million Per Day Could Buy in Education
 
-> **Base figure:** $200,000,000/day — the estimated active operations burn rate.
+> **Base figure:** $220,000,000/day — the Phase 2 sustained operations burn rate.
 
 #### Tuition & Scholarships
 
 | Item | Unit Cost Used | Units Fundable Per Day | Annualized (365 days) |
 |------|---------------|----------------------|----------------------|
-| Full-year community college tuitions | $4,150 | **48,193** | 17,590,361 |
-| Full-year public in-state tuitions (tuition + fees) | $11,950 | **16,736** | 6,108,787 |
-| Full-year private college tuitions (tuition + fees) | $45,000 | **4,444** | 1,622,222 |
-| 4-year public in-state degrees (total cost of attendance) | $123,960 | **1,614** | 588,900 |
-| 4-year private college degrees (total cost of attendance) | $261,880 | **764** | 278,716 |
-| Maximum Pell Grant awards ($7,395 each) | $7,395 | **27,044** | 9,871,534 |
-| College textbook sets (annual, public 4-yr) | $1,220 | **163,934** | 59,836,066 |
+| Full-year community college tuitions | $4,150 | **53,012** | 19,349,398 |
+| Full-year public in-state tuitions (tuition + fees) | $11,950 | **18,410** | 6,719,665 |
+| Full-year private college tuitions (tuition + fees) | $45,000 | **4,889** | 1,784,444 |
+| 4-year public in-state degrees (total cost of attendance) | $123,960 | **1,775** | 647,868 |
+| 4-year private college degrees (total cost of attendance) | $261,880 | **840** | 306,587 |
+| Maximum Pell Grant awards ($7,395 each) | $7,395 | **29,749** | 10,858,282 |
+| College textbook sets (annual, public 4-yr) | $1,220 | **180,328** | 65,819,672 |
 
 #### Teacher Pay & School Operations
 
 | Item | Unit Cost Used | Units Fundable Per Day | Annualized (365 days) |
 |------|---------------|----------------------|----------------------|
-| Annual teacher salaries (avg. $74,177) | $74,177 | **2,696** | 984,136 |
-| Annual starting teacher salaries ($46,526) | $46,526 | **4,298** | 1,568,627 |
-| Full-year K–12 per-pupil spending | $17,277 | **11,576** | 4,225,271 |
-| Head Start slots (annual, ~$12,600/slot) | $12,600 | **15,873** | 5,793,651 |
-| Free school lunches (per meal, ~$4.41 federal reimbursement) | $4.41 | **45,351,474** | 16,553,287,981 |
+| Annual teacher salaries (avg. $74,177) | $74,177 | **2,966** | 1,082,549 |
+| Annual starting teacher salaries ($46,526) | $46,526 | **4,728** | 1,725,690 |
+| Full-year K–12 per-pupil spending | $17,277 | **12,733** | 4,647,649 |
+| Head Start slots (annual, ~$12,600/slot) | $12,600 | **17,460** | 6,373,016 |
+| Free school lunches (per meal, ~$4.41 federal reimbursement) | $4.41 | **49,886,621** | 18,208,616,780 |
 
 #### Student Debt Relief
 
 | Item | Unit Cost Used | Units Fundable Per Day | Annualized (365 days) |
 |------|---------------|----------------------|----------------------|
-| Average student loan balances erased ($39,375) | $39,375 | **5,079** | 1,853,968 |
-| Median student loan balances erased (~$22,500) | $22,500 | **8,889** | 3,244,444 |
+| Average student loan balances erased ($39,375) | $39,375 | **5,587** | 2,039,365 |
+| Median student loan balances erased (~$22,500) | $22,500 | **9,778** | 3,568,889 |
 
 #### School Construction
 
 | Item | Unit Cost Used | Units Fundable Per Day | Annualized (365 days) |
 |------|---------------|----------------------|----------------------|
-| New elementary schools (~60,000 sq ft) | $17,700,000 | **11.3** | 4,124 |
-| New high schools (~130,000 sq ft) | $46,700,000 | **4.3** | 1,564 |
+| New elementary schools (~60,000 sq ft) | $17,700,000 | **12.4** | 4,537 |
+| New high schools (~130,000 sq ft) | $46,700,000 | **4.7** | 1,720 |
 
 ---
 
@@ -318,16 +349,16 @@ All costs reflect 2024–2026 U.S. estimates unless otherwise noted.
 
 ---
 
-### 6C. Education-Focused Time Comparisons ($200M/day rate)
+### 6C. Education-Focused Time Comparisons ($220M/day rate)
 
 | Timeframe | War Spending | Education Equivalent |
 |-----------|-------------|---------------------|
-| **Per second** ($2,315) | $2,315 | 525 school lunches OR 0.19 community college tuitions |
-| **Per minute** ($138,889) | $138,889 | 33 community college tuitions OR 2 teacher salaries |
-| **Per hour** ($8.33M) | $8,333,333 | 2,008 community college tuitions OR 112 teacher salaries OR 1,127 Pell Grants |
-| **Per day** ($200M) | $200,000,000 | 16,736 public in-state tuitions OR 2,696 teacher salaries OR 5,079 student loans erased |
-| **Per week** ($1.4B) | $1,400,000,000 | 117,155 in-state tuitions OR 18,873 teacher salaries |
-| **4 weeks** (Trump's est.) | $5,600,000,000 | 468,619 in-state tuitions OR 75,492 teacher salaries OR 142,222 student loans erased |
+| **Per second** ($2,546) | $2,546 | 577 school lunches OR 0.61 community college tuitions |
+| **Per minute** ($152,778) | $152,778 | 37 community college tuitions OR 2 teacher salaries |
+| **Per hour** ($9.17M) | $9,166,667 | 2,209 community college tuitions OR 124 teacher salaries OR 1,239 Pell Grants |
+| **Per day** ($220M) | $220,000,000 | 18,410 public in-state tuitions OR 2,966 teacher salaries OR 5,587 student loans erased |
+| **Per week** ($1.54B) | $1,540,000,000 | 128,870 in-state tuitions OR 20,762 teacher salaries |
+| **4 weeks** (Trump's est.) | $6,160,000,000 | 515,480 in-state tuitions OR 83,048 teacher salaries OR 156,444 student loans erased |
 | **First 24 hrs (actual)** ($779M) | $779,000,000 | 65,188 in-state tuitions OR 10,502 teacher salaries |
 | **Pre-strike buildup** ($630M) | $630,000,000 | 52,720 in-state tuitions OR 8,494 teacher salaries |
 
@@ -337,52 +368,52 @@ All costs reflect 2024–2026 U.S. estimates unless otherwise noted.
 
 | Education Need | Americans Affected | Daily War $ Equivalent |
 |---------------|-------------------|----------------------|
-| Total student loan borrowers | ~42.8 million | $200M/day could erase 5,079 avg. loan balances — enough for all borrowers in ~23 years at this daily rate |
-| Students who skip textbooks (cost) | ~65% of college students | $200M/day could provide 163,934 annual textbook sets per day |
-| Children eligible for Head Start but unserved | ~300,000+ (est. unmet demand) | $200M/day = 15,873 new Head Start slots/day — enough to close the gap in ~19 days |
-| Teacher shortage (estimated vacancies) | ~55,000–100,000 unfilled positions | $200M/day could fund 2,696 teacher salaries — entire shortage addressed in ~20–37 days |
-| Students receiving free/reduced school lunches | ~30 million children daily | $200M/day = 45.4 million lunches — enough to feed every eligible child with surplus |
-| Public school buildings needing major repair | ~53% of schools (per GAO) | $200M/day could build ~11 new elementary schools or ~4 new high schools per day |
-| Americans who have never attended college (cost barrier) | ~37% of 18–24 yr olds | $200M/day = 48,193 community college tuitions funded daily |
+| Total student loan borrowers | ~42.8 million | $220M/day could erase 5,587 avg. loan balances — enough for all borrowers in ~21 years at this daily rate |
+| Students who skip textbooks (cost) | ~65% of college students | $220M/day could provide 180,328 annual textbook sets per day |
+| Children eligible for Head Start but unserved | ~300,000+ (est. unmet demand) | $220M/day = 17,460 new Head Start slots/day — enough to close the gap in ~17 days |
+| Teacher shortage (estimated vacancies) | ~55,000–100,000 unfilled positions | $220M/day could fund 2,966 teacher salaries — entire shortage addressed in ~19–34 days |
+| Students receiving free/reduced school lunches | ~30 million children daily | $220M/day = 49.9 million lunches — enough to feed every eligible child with surplus |
+| Public school buildings needing major repair | ~53% of schools (per GAO) | $220M/day could build ~12 new elementary schools or ~5 new high schools per day |
+| Americans who have never attended college (cost barrier) | ~37% of 18–24 yr olds | $220M/day = 53,012 community college tuitions funded daily |
 
 ---
 
 ## 7. Comparative Calculations: Infrastructure
 
-### 7A. What $200 Million Per Day Could Buy in Infrastructure
+### 7A. What $220 Million Per Day Could Buy in Infrastructure
 
-> **Base figure:** $200,000,000/day — the estimated active operations burn rate.
+> **Base figure:** $220,000,000/day — the Phase 2 sustained operations burn rate.
 
 #### Transportation
 
 | Item | Unit Cost Used | Units Fundable Per Day | Annualized (365 days) |
 |------|---------------|----------------------|----------------------|
-| Lane-miles of annual road maintenance | $24,000/yr | **8,333** | 3,041,667 |
-| Days toward road rehabilitation backlog ($435B) | $200M | **1 day** | Backlog cleared in ~5.96 years |
-| Days toward bridge repair backlog ($117.1B) | $200M | **1 day** | Backlog cleared in ~1.6 years |
-| Days toward total road/bridge backlog ($786B) | $200M | **1 day** | Backlog cleared in ~10.8 years |
+| Lane-miles of annual road maintenance | $24,000/yr | **9,167** | 3,345,833 |
+| Days toward road rehabilitation backlog ($435B) | $220M | **1 day** | Backlog cleared in ~5.4 years |
+| Days toward bridge repair backlog ($117.1B) | $220M | **1 day** | Backlog cleared in ~1.5 years |
+| Days toward total road/bridge backlog ($786B) | $220M | **1 day** | Backlog cleared in ~9.8 years |
 
 #### Water
 
 | Item | Unit Cost Used | Units Fundable Per Day | Annualized (365 days) |
 |------|---------------|----------------------|----------------------|
-| Days toward drinking water needs ($625B/20yr) | $200M | **1 day** | Would take ~8.6 years at this rate to close full 20-yr need |
-| Days toward drinking water gap ($309B) | $200M | **1 day** | Gap closed in ~4.2 years |
-| Days toward wastewater/stormwater annual gap ($69B/yr) | $200M | **1 day** | Full annual gap met in ~345 days |
+| Days toward drinking water needs ($625B/20yr) | $220M | **1 day** | Would take ~7.8 years at this rate to close full 20-yr need |
+| Days toward drinking water gap ($309B) | $220M | **1 day** | Gap closed in ~3.8 years |
+| Days toward wastewater/stormwater annual gap ($69B/yr) | $220M | **1 day** | Full annual gap met in ~314 days |
 
 #### Broadband
 
 | Item | Unit Cost Used | Units Fundable Per Day | Annualized (365 days) |
 |------|---------------|----------------------|----------------------|
-| Households' annual internet service ($936/yr) | $936 | **213,675** | 77,991,453 |
-| Years of internet for all unconnected HH (~10M × $936) | $9.36B total | At $200M/day, **47 days** covers a full year for all | — |
+| Households' annual internet service ($936/yr) | $936 | **235,043** | 85,790,598 |
+| Years of internet for all unconnected HH (~10M × $936) | $9.36B total | At $220M/day, **43 days** covers a full year for all | — |
 
 #### Overall Infrastructure Gap
 
 | Item | Unit Cost Used | Units Fundable Per Day | Annualized (365 days) |
 |------|---------------|----------------------|----------------------|
-| Days toward total ASCE gap ($3.7T) | $200M | **1 day** | At $200M/day, $73B/year; full gap addressed in ~50.7 years |
-| Days toward total ASCE gap ($4.4T incl. all categories) | $200M | **1 day** | At $200M/day, full gap addressed in ~60.3 years |
+| Days toward total ASCE gap ($3.7T) | $220M | **1 day** | At $220M/day, $80.3B/year; full gap addressed in ~46.1 years |
+| Days toward total ASCE gap ($4.4T incl. all categories) | $220M | **1 day** | At $220M/day, full gap addressed in ~54.8 years |
 
 ---
 
@@ -399,15 +430,15 @@ All costs reflect 2024–2026 U.S. estimates unless otherwise noted.
 
 ---
 
-### 7C. Infrastructure-Focused Time Comparisons ($200M/day rate)
+### 7C. Infrastructure-Focused Time Comparisons ($220M/day rate)
 
 | Timeframe | War Spending | Infrastructure Equivalent |
 |-----------|-------------|--------------------------|
-| **Per minute** ($138,889) | $138,889 | 5.8 lane-miles of road maintenance OR 148 households' internet for a year |
-| **Per hour** ($8.33M) | $8,333,333 | 347 lane-miles of road maintenance OR 8,904 households' internet for a year |
-| **Per day** ($200M) | $200,000,000 | 8,333 lane-miles maintained OR 0.046% of the bridge repair backlog |
-| **Per week** ($1.4B) | $1,400,000,000 | 1.2% of the bridge repair backlog OR 0.45% of the drinking water gap |
-| **4 weeks** (Trump's est.) | $5,600,000,000 | 4.8% of bridge repair backlog OR 1.8% of drinking water gap OR 0.15% of total ASCE gap |
+| **Per minute** ($152,778) | $152,778 | 6.4 lane-miles of road maintenance OR 163 households' internet for a year |
+| **Per hour** ($9.17M) | $9,166,667 | 382 lane-miles of road maintenance OR 9,795 households' internet for a year |
+| **Per day** ($220M) | $220,000,000 | 9,167 lane-miles maintained OR 0.19% of the bridge repair backlog |
+| **Per week** ($1.54B) | $1,540,000,000 | 1.3% of the bridge repair backlog OR 0.50% of the drinking water gap |
+| **4 weeks** (Trump's est.) | $6,160,000,000 | 5.3% of bridge repair backlog OR 2.0% of drinking water gap OR 0.17% of total ASCE gap |
 | **First 24 hrs (actual)** ($779M) | $779,000,000 | 0.67% of bridge repair backlog OR 0.25% of drinking water gap |
 | **$43B cumulative** | $43,000,000,000 | 36.7% of bridge repair backlog OR 6.9% of drinking water needs OR 1.16% of total ASCE gap |
 
@@ -430,15 +461,15 @@ All costs reflect 2024–2026 U.S. estimates unless otherwise noted.
 
 ## 8. Cross-Sector Comparisons
 
-### 8A. Time-Based Comparisons ($200M/day rate)
+### 8A. Time-Based Comparisons ($220M/day rate)
 
 | Timeframe | War Spending | Healthcare Equivalent | Education Equivalent | Infrastructure Equivalent |
 |-----------|-------------|----------------------|---------------------|--------------------------|
-| **Per second** ($2,315) | $2,315 | 15 therapy sessions | 525 school lunches | 0.1 lane-mile maintained |
-| **Per minute** ($138,889) | $138,889 | 23 insulin pumps | 33 community college tuitions | 5.8 lane-miles maintained |
-| **Per hour** ($8.33M) | $8,333,333 | 238 knee replacements | 112 teacher salaries | 347 lane-miles maintained |
-| **Per day** ($200M) | $200,000,000 | 1.3M therapy sessions | 16,736 in-state tuitions | 8,333 lane-miles maintained |
-| **4 weeks** ($5.6B) | $5,600,000,000 | 160,000 knee replacements | 75,492 teacher salaries | 4.8% of bridge backlog |
+| **Per second** ($2,546) | $2,546 | 17 therapy sessions | 577 school lunches | 0.1 lane-mile maintained |
+| **Per minute** ($152,778) | $152,778 | 25 insulin pumps | 37 community college tuitions | 6.4 lane-miles maintained |
+| **Per hour** ($9.17M) | $9,166,667 | 262 knee replacements | 124 teacher salaries | 382 lane-miles maintained |
+| **Per day** ($220M) | $220,000,000 | 1.47M therapy sessions | 18,410 in-state tuitions | 9,167 lane-miles maintained |
+| **4 weeks** ($6.16B) | $6,160,000,000 | 176,000 knee replacements | 83,048 teacher salaries | 5.3% of bridge backlog |
 
 ### 8B. What One THAAD Interceptor ($12.7M) Could Buy Across Sectors
 
@@ -469,10 +500,10 @@ Per Brown University Costs of War Project data:
 | Healthcare | 9 jobs |
 | Education | ~13 jobs |
 
-> **Implication:** $200M/day in military spending creates ~1,000 jobs.  
-> The same amount invested in healthcare would create ~1,800 jobs.  
-> In infrastructure: ~1,500 jobs.  
-> In education: **~2,600 jobs** — more than 2.5× the military figure.
+> **Implication:** $220M/day in military spending creates ~1,100 jobs.
+> The same amount invested in healthcare would create ~1,980 jobs.
+> In infrastructure: ~1,650 jobs.
+> In education: **~2,860 jobs** — more than 2.5× the military figure.
 
 ---
 
@@ -483,8 +514,8 @@ Per Brown University Costs of War Project data:
 | Metric | Amount |
 |--------|--------|
 | Total conflict spending ($43B) / taxpayer | ~$287 per taxpayer |
-| Daily active ops ($200M) / taxpayer | ~$1.33 per taxpayer per day |
-| Projected 4-week campaign ($5.6B) / taxpayer | ~$37 per taxpayer |
+| Daily active ops ($220M) / taxpayer | ~$1.47 per taxpayer per day |
+| Projected 4-week campaign ($6.16B) / taxpayer | ~$41 per taxpayer |
 
 For context — what $287 per taxpayer could buy:
 
@@ -506,35 +537,35 @@ For context — what $37 per taxpayer (4-week campaign) could buy:
 
 ## 10. Comparison to U.S. Need Statistics (Summary)
 
-| Need Area | Americans Affected | Daily War $ Equivalent ($200M) |
+| Need Area | Americans Affected | Daily War $ Equivalent ($220M) |
 |-----------|-------------------|-------------------------------|
 | **Healthcare** | | |
-| Uninsured Americans | ~27.6 million | $7.25 per uninsured person per day |
-| Americans with diabetes | ~37.3 million | 33,333 insulin pumps/day — all equipped in ~3.7 years |
-| Americans needing hearing aids | ~28.8 million (NIDCD) | 50,000 pairs/day — full unmet need met in ~16 months |
-| Americans with sleep apnea | ~30 million (~22M unequipped) | 133,333 CPAPs/day — unmet need met in ~165 days |
-| Cannot afford mental health care | ~57 million (NAMI) | 1.33M therapy sessions/day |
-| Annual amputations | ~185,000/year (Amputee Coalition) | 20,000 prosthetics/day — full year's need met in 9.25 days |
-| Annual U.S. insulin pump sales | ~260,000 units/year | 33,333/day — full year's market supplied in &lt;8 days |
-| Annual hearing aid sales | ~5.09M units/year (2023) | 50,000 pairs/day — 10× the daily market rate |
-| New wheelchair users annually | ~2M/year (all types) | 57,143 power chairs/day — a month of new demand per day |
+| Uninsured Americans | ~27.6 million | $7.97 per uninsured person per day |
+| Americans with diabetes | ~37.3 million | 36,667 insulin pumps/day — all equipped in ~3.4 years |
+| Americans needing hearing aids | ~28.8 million (NIDCD) | 55,000 pairs/day — full unmet need met in ~14.6 months |
+| Americans with sleep apnea | ~30 million (~22M unequipped) | 146,667 CPAPs/day — unmet need met in ~150 days |
+| Cannot afford mental health care | ~57 million (NAMI) | 1.47M therapy sessions/day |
+| Annual amputations | ~185,000/year (Amputee Coalition) | 22,000 prosthetics/day — full year's need met in 8.4 days |
+| Annual U.S. insulin pump sales | ~260,000 units/year | 36,667/day — full year's market supplied in ~7 days |
+| Annual hearing aid sales | ~5.09M units/year (2023) | 55,000 pairs/day — 11× the daily market rate |
+| New wheelchair users annually | ~2M/year (all types) | 62,857 power chairs/day — a month of new demand per day |
 | **Education** | | |
-| Student loan borrowers | ~42.8 million | 5,079 loans erased/day — all cleared in ~23 years |
-| Children eligible but unserved by Head Start | ~300,000+ | Gap closed in ~19 days |
-| Estimated teacher vacancies | ~55,000–100,000 | Entire shortage funded in ~20–37 days |
-| College students skipping textbooks | ~65% of enrollees | 163,934 textbook sets/day |
-| Students receiving free school lunch | ~30 million/day | 45.4 million lunches/day — full coverage with surplus |
+| Student loan borrowers | ~42.8 million | 5,587 loans erased/day — all cleared in ~21 years |
+| Children eligible but unserved by Head Start | ~300,000+ | Gap closed in ~17 days |
+| Estimated teacher vacancies | ~55,000–100,000 | Entire shortage funded in ~19–34 days |
+| College students skipping textbooks | ~65% of enrollees | 180,328 textbook sets/day |
+| Students receiving free school lunch | ~30 million/day | 49.9 million lunches/day — full coverage with surplus |
 | **Infrastructure** | | |
-| Bridges needing repair | ~221,791 | Bridge backlog ($117.1B) cleared in ~1.6 years |
+| Bridges needing repair | ~221,791 | Bridge backlog ($117.1B) cleared in ~1.5 years |
 | Lead service lines in use | ~9 million | Potentially all replaced with $43B cumulative spending |
-| Households without internet | ~10 million | All connected for a year in ~47 days |
+| Households without internet | ~10 million | All connected for a year in ~43 days |
 | Total ASCE infrastructure gap | $3.7–$4.4 trillion | $43B cumulative = 1.0–1.2% of total gap |
 
 ---
 
 ## 11. Methodology Notes
 
-1. **War cost figures** are estimates compiled from publicly available reporting. The Pentagon has not disclosed official totals. The $200M/day active ops rate is derived from the IranWarCost.com tracker (anchored at $43B on March 2, 2026, incrementing at $2,315/second). The $30M/day figure comes from comparable deployment estimates published by Mishpacha Magazine citing Brown University data.
+1. **War cost figures** are estimates compiled from publicly available reporting. The Pentagon has not disclosed official totals. The $220M/day Phase 2 sustained operations rate is derived from the Iran War Cost Tracker, which employs a three-phase model ($380M/$220M/$155M/day) with seven component-level costs (personnel, naval forces, aircraft ops, fuel/logistics, ordnance, C4ISR/cyber/space, overhead) and is anchored at $43B cumulative spending on March 2, 2026, incrementing at $2,546/second. The Penn Wharton Budget Model projects up to $210B total economic cost if the conflict resolves in under 2 months ($65B direct military + $115B+ broader fallout). The $30M/day figure comes from comparable deployment estimates published by Mishpacha Magazine citing Brown University data.
 
 2. **Healthcare costs** use national averages for uninsured/self-pay patients. Actual costs vary dramatically by geography, provider, and insurance plan. Where a range exists, we use the midpoint for calculations unless otherwise noted.
 
@@ -558,9 +589,10 @@ For context — what $37 per taxpayer (4-week campaign) could buy:
 - Al Jazeera, "How much could the Iran war cost the US?" (March 3, 2026)
 - Brown University Costs of War Project (costsofwar.watson.brown.edu)
 - CSIS, "Operation Epic Fury and the Remnants of Iran's Nuclear Program" (March 2026)
-- IranWarCost.com — Real-time cost tracker
+- Iran War Cost Tracker (iran-cost-ticker.com) — Phased cost model (Days 0–3: $380M, Days 3–10: $220M, Day 10+: $155M/day) with seven sourced component costs
 - Mishpacha Magazine, "The High Cost of a Hostile Iran" (February 2026)
 - JINSA, Missile and Interceptor Cost Estimates (July 2025)
+- Penn Wharton Budget Model / Fortune, "Trump's strikes on Iran could cost American economy as much as $210 billion" (March 2, 2026)
 
 ### Healthcare
 - BetterCare.com — Insulin and ER visit cost data (2025–2026)

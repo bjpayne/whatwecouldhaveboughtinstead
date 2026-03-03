@@ -6,13 +6,13 @@ Live site: [whatwecouldhaveboughtinstead.com](https://www.whatwecouldhaveboughti
 
 ## About
 
-Operation Epic Fury costs approximately **$200 million per day** — $2,315 every second. Since April 2024, the U.S. has spent an estimated **$43 billion** on Iran-related conflict operations.
+Operation Epic Fury costs approximately **$220 million per day** (Phase 2 sustained operations rate) — $2,546 every second. Since April 2024, the U.S. has spent an estimated **$43 billion** on Iran-related conflict operations.
 
 This project puts that spending in context by showing what the same money could buy if invested domestically:
 
-- **Healthcare**: 33,333 insulin pumps, 1.3 million therapy sessions, or 5,714 knee replacements — per day
-- **Education**: 16,736 college tuitions, 2,696 teacher salaries, or 45 million school lunches — per day
-- **Infrastructure**: 8,333 lane-miles of road maintenance, or the entire bridge repair backlog cleared in 1.6 years
+- **Healthcare**: 36,667 insulin pumps, 1.47 million therapy sessions, or 6,286 knee replacements — per day
+- **Education**: 18,410 college tuitions, 2,966 teacher salaries, or 49.9 million school lunches — per day
+- **Infrastructure**: 9,167 lane-miles of road maintenance, or the entire bridge repair backlog cleared in 1.5 years
 
 All figures are estimates based on publicly available data as of March 3, 2026.
 
@@ -54,7 +54,7 @@ The site is a single `index.html` file with no build step, no dependencies, and 
 
 Calculations are simple division (daily war cost ÷ unit cost = units purchasable). They do not account for supply constraints, manufacturing capacity, workforce availability, or procurement complexity. They are intended to illustrate scale, not propose literal policy alternatives.
 
-The $200M/day active operations rate is derived from IranWarCost.com (anchored at $43B on March 2, 2026, incrementing at $2,315/second). The $30M/day figure comes from comparable deployment estimates published by Mishpacha Magazine citing Brown University data.
+The $220M/day sustained operations rate is derived from a phased cost model (Iran War Cost Tracker): $380M/day for initial strikes (Days 0–3), $220M/day for sustained operations (Days 3–10), and $155M/day for the air dominance/ISR phase (Day 10+). The model is built from seven sourced components: personnel, naval forces, aircraft operations, fuel & logistics, ordnance, C4ISR/cyber/space, and overhead. The $30M/day figure comes from comparable deployment estimates published by Mishpacha Magazine citing Brown University data.
 
 ## License
 
