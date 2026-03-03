@@ -511,9 +511,13 @@ For context — what $37 per taxpayer (4-week campaign) could buy:
 | **Healthcare** | | |
 | Uninsured Americans | ~27.6 million | $7.25 per uninsured person per day |
 | Americans with diabetes | ~37.3 million | 33,333 insulin pumps/day — all equipped in ~3.7 years |
-| Americans needing hearing aids | ~30 million | 50,000 pairs/day — all equipped in ~1.6 years |
-| Americans with sleep apnea | ~30 million | 133,333 CPAPs/day — all equipped in ~225 days |
+| Americans needing hearing aids | ~28.8 million (NIDCD) | 50,000 pairs/day — full unmet need met in ~16 months |
+| Americans with sleep apnea | ~30 million (~22M unequipped) | 133,333 CPAPs/day — unmet need met in ~165 days |
 | Cannot afford mental health care | ~57 million (NAMI) | 1.33M therapy sessions/day |
+| Annual amputations | ~185,000/year (Amputee Coalition) | 20,000 prosthetics/day — full year's need met in 9.25 days |
+| Annual U.S. insulin pump sales | ~260,000 units/year | 33,333/day — full year's market supplied in &lt;8 days |
+| Annual hearing aid sales | ~5.09M units/year (2023) | 50,000 pairs/day — 10× the daily market rate |
+| New wheelchair users annually | ~2M/year (all types) | 57,143 power chairs/day — a month of new demand per day |
 | **Education** | | |
 | Student loan borrowers | ~42.8 million | 5,079 loans erased/day — all cleared in ~23 years |
 | Children eligible but unserved by Head Start | ~300,000+ | Gap closed in ~19 days |
@@ -570,6 +574,18 @@ For context — what $37 per taxpayer (4-week campaign) could buy:
 - Mira Health — ER visit cost analysis (2025)
 - ConsumerShield / BetterCare — Ambulance cost data (2025–2026)
 - NAMI — Mental health access statistics
+- CDC National Diabetes Statistics Report — 38.4M Americans with diabetes, 8.4M insulin-dependent
+- SingleCare — Insulin statistics 2025, ~350,000 current pump users
+- IMARC Group / Vocal Media — U.S. insulin pump market size ($1.55B in 2024, ~260K units/year estimated)
+- CPAP.com — 2025 Sleep Apnea Statistics (~30M affected, ~8M current CPAP users)
+- Straits Research — CPAP Devices Market Size Report 2025–2033
+- RetirementLiving.com / Disabled World — 3.3M U.S. wheelchair users, ~2M new users/year
+- INTCO Medical — United States Wheelchair Market 2026 analysis
+- Fortune Business Insights — U.S. Hearing Aids Market (5.09M units sold in 2023)
+- MarkeTrak 2025 — Hearing aid adoption rates (39% in 2025, up from 23% in 1989)
+- NIDCD — 28.8M Americans who could benefit from hearing aids
+- Amputee Coalition / Pro Medical East — 185,000 amputations/year, 2.1M living with limb loss
+- NCBI / StatPearls — Prosthetics in Orthopedics, ~1.7M prosthetic users in U.S.
 
 ### Education
 - College Board, *Trends in College Pricing and Student Aid 2025*
