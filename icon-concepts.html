@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Icon Concepts — The Cost of Home</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: #0a0a0c;
+    color: #f1f1f1;
+    font-family: 'DM Sans', sans-serif;
+    padding: 60px 24px;
+  }
+  h1 {
+    text-align: center;
+    font-size: 1.4rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-bottom: 12px;
+  }
+  .subtitle {
+    text-align: center;
+    color: #8a8a9a;
+    font-size: 0.85rem;
+    margin-bottom: 60px;
+  }
+  .concepts {
+    max-width: 960px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 64px;
+  }
+  .concept {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+    padding: 40px;
+    background: #141418;
+    border: 1px solid #2a2a35;
+    border-radius: 20px;
+  }
+  .concept-visual {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    justify-content: center;
+  }
+  .icon-preview {
+    background: #0a0a0c;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .icon-preview.large {
+    width: 200px;
+    height: 200px;
+    border-radius: 20px;
+  }
+  .icon-preview.medium {
+    width: 64px;
+    height: 64px;
+    border-radius: 12px;
+  }
+  .icon-preview.small {
+    width: 32px;
+    height: 32px;
+    border-radius: 6px;
+  }
+  .icon-preview svg {
+    display: block;
+  }
+  .concept-info h2 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 6px;
+  }
+  .concept-info .concept-num {
+    font-size: 0.7rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #555;
+    margin-bottom: 8px;
+  }
+  .concept-info .desc {
+    color: #8a8a9a;
+    font-size: 0.85rem;
+    line-height: 1.65;
+    margin-bottom: 16px;
+  }
+  .concept-info .pros-cons {
+    font-size: 0.78rem;
+    line-height: 1.7;
+    color: #666;
+  }
+  .concept-info .pros-cons span.pro { color: #2ec4b6; }
+  .concept-info .pros-cons span.con { color: #e63946; }
+
+  @media (max-width: 700px) {
+    .concept { grid-template-columns: 1fr; }
+    .concept-visual { justify-content: flex-start; }
+  }
+</style>
+</head>
+<body>
+
+<h1>Icon Concepts</h1>
+<p class="subtitle">Five directions for favicon, Apple Touch, Open Graph, and Twitter Card</p>
+
+<div class="concepts">
+
+<!-- ═══════════ CONCEPT 1: Split Dollar ═══════════ -->
+<div class="concept">
+  <div class="concept-visual">
+    <div class="icon-preview large">
+      <svg width="160" height="160" viewBox="0 0 160 160" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <clipPath id="leftHalf1"><rect x="0" y="0" width="80" height="160"/></clipPath>
+          <clipPath id="rightHalf1"><rect x="80" y="0" width="80" height="160"/></clipPath>
+        </defs>
+        <!-- Left half: war red -->
+        <g clip-path="url(#leftHalf1)">
+          <circle cx="80" cy="80" r="64" fill="#e63946"/>
+        </g>
+        <!-- Right half: teal -->
+        <g clip-path="url(#rightHalf1)">
+          <circle cx="80" cy="80" r="64" fill="#2ec4b6"/>
+        </g>
+        <!-- Dollar sign center -->
+        <text x="80" y="100" text-anchor="middle" font-family="'DM Sans',sans-serif" font-weight="700" font-size="64" fill="#0a0a0c">$</text>
+        <!-- Thin divider line -->
+        <line x1="80" y1="16" x2="80" y2="144" stroke="#0a0a0c" stroke-width="3"/>
+      </svg>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:12px">
+      <div class="icon-preview medium">
+        <svg width="48" height="48" viewBox="0 0 160 160" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <clipPath id="leftHalf1b"><rect x="0" y="0" width="80" height="160"/></clipPath>
+            <clipPath id="rightHalf1b"><rect x="80" y="0" width="80" height="160"/></clipPath>
+          </defs>
+          <g clip-path="url(#leftHalf1b)"><circle cx="80" cy="80" r="64" fill="#e63946"/></g>
+          <g clip-path="url(#rightHalf1b)"><circle cx="80" cy="80" r="64" fill="#2ec4b6"/></g>
+          <text x="80" y="100" text-anchor="middle" font-family="'DM Sans',sans-serif" font-weight="700" font-size="64" fill="#0a0a0c">$</text>
+          <line x1="80" y1="16" x2="80" y2="144" stroke="#0a0a0c" stroke-width="4"/>
+        </svg>
+      </div>
+      <div class="icon-preview small">
+        <svg width="24" height="24" viewBox="0 0 160 160" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <clipPath id="leftHalf1c"><rect x="0" y="0" width="80" height="160"/></clipPath>
+            <clipPath id="rightHalf1c"><rect x="80" y="0" width="80" height="160"/></clipPath>
+          </defs>
+          <g clip-path="url(#leftHalf1c)"><circle cx="80" cy="80" r="64" fill="#e63946"/></g>
+          <g clip-path="url(#rightHalf1c)"><circle cx="80" cy="80" r="64" fill="#2ec4b6"/></g>
+          <text x="80" y="100" text-anchor="middle" font-family="'DM Sans',sans-serif" font-weight="700" font-size="64" fill="#0a0a0c">$</text>
+          <line x1="80" y1="16" x2="80" y2="144" stroke="#0a0a0c" stroke-width="6"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+  <div class="concept-info">
+    <div class="concept-num">Concept 1</div>
+    <h2>Split Dollar</h2>
+    <p class="desc">A circle split down the center — war red on the left, care teal on the right — with a bold dollar sign straddling both halves. The core tension of the site in one glyph: the same money, two possible futures.</p>
+    <div class="pros-cons">
+      <span class="pro">+</span> Instantly communicates "money split two ways"<br>
+      <span class="pro">+</span> Reads clearly at every size — the $ is unmistakable at 16px<br>
+      <span class="pro">+</span> Uses the site's exact color palette<br>
+      <span class="con">–</span> Doesn't reference the three sectors specifically<br>
+      <span class="con">–</span> Dollar-sign icons are common in finance/fintech
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════ CONCEPT 2: Broken Missile / House ═══════════ -->
+<div class="concept">
+  <div class="concept-visual">
+    <div class="icon-preview large">
+      <svg width="160" height="160" viewBox="0 0 160 160" xmlns="http://www.w3.org/2000/svg">
+        <rect width="160" height="160" rx="32" fill="#0a0a0c"/>
+        <!-- Missile shape (top-left), angled, in red -->
+        <g transform="translate(38, 28) rotate(35, 24, 50)">
+          <path d="M24 0 L34 16 L34 60 L24 68 L14 60 L14 16 Z" fill="#e63946" opacity="0.85"/>
+          <path d="M14 60 L8 76 L24 68 L40 76 L34 60" fill="#e63946" opacity="0.6"/>
+        </g>
+        <!-- Jagged break line -->
+        <path d="M56 72 L64 66 L58 78 L68 74 L60 86 L70 80 L62 92" stroke="#f1f1f1" stroke-width="2.5" fill="none" stroke-linecap="round" opacity="0.5"/>
+        <!-- House shape (bottom-right), in teal -->
+        <g transform="translate(78, 72)">
+          <path d="M36 0 L68 28 L60 28 L60 60 L12 60 L12 28 L4 28 Z" fill="#2ec4b6"/>
+          <!-- Door -->
+          <rect x="28" y="36" width="16" height="24" rx="2" fill="#0a0a0c"/>
+          <!-- Window -->
+          <rect x="18" y="28" width="10" height="10" rx="1" fill="#0a0a0c" opacity="0.6"/>
+          <rect x="44" y="28" width="10" height="10" rx="1" fill="#0a0a0c" opacity="0.6"/>
+        </g>
+      </svg>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:12px">
+      <div class="icon-preview medium">
+        <svg width="48" height="48" viewBox="0 0 160 160" xmlns="http://www.w3.org/2000/svg">
+          <rect width="160" height="160" rx="32" fill="#0a0a0c"/>
+          <g transform="translate(38, 28) rotate(35, 24, 50)">
+            <path d="M24 0 L34 16 L34 60 L24 68 L14 60 L14 16 Z" fill="#e63946" opacity="0.85"/>
+            <path d="M14 60 L8 76 L24 68 L40 76 L34 60" fill="#e63946" opacity="0.6"/>
+          </g>
+          <path d="M56 72 L64 66 L58 78 L68 74 L60 86 L70 80 L62 92" stroke="#f1f1f1" stroke-width="3.5" fill="none" stroke-linecap="round" opacity="0.5"/>
+          <g transform="translate(78, 72)">
+            <path d="M36 0 L68 28 L60 28 L60 60 L12 60 L12 28 L4 28 Z" fill="#2ec4b6"/>
+            <rect x="28" y="36" width="16" height="24" rx="2" fill="#0a0a0c"/>
+          </g>
+        </svg>
+      </div>
+      <div class="icon-preview small">
+        <svg width="24" height="24" viewBox="0 0 160 160" xmlns="http://www.w3.org/2000/svg">
+          <rect width="160" height="160" rx="32" fill="#0a0a0c"/>
+          <g transform="translate(38, 28) rotate(35, 24, 50)">
+            <path d="M24 0 L34 16 L34 60 L24 68 L14 60 L14 16 Z" fill="#e63946" opacity="0.85"/>
+            <path d="M14 60 L8 76 L24 68 L40 76 L34 60" fill="#e63946" opacity="0.6"/>
+          </g>
+          <g transform="translate(78, 72)">
+            <path d="M36 0 L68 28 L60 28 L60 60 L12 60 L12 28 L4 28 Z" fill="#2ec4b6"/>
+            <rect x="28" y="36" width="16" height="24" rx="2" fill="#0a0a0c"/>
+          </g>
+        </svg>
+      </div>
+    </div>
+  </div>
+  <div class="concept-info">
+    <div class="concept-num">Concept 2</div>
+    <h2>Missile to House</h2>
+    <p class="desc">A red missile in the upper-left breaking apart into a teal house in the lower-right. A visual metaphor for transformation — destroying abroad vs. building at home. The jagged break represents the choice point.</p>
+    <div class="pros-cons">
+      <span class="pro">+</span> Most literal representation of the site's argument<br>
+      <span class="pro">+</span> Emotionally striking — war weapon becoming a home<br>
+      <span class="pro">+</span> Unique — not a common icon pattern<br>
+      <span class="con">–</span> Detail gets lost at 16–32px favicon size<br>
+      <span class="con">–</span> More illustrative than iconic — harder to recognize as a brand mark
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════ CONCEPT 3: Tri-Color Bar Chart ═══════════ -->
+<div class="concept">
+  <div class="concept-visual">
+    <div class="icon-preview large">
+      <svg width="160" height="160" viewBox="0 0 160 160" xmlns="http://www.w3.org/2000/svg">
+        <rect width="160" height="160" rx="32" fill="#0a0a0c"/>
+        <!-- Three ascending bars in sector colors -->
+        <rect x="24" y="86" width="28" height="50" rx="4" fill="#2ec4b6"/>
+        <rect x="66" y="56" width="28" height="80" rx="4" fill="#a8dadc"/>
+        <rect x="108" y="26" width="28" height="110" rx="4" fill="#f4a261"/>
+        <!-- Red downward arrow overlaid -->
+        <g transform="translate(80, 20)">
+          <path d="M0 0 L8 -4 L3 -4 L3 -18 L-3 -18 L-3 -4 L-8 -4 Z" fill="#e63946" transform="rotate(180)" opacity="0.9"/>
+        </g>
+      </svg>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:12px">
+      <div class="icon-preview medium">
+        <svg width="48" height="48" viewBox="0 0 160 160" xmlns="http://www.w3.org/2000/svg">
+          <rect width="160" height="160" rx="32" fill="#0a0a0c"/>
+          <rect x="24" y="86" width="28" height="50" rx="4" fill="#2ec4b6"/>
+          <rect x="66" y="56" width="28" height="80" rx="4" fill="#a8dadc"/>
+          <rect x="108" y="26" width="28" height="110" rx="4" fill="#f4a261"/>
+        </svg>
+      </div>
+      <div class="icon-preview small">
+        <svg width="24" height="24" viewBox="0 0 160 160" xmlns="http://www.w3.org/2000/svg">
+          <rect width="160" height="160" rx="32" fill="#0a0a0c"/>
+          <rect x="24" y="86" width="28" height="50" rx="6" fill="#2ec4b6"/>
+          <rect x="66" y="56" width="28" height="80" rx="6" fill="#a8dadc"/>
+          <rect x="108" y="26" width="28" height="110" rx="6" fill="#f4a261"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+  <div class="concept-info">
+    <div class="concept-num">Concept 3</div>
+    <h2>Three Pillars</h2>
+    <p class="desc">Three ascending bars in the site's sector colors — teal (health), blue (education), gold (infrastructure) — representing what we could build instead. Simple, data-forward, and directly maps to the navbar's three sections.</p>
+    <div class="pros-cons">
+      <span class="pro">+</span> Reads perfectly at every size — even 16px<br>
+      <span class="pro">+</span> Color-coded to match the site's three sections<br>
+      <span class="pro">+</span> Signals "data analysis" which matches the site's tone<br>
+      <span class="con">–</span> Could be mistaken for a generic analytics/dashboard icon<br>
+      <span class="con">–</span> Less emotionally evocative than the other concepts
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════ CONCEPT 4: Price Tag / Toggle ═══════════ -->
+<div class="concept">
+  <div class="concept-visual">
+    <div class="icon-preview large">
+      <svg width="160" height="160" viewBox="0 0 160 160" xmlns="http://www.w3.org/2000/svg">
+        <rect width="160" height="160" rx="32" fill="#0a0a0c"/>
+        <!-- Horizontal toggle track -->
+        <rect x="20" y="56" width="120" height="48" rx="24" fill="#1a1a20" stroke="#2a2a35" stroke-width="2"/>
+        <!-- Left side label: red war X -->
+        <g transform="translate(46, 80)">
+          <line x1="-8" y1="-8" x2="8" y2="8" stroke="#e63946" stroke-width="3.5" stroke-linecap="round"/>
+          <line x1="8" y1="-8" x2="-8" y2="8" stroke="#e63946" stroke-width="3.5" stroke-linecap="round"/>
+        </g>
+        <!-- Toggle knob — positioned right (teal side = active) -->
+        <circle cx="116" cy="80" r="20" fill="#2ec4b6"/>
+        <!-- Checkmark inside knob -->
+        <polyline points="106,80 112,87 126,73" fill="none" stroke="#0a0a0c" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <!-- Three dots under for sectors -->
+        <circle cx="60" cy="126" r="5" fill="#2ec4b6"/>
+        <circle cx="80" cy="126" r="5" fill="#a8dadc"/>
+        <circle cx="100" cy="126" r="5" fill="#f4a261"/>
+      </svg>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:12px">
+      <div class="icon-preview medium">
+        <svg width="48" height="48" viewBox="0 0 160 160" xmlns="http://www.w3.org/2000/svg">
+          <rect width="160" height="160" rx="32" fill="#0a0a0c"/>
+          <rect x="20" y="56" width="120" height="48" rx="24" fill="#1a1a20" stroke="#2a2a35" stroke-width="2"/>
+          <g transform="translate(46, 80)">
+            <line x1="-8" y1="-8" x2="8" y2="8" stroke="#e63946" stroke-width="4.5" stroke-linecap="round"/>
+            <line x1="8" y1="-8" x2="-8" y2="8" stroke="#e63946" stroke-width="4.5" stroke-linecap="round"/>
+          </g>
+          <circle cx="116" cy="80" r="20" fill="#2ec4b6"/>
+          <polyline points="106,80 112,87 126,73" fill="none" stroke="#0a0a0c" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="60" cy="126" r="6" fill="#2ec4b6"/>
+          <circle cx="80" cy="126" r="6" fill="#a8dadc"/>
+          <circle cx="100" cy="126" r="6" fill="#f4a261"/>
+        </svg>
+      </div>
+      <div class="icon-preview small">
+        <svg width="24" height="24" viewBox="0 0 160 160" xmlns="http://www.w3.org/2000/svg">
+          <rect width="160" height="160" rx="32" fill="#0a0a0c"/>
+          <rect x="20" y="50" width="120" height="60" rx="30" fill="#1a1a20"/>
+          <circle cx="116" cy="80" r="24" fill="#2ec4b6"/>
+          <polyline points="104,80 112,89 128,71" fill="none" stroke="#0a0a0c" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+  <div class="concept-info">
+    <div class="concept-num">Concept 4</div>
+    <h2>The Toggle</h2>
+    <p class="desc">A UI toggle switch — flipped from the red X (war) to the teal checkmark (home). Three colored dots underneath represent the sectors. The message: this is a choice we can make.</p>
+    <div class="pros-cons">
+      <span class="pro">+</span> Conceptually powerful — "we could flip the switch"<br>
+      <span class="pro">+</span> Modern, UI-native metaphor that feels interactive<br>
+      <span class="pro">+</span> Clean silhouette at small sizes<br>
+      <span class="con">–</span> The X and dots disappear at favicon size — only the toggle reads<br>
+      <span class="con">–</span> Might feel more "tech product" than "public policy analysis"
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════ CONCEPT 5: House Outline with Sector Roof ═══════════ -->
+<div class="concept">
+  <div class="concept-visual">
+    <div class="icon-preview large">
+      <svg width="160" height="160" viewBox="0 0 160 160" xmlns="http://www.w3.org/2000/svg">
+        <rect width="160" height="160" rx="32" fill="#0a0a0c"/>
+        <!-- House outline -->
+        <path d="M80 24 L140 72 L140 136 L20 136 L20 72 Z" fill="none" stroke="#f1f1f1" stroke-width="4" stroke-linejoin="round"/>
+        <!-- Tri-color roof segments -->
+        <path d="M80 24 L40 60" stroke="#2ec4b6" stroke-width="6" stroke-linecap="round"/>
+        <path d="M80 24 L80 24" stroke="#a8dadc" stroke-width="6" stroke-linecap="round"/>
+        <path d="M80 24 L120 60" stroke="#f4a261" stroke-width="6" stroke-linecap="round"/>
+        <!-- Three colored bars inside the house (like a chart) -->
+        <rect x="36" y="100" width="18" height="28" rx="3" fill="#2ec4b6" opacity="0.9"/>
+        <rect x="71" y="86" width="18" height="42" rx="3" fill="#a8dadc" opacity="0.9"/>
+        <rect x="106" y="72" width="18" height="56" rx="3" fill="#f4a261" opacity="0.9"/>
+        <!-- Small red line through / strikethrough at top corner -->
+        <line x1="128" y1="28" x2="142" y2="42" stroke="#e63946" stroke-width="3" stroke-linecap="round" opacity="0.7"/>
+        <line x1="142" y1="28" x2="128" y2="42" stroke="#e63946" stroke-width="3" stroke-linecap="round" opacity="0.7"/>
+      </svg>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:12px">
+      <div class="icon-preview medium">
+        <svg width="48" height="48" viewBox="0 0 160 160" xmlns="http://www.w3.org/2000/svg">
+          <rect width="160" height="160" rx="32" fill="#0a0a0c"/>
+          <path d="M80 24 L140 72 L140 136 L20 136 L20 72 Z" fill="none" stroke="#f1f1f1" stroke-width="5" stroke-linejoin="round"/>
+          <rect x="36" y="100" width="18" height="28" rx="3" fill="#2ec4b6" opacity="0.9"/>
+          <rect x="71" y="86" width="18" height="42" rx="3" fill="#a8dadc" opacity="0.9"/>
+          <rect x="106" y="72" width="18" height="56" rx="3" fill="#f4a261" opacity="0.9"/>
+        </svg>
+      </div>
+      <div class="icon-preview small">
+        <svg width="24" height="24" viewBox="0 0 160 160" xmlns="http://www.w3.org/2000/svg">
+          <rect width="160" height="160" rx="32" fill="#0a0a0c"/>
+          <path d="M80 28 L136 72 L136 132 L24 132 L24 72 Z" fill="none" stroke="#f1f1f1" stroke-width="8" stroke-linejoin="round"/>
+          <rect x="38" y="98" width="20" height="28" rx="4" fill="#2ec4b6"/>
+          <rect x="70" y="82" width="20" height="44" rx="4" fill="#a8dadc"/>
+          <rect x="102" y="68" width="20" height="58" rx="4" fill="#f4a261"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+  <div class="concept-info">
+    <div class="concept-num">Concept 5</div>
+    <h2>Home Chart</h2>
+    <p class="desc">A house outline containing three ascending bars in the sector colors — health, education, infrastructure rising inside the home. It directly ties "home" (the hero tagline) to the data (the site's substance). A small red X in the corner nods to the cost being rejected.</p>
+    <div class="pros-cons">
+      <span class="pro">+</span> Directly echoes the headline "The Cost of Home"<br>
+      <span class="pro">+</span> Combines the emotional (house) with the analytical (chart bars)<br>
+      <span class="pro">+</span> Three colors map perfectly to the navbar and section structure<br>
+      <span class="pro">+</span> House silhouette reads well even at 16px<br>
+      <span class="con">–</span> Slightly more complex than a pure geometric mark<br>
+      <span class="con">–</span> The red X is too subtle at small sizes (but removable)
+    </div>
+  </div>
+</div>
+
+</div>
+
+<div style="max-width:720px; margin:60px auto 0; text-align:center;">
+  <p style="color:#8a8a9a; font-size:0.85rem; line-height:1.7;">
+    <strong style="color:#f1f1f1;">Recommendation:</strong> Concept 5 (Home Chart) is the strongest overall. It's the only icon that simultaneously communicates the headline ("home"), the site structure (three sectors), and the analytical tone (chart bars) — all in a shape that holds up from 1200px OG cards down to a 16px favicon tab. Concept 3 (Three Pillars) is the safest fallback if you want maximum simplicity.
+  </p>
+</div>
+
+</body>
+</html>

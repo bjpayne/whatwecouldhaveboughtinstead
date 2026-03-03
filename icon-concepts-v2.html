@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Icon Concepts V2 — Split Dollar Variations</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: #0a0a0c;
+    color: #f1f1f1;
+    font-family: 'DM Sans', sans-serif;
+    padding: 60px 24px;
+  }
+  h1 {
+    text-align: center;
+    font-size: 1.4rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-bottom: 12px;
+  }
+  .subtitle {
+    text-align: center;
+    color: #8a8a9a;
+    font-size: 0.85rem;
+    margin-bottom: 60px;
+    max-width: 560px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .concepts {
+    max-width: 960px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 64px;
+  }
+  .concept {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+    padding: 40px;
+    background: #141418;
+    border: 1px solid #2a2a35;
+    border-radius: 20px;
+  }
+  .concept-visual {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    justify-content: center;
+  }
+  .icon-preview {
+    background: #0a0a0c;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .icon-preview.large {
+    width: 200px;
+    height: 200px;
+    border-radius: 20px;
+  }
+  .icon-preview.medium {
+    width: 64px;
+    height: 64px;
+    border-radius: 12px;
+  }
+  .icon-preview.small {
+    width: 32px;
+    height: 32px;
+    border-radius: 6px;
+  }
+  .icon-preview svg { display: block; }
+  .concept-info h2 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 6px;
+  }
+  .concept-info .concept-num {
+    font-size: 0.7rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #555;
+    margin-bottom: 8px;
+  }
+  .concept-info .desc {
+    color: #8a8a9a;
+    font-size: 0.85rem;
+    line-height: 1.65;
+    margin-bottom: 16px;
+  }
+  .concept-info .pros-cons {
+    font-size: 0.78rem;
+    line-height: 1.7;
+    color: #666;
+  }
+  .concept-info .pros-cons span.pro { color: #2ec4b6; }
+  .concept-info .pros-cons span.con { color: #e63946; }
+  @media (max-width: 700px) {
+    .concept { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<h1>Split Circle — Five Variations</h1>
+<p class="subtitle">All based on Concept 1's split-circle form with Concept 2's figurative icons replacing the dollar sign. War on the left (red), Home on the right (teal).</p>
+
+<div class="concepts">
+
+<!-- ═══════════ V1: Missile vs. House ═══════════ -->
+<div class="concept">
+  <div class="concept-visual">
+    <div class="icon-preview large">
+      <svg width="180" height="180" viewBox="0 0 180 180" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <clipPath id="v1left"><rect x="0" y="0" width="90" height="180"/></clipPath>
+          <clipPath id="v1right"><rect x="90" y="0" width="90" height="180"/></clipPath>
+        </defs>
+        <g clip-path="url(#v1left)"><circle cx="90" cy="90" r="72" fill="#e63946"/></g>
+        <g clip-path="url(#v1right)"><circle cx="90" cy="90" r="72" fill="#2ec4b6"/></g>
+        <line x1="90" y1="18" x2="90" y2="162" stroke="#0a0a0c" stroke-width="3"/>
+        <!-- Missile (left side) -->
+        <g transform="translate(52, 56)">
+          <path d="M14 0 L20 10 L20 44 L14 50 L8 44 L8 10 Z" fill="#0a0a0c" opacity="0.85"/>
+          <path d="M8 44 L2 56 L14 50 L26 56 L20 44" fill="#0a0a0c" opacity="0.55"/>
+          <!-- Nose highlight -->
+          <path d="M14 0 L17 6 L14 4 L11 6 Z" fill="#0a0a0c" opacity="0.4"/>
+        </g>
+        <!-- House (right side) -->
+        <g transform="translate(96, 58)">
+          <path d="M28 0 L52 20 L48 20 L48 44 L8 44 L8 20 L4 20 Z" fill="#0a0a0c" opacity="0.85"/>
+          <rect x="20" y="28" width="12" height="16" rx="1.5" fill="#2ec4b6" opacity="0.7"/>
+          <rect x="12" y="20" width="8" height="8" rx="1" fill="#2ec4b6" opacity="0.5"/>
+          <rect x="36" y="20" width="8" height="8" rx="1" fill="#2ec4b6" opacity="0.5"/>
+        </g>
+      </svg>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:12px">
+      <div class="icon-preview medium">
+        <svg width="48" height="48" viewBox="0 0 180 180" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <clipPath id="v1leftM"><rect x="0" y="0" width="90" height="180"/></clipPath>
+            <clipPath id="v1rightM"><rect x="90" y="0" width="90" height="180"/></clipPath>
+          </defs>
+          <g clip-path="url(#v1leftM)"><circle cx="90" cy="90" r="72" fill="#e63946"/></g>
+          <g clip-path="url(#v1rightM)"><circle cx="90" cy="90" r="72" fill="#2ec4b6"/></g>
+          <line x1="90" y1="18" x2="90" y2="162" stroke="#0a0a0c" stroke-width="4"/>
+          <g transform="translate(52, 56)">
+            <path d="M14 0 L20 10 L20 44 L14 50 L8 44 L8 10 Z" fill="#0a0a0c" opacity="0.85"/>
+            <path d="M8 44 L2 56 L14 50 L26 56 L20 44" fill="#0a0a0c" opacity="0.55"/>
+          </g>
+          <g transform="translate(96, 58)">
+            <path d="M28 0 L52 20 L48 20 L48 44 L8 44 L8 20 L4 20 Z" fill="#0a0a0c" opacity="0.85"/>
+            <rect x="20" y="28" width="12" height="16" rx="2" fill="#2ec4b6" opacity="0.7"/>
+          </g>
+        </svg>
+      </div>
+      <div class="icon-preview small">
+        <svg width="24" height="24" viewBox="0 0 180 180" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <clipPath id="v1leftS"><rect x="0" y="0" width="90" height="180"/></clipPath>
+            <clipPath id="v1rightS"><rect x="90" y="0" width="90" height="180"/></clipPath>
+          </defs>
+          <g clip-path="url(#v1leftS)"><circle cx="90" cy="90" r="72" fill="#e63946"/></g>
+          <g clip-path="url(#v1rightS)"><circle cx="90" cy="90" r="72" fill="#2ec4b6"/></g>
+          <line x1="90" y1="18" x2="90" y2="162" stroke="#0a0a0c" stroke-width="6"/>
+          <g transform="translate(48, 48)">
+            <path d="M16 0 L24 12 L24 48 L16 56 L8 48 L8 12 Z" fill="#0a0a0c"/>
+            <path d="M8 48 L0 62 L16 56 L32 62 L24 48" fill="#0a0a0c" opacity="0.5"/>
+          </g>
+          <g transform="translate(94, 54)">
+            <path d="M30 0 L56 22 L52 22 L52 48 L8 48 L8 22 L4 22 Z" fill="#0a0a0c"/>
+          </g>
+        </svg>
+      </div>
+    </div>
+  </div>
+  <div class="concept-info">
+    <div class="concept-num">Variation 1</div>
+    <h2>Missile vs. House</h2>
+    <p class="desc">The most literal pairing. A sleek missile silhouette on the red half, a simple house with door and windows on the teal half. The two shapes are roughly the same visual weight, creating a balanced composition. The missile's pointed nose and the house's peaked roof create a subtle mirror symmetry.</p>
+    <div class="pros-cons">
+      <span class="pro">+</span> Immediately readable — no interpretation needed<br>
+      <span class="pro">+</span> The missile and house silhouettes both hold at small sizes<br>
+      <span class="pro">+</span> Directly references "The Cost of Home" tagline<br>
+      <span class="con">–</span> The house only represents one of three sectors<br>
+      <span class="con">–</span> Could feel heavy-handed in its literalness
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════ V2: Crosshair vs. Heart ═══════════ -->
+<div class="concept">
+  <div class="concept-visual">
+    <div class="icon-preview large">
+      <svg width="180" height="180" viewBox="0 0 180 180" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <clipPath id="v2left"><rect x="0" y="0" width="90" height="180"/></clipPath>
+          <clipPath id="v2right"><rect x="90" y="0" width="90" height="180"/></clipPath>
+        </defs>
+        <g clip-path="url(#v2left)"><circle cx="90" cy="90" r="72" fill="#e63946"/></g>
+        <g clip-path="url(#v2right)"><circle cx="90" cy="90" r="72" fill="#2ec4b6"/></g>
+        <line x1="90" y1="18" x2="90" y2="162" stroke="#0a0a0c" stroke-width="3"/>
+        <!-- Crosshair/target (left side) -->
+        <g transform="translate(50, 56)">
+          <circle cx="18" cy="18" r="16" fill="none" stroke="#0a0a0c" stroke-width="4" opacity="0.8"/>
+          <circle cx="18" cy="18" r="6" fill="none" stroke="#0a0a0c" stroke-width="3" opacity="0.6"/>
+          <line x1="18" y1="0" x2="18" y2="8" stroke="#0a0a0c" stroke-width="3" opacity="0.8"/>
+          <line x1="18" y1="28" x2="18" y2="36" stroke="#0a0a0c" stroke-width="3" opacity="0.8"/>
+          <line x1="0" y1="18" x2="8" y2="18" stroke="#0a0a0c" stroke-width="3" opacity="0.8"/>
+          <line x1="28" y1="18" x2="36" y2="18" stroke="#0a0a0c" stroke-width="3" opacity="0.8"/>
+          <!-- Center dot -->
+          <circle cx="18" cy="18" r="2" fill="#0a0a0c" opacity="0.9"/>
+        </g>
+        <!-- Heart (right side) — slightly abstracted -->
+        <g transform="translate(100, 54)">
+          <path d="M26 8 C26 -2 42 -2 42 8 C42 22 26 32 26 40 C26 32 10 22 10 8 C10 -2 26 -2 26 8Z" fill="#0a0a0c" opacity="0.85"/>
+        </g>
+      </svg>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:12px">
+      <div class="icon-preview medium">
+        <svg width="48" height="48" viewBox="0 0 180 180" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <clipPath id="v2leftM"><rect x="0" y="0" width="90" height="180"/></clipPath>
+            <clipPath id="v2rightM"><rect x="90" y="0" width="90" height="180"/></clipPath>
+          </defs>
+          <g clip-path="url(#v2leftM)"><circle cx="90" cy="90" r="72" fill="#e63946"/></g>
+          <g clip-path="url(#v2rightM)"><circle cx="90" cy="90" r="72" fill="#2ec4b6"/></g>
+          <line x1="90" y1="18" x2="90" y2="162" stroke="#0a0a0c" stroke-width="4"/>
+          <g transform="translate(50, 56)">
+            <circle cx="18" cy="18" r="16" fill="none" stroke="#0a0a0c" stroke-width="5" opacity="0.8"/>
+            <line x1="18" y1="0" x2="18" y2="8" stroke="#0a0a0c" stroke-width="4" opacity="0.8"/>
+            <line x1="18" y1="28" x2="18" y2="36" stroke="#0a0a0c" stroke-width="4" opacity="0.8"/>
+            <line x1="0" y1="18" x2="8" y2="18" stroke="#0a0a0c" stroke-width="4" opacity="0.8"/>
+            <line x1="28" y1="18" x2="36" y2="18" stroke="#0a0a0c" stroke-width="4" opacity="0.8"/>
+            <circle cx="18" cy="18" r="3" fill="#0a0a0c"/>
+          </g>
+          <g transform="translate(100, 54)">
+            <path d="M26 8 C26 -2 42 -2 42 8 C42 22 26 32 26 40 C26 32 10 22 10 8 C10 -2 26 -2 26 8Z" fill="#0a0a0c" opacity="0.85"/>
+          </g>
+        </svg>
+      </div>
+      <div class="icon-preview small">
+        <svg width="24" height="24" viewBox="0 0 180 180" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <clipPath id="v2leftS"><rect x="0" y="0" width="90" height="180"/></clipPath>
+            <clipPath id="v2rightS"><rect x="90" y="0" width="90" height="180"/></clipPath>
+          </defs>
+          <g clip-path="url(#v2leftS)"><circle cx="90" cy="90" r="72" fill="#e63946"/></g>
+          <g clip-path="url(#v2rightS)"><circle cx="90" cy="90" r="72" fill="#2ec4b6"/></g>
+          <line x1="90" y1="18" x2="90" y2="162" stroke="#0a0a0c" stroke-width="7"/>
+          <g transform="translate(44, 50)">
+            <circle cx="22" cy="22" r="20" fill="none" stroke="#0a0a0c" stroke-width="8"/>
+            <circle cx="22" cy="22" r="5" fill="#0a0a0c"/>
+          </g>
+          <g transform="translate(96, 48)">
+            <path d="M30 10 C30 -4 50 -4 50 10 C50 28 30 38 30 48 C30 38 10 28 10 10 C10 -4 30 -4 30 10Z" fill="#0a0a0c"/>
+          </g>
+        </svg>
+      </div>
+    </div>
+  </div>
+  <div class="concept-info">
+    <div class="concept-num">Variation 2</div>
+    <h2>Crosshair vs. Heart</h2>
+    <p class="desc">A weapon's targeting reticle on the red half, a heart on the teal half. More abstract than Variation 1 — this is about intent rather than objects. The crosshair says "destruction by design," the heart says "care by choice." Both shapes are circular, creating visual harmony within the split circle.</p>
+    <div class="pros-cons">
+      <span class="pro">+</span> Emotionally resonant — targeting vs. caring<br>
+      <span class="pro">+</span> Both shapes are inherently circular, fitting the container perfectly<br>
+      <span class="pro">+</span> Heart is universal, not limited to just healthcare<br>
+      <span class="con">–</span> Crosshair detail (tick marks) gets lost at 16px<br>
+      <span class="con">–</span> Heart could read as "love" or "charity" rather than "domestic investment"
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════ V3: Explosion vs. Seedling ═══════════ -->
+<div class="concept">
+  <div class="concept-visual">
+    <div class="icon-preview large">
+      <svg width="180" height="180" viewBox="0 0 180 180" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <clipPath id="v3left"><rect x="0" y="0" width="90" height="180"/></clipPath>
+          <clipPath id="v3right"><rect x="90" y="0" width="90" height="180"/></clipPath>
+        </defs>
+        <g clip-path="url(#v3left)"><circle cx="90" cy="90" r="72" fill="#e63946"/></g>
+        <g clip-path="url(#v3right)"><circle cx="90" cy="90" r="72" fill="#2ec4b6"/></g>
+        <line x1="90" y1="18" x2="90" y2="162" stroke="#0a0a0c" stroke-width="3"/>
+        <!-- Explosion / starburst (left side) -->
+        <g transform="translate(52, 58)">
+          <polygon points="20,0 24,14 36,6 28,18 40,22 28,26 36,38 24,30 20,44 16,30 4,38 12,26 0,22 12,18 4,6 16,14" fill="#0a0a0c" opacity="0.85"/>
+        </g>
+        <!-- Seedling / sprout (right side) -->
+        <g transform="translate(108, 52)">
+          <!-- Stem -->
+          <path d="M18 48 L18 24" stroke="#0a0a0c" stroke-width="4" stroke-linecap="round" fill="none" opacity="0.85"/>
+          <!-- Left leaf -->
+          <path d="M18 28 C10 28 2 20 2 10 C2 10 10 12 18 22" fill="#0a0a0c" opacity="0.7"/>
+          <!-- Right leaf -->
+          <path d="M18 18 C26 16 34 8 36 0 C36 0 26 4 18 18" fill="#0a0a0c" opacity="0.85"/>
+          <!-- Ground line -->
+          <line x1="6" y1="48" x2="30" y2="48" stroke="#0a0a0c" stroke-width="3" stroke-linecap="round" opacity="0.5"/>
+        </g>
+      </svg>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:12px">
+      <div class="icon-preview medium">
+        <svg width="48" height="48" viewBox="0 0 180 180" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <clipPath id="v3leftM"><rect x="0" y="0" width="90" height="180"/></clipPath>
+            <clipPath id="v3rightM"><rect x="90" y="0" width="90" height="180"/></clipPath>
+          </defs>
+          <g clip-path="url(#v3leftM)"><circle cx="90" cy="90" r="72" fill="#e63946"/></g>
+          <g clip-path="url(#v3rightM)"><circle cx="90" cy="90" r="72" fill="#2ec4b6"/></g>
+          <line x1="90" y1="18" x2="90" y2="162" stroke="#0a0a0c" stroke-width="4"/>
+          <g transform="translate(48, 54)">
+            <polygon points="22,0 26,16 40,6 30,20 44,24 30,28 40,42 26,32 22,48 18,32 4,42 14,28 0,24 14,20 4,6 18,16" fill="#0a0a0c" opacity="0.85"/>
+          </g>
+          <g transform="translate(106, 50)">
+            <path d="M20 52 L20 26" stroke="#0a0a0c" stroke-width="5" stroke-linecap="round" fill="none"/>
+            <path d="M20 30 C10 30 2 20 2 8 C2 8 12 12 20 24" fill="#0a0a0c" opacity="0.7"/>
+            <path d="M20 20 C28 16 38 8 40 0 C40 0 28 4 20 20" fill="#0a0a0c" opacity="0.85"/>
+            <line x1="6" y1="52" x2="34" y2="52" stroke="#0a0a0c" stroke-width="4" stroke-linecap="round" opacity="0.5"/>
+          </g>
+        </svg>
+      </div>
+      <div class="icon-preview small">
+        <svg width="24" height="24" viewBox="0 0 180 180" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <clipPath id="v3leftS"><rect x="0" y="0" width="90" height="180"/></clipPath>
+            <clipPath id="v3rightS"><rect x="90" y="0" width="90" height="180"/></clipPath>
+          </defs>
+          <g clip-path="url(#v3leftS)"><circle cx="90" cy="90" r="72" fill="#e63946"/></g>
+          <g clip-path="url(#v3rightS)"><circle cx="90" cy="90" r="72" fill="#2ec4b6"/></g>
+          <line x1="90" y1="18" x2="90" y2="162" stroke="#0a0a0c" stroke-width="7"/>
+          <g transform="translate(42, 46)">
+            <polygon points="24,0 28,18 46,6 34,22 50,26 34,30 46,48 28,36 24,54 20,36 2,48 14,30 0,26 14,22 2,6 20,18" fill="#0a0a0c"/>
+          </g>
+          <g transform="translate(102, 46)">
+            <path d="M22 56 L22 28" stroke="#0a0a0c" stroke-width="7" stroke-linecap="round" fill="none"/>
+            <path d="M22 34 C10 34 0 22 0 8 C0 8 14 14 22 28" fill="#0a0a0c"/>
+            <path d="M22 22 C32 18 42 8 44 0 C44 0 30 6 22 22" fill="#0a0a0c"/>
+          </g>
+        </svg>
+      </div>
+    </div>
+  </div>
+  <div class="concept-info">
+    <div class="concept-num">Variation 3</div>
+    <h2>Explosion vs. Seedling</h2>
+    <p class="desc">A starburst explosion on the red half, a growing seedling on the teal half. This is the most metaphorical pairing — destruction vs. growth. The explosion is chaotic and angular, the seedling is organic and upward-reaching. The contrast in shape language is as powerful as the color contrast.</p>
+    <div class="pros-cons">
+      <span class="pro">+</span> Strongest conceptual contrast — chaos vs. growth<br>
+      <span class="pro">+</span> The seedling implies investment in the future, spanning all sectors<br>
+      <span class="pro">+</span> Both shapes are distinctive — no confusion with other brands<br>
+      <span class="con">–</span> Starburst could be read as a "new" or "sale" badge, not an explosion<br>
+      <span class="con">–</span> The seedling is delicate and thins out at small sizes
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════ V4: Bomb vs. Book/Wrench/Cross ═══════════ -->
+<div class="concept">
+  <div class="concept-visual">
+    <div class="icon-preview large">
+      <svg width="180" height="180" viewBox="0 0 180 180" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <clipPath id="v4left"><rect x="0" y="0" width="90" height="180"/></clipPath>
+          <clipPath id="v4right"><rect x="90" y="0" width="90" height="180"/></clipPath>
+        </defs>
+        <g clip-path="url(#v4left)"><circle cx="90" cy="90" r="72" fill="#e63946"/></g>
+        <g clip-path="url(#v4right)"><circle cx="90" cy="90" r="72" fill="#2ec4b6"/></g>
+        <line x1="90" y1="18" x2="90" y2="162" stroke="#0a0a0c" stroke-width="3"/>
+        <!-- Falling bomb (left side) -->
+        <g transform="translate(44, 42)">
+          <!-- Body -->
+          <ellipse cx="22" cy="38" rx="14" ry="18" fill="#0a0a0c" opacity="0.85"/>
+          <!-- Nose cone -->
+          <path d="M22 20 L16 32 L28 32 Z" fill="#0a0a0c" opacity="0.85"/>
+          <!-- Tail fins -->
+          <path d="M12 56 L8 68 L16 58 Z" fill="#0a0a0c" opacity="0.6"/>
+          <path d="M32 56 L36 68 L28 58 Z" fill="#0a0a0c" opacity="0.6"/>
+          <rect x="18" y="56" width="8" height="12" rx="1" fill="#0a0a0c" opacity="0.6"/>
+        </g>
+        <!-- Three-icon stack (right side): health cross + book + wrench -->
+        <g transform="translate(104, 42)">
+          <!-- Health cross (top) -->
+          <rect x="10" y="0" width="12" height="6" rx="1" fill="#0a0a0c" opacity="0.85"/>
+          <rect x="13" y="-3" width="6" height="12" rx="1" fill="#0a0a0c" opacity="0.85"/>
+          <!-- Book (middle) -->
+          <path d="M4 24 L16 20 L28 24 L28 40 L16 36 L4 40 Z" fill="none" stroke="#0a0a0c" stroke-width="3" stroke-linejoin="round" opacity="0.8"/>
+          <line x1="16" y1="20" x2="16" y2="36" stroke="#0a0a0c" stroke-width="2" opacity="0.6"/>
+          <!-- Wrench (bottom) -->
+          <g transform="translate(4, 48)">
+            <path d="M4 2 C2 0 0 2 0 5 C0 8 3 10 6 8 L18 18 L22 14 L10 4 C10 1 8 0 6 0 Z" fill="#0a0a0c" opacity="0.8"/>
+          </g>
+        </g>
+      </svg>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:12px">
+      <div class="icon-preview medium">
+        <svg width="48" height="48" viewBox="0 0 180 180" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <clipPath id="v4leftM"><rect x="0" y="0" width="90" height="180"/></clipPath>
+            <clipPath id="v4rightM"><rect x="90" y="0" width="90" height="180"/></clipPath>
+          </defs>
+          <g clip-path="url(#v4leftM)"><circle cx="90" cy="90" r="72" fill="#e63946"/></g>
+          <g clip-path="url(#v4rightM)"><circle cx="90" cy="90" r="72" fill="#2ec4b6"/></g>
+          <line x1="90" y1="18" x2="90" y2="162" stroke="#0a0a0c" stroke-width="4"/>
+          <g transform="translate(44, 42)">
+            <ellipse cx="22" cy="38" rx="14" ry="18" fill="#0a0a0c" opacity="0.85"/>
+            <path d="M22 20 L16 32 L28 32 Z" fill="#0a0a0c" opacity="0.85"/>
+            <path d="M12 56 L8 68 L16 58 Z" fill="#0a0a0c" opacity="0.6"/>
+            <path d="M32 56 L36 68 L28 58 Z" fill="#0a0a0c" opacity="0.6"/>
+            <rect x="18" y="56" width="8" height="12" rx="1" fill="#0a0a0c" opacity="0.6"/>
+          </g>
+          <g transform="translate(104, 42)">
+            <rect x="8" y="0" width="16" height="8" rx="1.5" fill="#0a0a0c" opacity="0.85"/>
+            <rect x="12" y="-4" width="8" height="16" rx="1.5" fill="#0a0a0c" opacity="0.85"/>
+            <path d="M4 26 L16 22 L28 26 L28 42 L16 38 L4 42 Z" fill="none" stroke="#0a0a0c" stroke-width="3.5" stroke-linejoin="round" opacity="0.8"/>
+            <g transform="translate(4, 50)">
+              <path d="M4 2 C2 0 0 2 0 5 C0 8 3 10 6 8 L18 18 L22 14 L10 4 C10 1 8 0 6 0 Z" fill="#0a0a0c" opacity="0.8"/>
+            </g>
+          </g>
+        </svg>
+      </div>
+      <div class="icon-preview small">
+        <svg width="24" height="24" viewBox="0 0 180 180" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <clipPath id="v4leftS"><rect x="0" y="0" width="90" height="180"/></clipPath>
+            <clipPath id="v4rightS"><rect x="90" y="0" width="90" height="180"/></clipPath>
+          </defs>
+          <g clip-path="url(#v4leftS)"><circle cx="90" cy="90" r="72" fill="#e63946"/></g>
+          <g clip-path="url(#v4rightS)"><circle cx="90" cy="90" r="72" fill="#2ec4b6"/></g>
+          <line x1="90" y1="18" x2="90" y2="162" stroke="#0a0a0c" stroke-width="7"/>
+          <g transform="translate(40, 36)">
+            <ellipse cx="24" cy="42" rx="18" ry="22" fill="#0a0a0c"/>
+            <path d="M24 20 L14 36 L34 36 Z" fill="#0a0a0c"/>
+            <rect x="18" y="62" width="12" height="16" rx="2" fill="#0a0a0c" opacity="0.6"/>
+          </g>
+          <g transform="translate(100, 48)">
+            <rect x="6" y="0" width="22" height="10" rx="2" fill="#0a0a0c"/>
+            <rect x="10" y="-6" width="14" height="22" rx="2" fill="#0a0a0c"/>
+            <rect x="4" y="32" width="26" height="18" rx="3" fill="#0a0a0c" opacity="0.7"/>
+            <circle cx="17" cy="68" r="10" fill="#0a0a0c" opacity="0.6"/>
+          </g>
+        </svg>
+      </div>
+    </div>
+  </div>
+  <div class="concept-info">
+    <div class="concept-num">Variation 4</div>
+    <h2>Bomb vs. Three Sectors</h2>
+    <p class="desc">A falling bomb on the red half. On the teal half, a vertical stack of three icons representing each sector: a medical cross (health), an open book (education), and a wrench (infrastructure). This variation directly maps to the site's three-section structure.</p>
+    <div class="pros-cons">
+      <span class="pro">+</span> Only version that explicitly references all three sectors<br>
+      <span class="pro">+</span> The bomb is a bold, unmistakable war symbol<br>
+      <span class="pro">+</span> Creates visual "inventory" feel — what we could have instead<br>
+      <span class="con">–</span> Three small icons on the right side become unreadable at 32px<br>
+      <span class="con">–</span> Feels busier and less elegant than single-icon pairings<br>
+      <span class="con">–</span> The wrench/book/cross read as generic clip art at distance
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════ V5: Downward Arrow vs. Upward Arrow ═══════════ -->
+<div class="concept">
+  <div class="concept-visual">
+    <div class="icon-preview large">
+      <svg width="180" height="180" viewBox="0 0 180 180" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <clipPath id="v5left"><rect x="0" y="0" width="90" height="180"/></clipPath>
+          <clipPath id="v5right"><rect x="90" y="0" width="90" height="180"/></clipPath>
+        </defs>
+        <g clip-path="url(#v5left)"><circle cx="90" cy="90" r="72" fill="#e63946"/></g>
+        <g clip-path="url(#v5right)"><circle cx="90" cy="90" r="72" fill="#2ec4b6"/></g>
+        <line x1="90" y1="18" x2="90" y2="162" stroke="#0a0a0c" stroke-width="3"/>
+        <!-- Downward arrow (left — war = decline / dropping bombs) -->
+        <g transform="translate(46, 46)">
+          <line x1="20" y1="0" x2="20" y2="52" stroke="#0a0a0c" stroke-width="7" stroke-linecap="round"/>
+          <path d="M6 38 L20 56 L34 38" fill="none" stroke="#0a0a0c" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+        </g>
+        <!-- Upward arrow (right — home = growth / building up) -->
+        <g transform="translate(112, 36)">
+          <line x1="20" y1="68" x2="20" y2="16" stroke="#0a0a0c" stroke-width="7" stroke-linecap="round"/>
+          <path d="M6 30 L20 12 L34 30" fill="none" stroke="#0a0a0c" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+          <!-- Three small dots at the arrow tip representing sectors -->
+          <circle cx="8" cy="4" r="4" fill="#0a0a0c" opacity="0.5"/>
+          <circle cx="20" cy="0" r="4" fill="#0a0a0c" opacity="0.5"/>
+          <circle cx="32" cy="4" r="4" fill="#0a0a0c" opacity="0.5"/>
+        </g>
+      </svg>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:12px">
+      <div class="icon-preview medium">
+        <svg width="48" height="48" viewBox="0 0 180 180" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <clipPath id="v5leftM"><rect x="0" y="0" width="90" height="180"/></clipPath>
+            <clipPath id="v5rightM"><rect x="90" y="0" width="90" height="180"/></clipPath>
+          </defs>
+          <g clip-path="url(#v5leftM)"><circle cx="90" cy="90" r="72" fill="#e63946"/></g>
+          <g clip-path="url(#v5rightM)"><circle cx="90" cy="90" r="72" fill="#2ec4b6"/></g>
+          <line x1="90" y1="18" x2="90" y2="162" stroke="#0a0a0c" stroke-width="5"/>
+          <g transform="translate(46, 46)">
+            <line x1="20" y1="0" x2="20" y2="52" stroke="#0a0a0c" stroke-width="9" stroke-linecap="round"/>
+            <path d="M4 36 L20 58 L36 36" fill="none" stroke="#0a0a0c" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+          </g>
+          <g transform="translate(112, 36)">
+            <line x1="20" y1="68" x2="20" y2="16" stroke="#0a0a0c" stroke-width="9" stroke-linecap="round"/>
+            <path d="M4 32 L20 10 L36 32" fill="none" stroke="#0a0a0c" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+          </g>
+        </svg>
+      </div>
+      <div class="icon-preview small">
+        <svg width="24" height="24" viewBox="0 0 180 180" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <clipPath id="v5leftS"><rect x="0" y="0" width="90" height="180"/></clipPath>
+            <clipPath id="v5rightS"><rect x="90" y="0" width="90" height="180"/></clipPath>
+          </defs>
+          <g clip-path="url(#v5leftS)"><circle cx="90" cy="90" r="72" fill="#e63946"/></g>
+          <g clip-path="url(#v5rightS)"><circle cx="90" cy="90" r="72" fill="#2ec4b6"/></g>
+          <line x1="90" y1="18" x2="90" y2="162" stroke="#0a0a0c" stroke-width="8"/>
+          <g transform="translate(42, 42)">
+            <line x1="22" y1="0" x2="22" y2="58" stroke="#0a0a0c" stroke-width="14" stroke-linecap="round"/>
+            <path d="M2 38 L22 62 L42 38" fill="none" stroke="#0a0a0c" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
+          </g>
+          <g transform="translate(112, 32)">
+            <line x1="22" y1="72" x2="22" y2="14" stroke="#0a0a0c" stroke-width="14" stroke-linecap="round"/>
+            <path d="M2 34 L22 10 L42 34" fill="none" stroke="#0a0a0c" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
+          </g>
+        </svg>
+      </div>
+    </div>
+  </div>
+  <div class="concept-info">
+    <div class="concept-num">Variation 5</div>
+    <h2>Down vs. Up</h2>
+    <p class="desc">The most minimal and abstract variation. A bold downward arrow on red (decline, destruction, money falling away), a bold upward arrow on teal (growth, building, investment rising). Pure geometry — no figurative imagery at all. Three small dots crown the upward arrow as a subtle nod to the three sectors.</p>
+    <div class="pros-cons">
+      <span class="pro">+</span> Maximum legibility at every size — even 12px<br>
+      <span class="pro">+</span> The cleanest, most "logo-grade" version<br>
+      <span class="pro">+</span> Universal language — no cultural interpretation needed<br>
+      <span class="pro">+</span> Works in any context: social card, tab, watermark<br>
+      <span class="con">–</span> So abstract it could mean anything (stocks, analytics, etc.)<br>
+      <span class="con">–</span> Doesn't reference "home," war, or any specific sector
+    </div>
+  </div>
+</div>
+
+</div>
+
+<!-- Recommendation -->
+<div style="max-width:720px; margin:60px auto 0; text-align:center; padding-bottom: 60px;">
+  <p style="color:#8a8a9a; font-size:0.85rem; line-height:1.7;">
+    <strong style="color:#f1f1f1;">Recommendation:</strong> <strong style="color:#2ec4b6;">Variation 1 (Missile vs. House)</strong> is the strongest pick. It's the only version where both halves are instantly identifiable at every size — a pointed missile and a peaked house are among the most universally recognized silhouettes in existence. The shapes mirror each other (pointed tops, wider bases), creating visual balance. And the house directly echoes your "Cost of Home" headline. <strong style="color:#a8dadc;">Variation 5 (Down vs. Up)</strong> is the runner-up if you want maximum simplicity and cross-platform scalability — it's the safest favicon and will never lose legibility.
+  </p>
+</div>
+
+</body>
+</html>
