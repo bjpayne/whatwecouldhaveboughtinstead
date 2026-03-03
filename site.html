@@ -175,9 +175,15 @@
     border-color: var(--care-teal);
   }
   .comp-card .icon {
-    font-size: 2rem;
+    width: 2rem;
+    height: 2rem;
     margin-bottom: 16px;
     display: block;
+    color: var(--muted);
+  }
+  .comp-card .icon svg {
+    width: 100%;
+    height: 100%;
   }
   .comp-card .item-name {
     font-size: 0.8rem;
@@ -291,7 +297,8 @@
     gap: 16px;
     text-align: center;
   }
-  .thaad-item .t-icon { font-size: 1.6rem; margin-bottom: 6px; }
+  .thaad-item .t-icon { width: 1.6rem; height: 1.6rem; margin-bottom: 6px; display: inline-block; color: var(--muted); }
+  .thaad-item .t-icon svg { width: 100%; height: 100%; }
   .thaad-item .t-num {
     font-family: 'Bebas Neue', sans-serif;
     font-size: 2rem;
@@ -461,8 +468,8 @@
     VS. THE COST OF <span class="care">CARE</span>
   </h1>
   <p class="hero-sub">
-    What could America's daily spending on Operation Epic Fury buy if invested in healthcare?
-    A data-driven comparison of military expenditure and medical needs.
+    What could America's daily spending on Operation Epic Fury buy if invested in here?
+    A data-driven comparison of military expenditure and public needs.
   </p>
   <span class="hero-date">Data as of March 3, 2026 · All figures are estimates from public sources</span>
 </section>
@@ -507,84 +514,84 @@
 
     <div class="comparison-grid">
       <div class="comp-card fade-in">
-        <span class="icon">💉</span>
+        <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m18 2 4 4"/><path d="m17 7 3-3"/><path d="M19 9 8.7 19.3c-1 1-2.5 1-3.4 0l-.6-.6c-1-1-1-2.5 0-3.4L15 5"/><path d="m9 11 4 4"/><path d="m5 19-3 3"/><path d="m14 4 6 6"/></svg></span>
         <div class="item-name">Insulin Pumps</div>
         <div class="big-num">33,333</div>
         <div class="per-label">per day · at $6,000 each</div>
         <div class="cost-note">37.3M Americans have diabetes. At this rate, every diabetic could have a pump in 3.7 years.</div>
       </div>
       <div class="comp-card fade-in">
-        <span class="icon">😴</span>
+        <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="1em" height="1em"><path fill-rule="evenodd" d="M9.528 1.718a.75.75 0 0 1 .162.819A8.97 8.97 0 0 0 9 6a9 9 0 0 0 9 9 8.97 8.97 0 0 0 3.463-.69.75.75 0 0 1 .981.98 10.503 10.503 0 0 1-9.694 6.46c-5.799 0-10.5-4.7-10.5-10.5 0-4.368 2.667-8.112 6.46-9.694a.75.75 0 0 1 .818.162Z" clip-rule="evenodd"/></svg></span>
         <div class="item-name">CPAP Machines</div>
         <div class="big-num">133,333</div>
         <div class="per-label">per day · at $1,500 each</div>
         <div class="cost-note">~30M Americans have sleep apnea. All could be equipped in ~225 days.</div>
       </div>
       <div class="comp-card fade-in">
-        <span class="icon">♿</span>
+        <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="16" cy="4" r="1"/><path d="m18 19 1-7-6 1"/><path d="m5 8 3-3 5.5 3-2.36 3.5"/><path d="M4.24 14.5a5 5 0 0 0 6.88 6"/><path d="M13.76 17.5a5 5 0 0 0-6.88-6"/></svg></span>
         <div class="item-name">Power Wheelchairs</div>
         <div class="big-num">57,143</div>
         <div class="per-label">per day · at $3,500 each</div>
         <div class="cost-note">Without insurance, a power chair can cost $3,000–$5,000 out of pocket.</div>
       </div>
       <div class="comp-card fade-in">
-        <span class="icon">🦻</span>
+        <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8.5a6.5 6.5 0 1 1 13 0c0 6-6 6-6 10a3.5 3.5 0 1 1-7 0"/><path d="M15 8.5a2.5 2.5 0 0 0-5 0v1a2 2 0 1 1 0 4"/></svg></span>
         <div class="item-name">Hearing Aid Pairs</div>
         <div class="big-num">50,000</div>
         <div class="per-label">per day · at $4,000/pair</div>
         <div class="cost-note">~30M Americans need hearing aids. Fewer than 1 in 3 over age 70 have ever used them.</div>
       </div>
       <div class="comp-card fade-in">
-        <span class="icon">🦿</span>
+        <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 16v-2.38C4 11.5 2.97 10.5 3 8c.03-2.72 1.49-6 4.5-6C9.37 2 10 3.8 10 5.5c0 3.11-2 5.66-2 8.68V16a2 2 0 1 1-4 0Z"/><path d="M20 20v-2.38c0-2.12 1.03-3.12 1-5.62-.03-2.72-1.49-6-4.5-6C14.63 6 14 7.8 14 9.5c0 3.11 2 5.66 2 8.68V20a2 2 0 1 0 4 0Z"/><path d="M16 17h4"/><path d="M4 13h4"/></svg></span>
         <div class="item-name">Prosthetic Legs</div>
         <div class="big-num">20,000</div>
         <div class="per-label">per day · at $10,000 (below-knee)</div>
         <div class="cost-note">Advanced microprocessor legs cost $45,000+, yielding 4,444/day instead.</div>
       </div>
       <div class="comp-card fade-in">
-        <span class="icon">🧠</span>
+        <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5a3 3 0 1 0-5.997.125 4 4 0 0 0-2.526 5.77 4 4 0 0 0 .556 6.588A4 4 0 1 0 12 18Z"/><path d="M12 5a3 3 0 1 1 5.997.125 4 4 0 0 1 2.526 5.77 4 4 0 0 1-.556 6.588A4 4 0 1 1 12 18Z"/><path d="M15 13a4.5 4.5 0 0 1-3-4 4.5 4.5 0 0 1-3 4"/><path d="M17.599 6.5a3 3 0 0 0 .399-1.375"/><path d="M6.003 5.125A3 3 0 0 0 6.401 6.5"/><path d="M3.477 10.896a4 4 0 0 1 .585-.396"/><path d="M19.938 10.5a4 4 0 0 1 .585.396"/><path d="M6 18a4 4 0 0 1-1.967-.516"/><path d="M19.967 17.484A4 4 0 0 1 18 18"/></svg></span>
         <div class="item-name">Therapy Sessions</div>
         <div class="big-num">1,333,333</div>
         <div class="per-label">per day · at $150/session</div>
         <div class="cost-note">57M Americans say they can't afford mental health care (NAMI).</div>
       </div>
       <div class="comp-card fade-in">
-        <span class="icon">🏥</span>
+        <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 6v4"/><path d="M14 14h-4"/><path d="M14 18h-4"/><path d="M14 8h-4"/><path d="M18 12h2a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2v-9a2 2 0 0 1 2-2h2"/><path d="M18 22V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v18"/></svg></span>
         <div class="item-name">ER Visits Covered</div>
         <div class="big-num">74,074</div>
         <div class="per-label">per day · at $2,700 avg</div>
         <div class="cost-note">The avg. ER visit costs $2,700 without insurance — a leading cause of medical debt.</div>
       </div>
       <div class="comp-card fade-in">
-        <span class="icon">🚑</span>
+        <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 10H6"/><path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/><path d="M19 18h2a1 1 0 0 0 1-1v-3.28a1 1 0 0 0-.684-.948l-1.923-.641a1 1 0 0 1-.578-.502l-1.539-3.076A1 1 0 0 0 16.382 8H14"/><path d="M8 8v4"/><path d="M9 18h6"/><circle cx="17" cy="18" r="2"/><circle cx="7" cy="18" r="2"/></svg></span>
         <div class="item-name">Ambulance Rides</div>
         <div class="big-num">166,667</div>
         <div class="per-label">per day · at $1,200 avg</div>
         <div class="cost-note">50% of ground ambulance patients face surprise bills. Air transport: $40K+.</div>
       </div>
       <div class="comp-card fade-in">
-        <span class="icon">🦴</span>
+        <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 10c.7-.7 1.69 0 2.5 0a2.5 2.5 0 1 0 0-5 .5.5 0 0 1-.5-.5 2.5 2.5 0 1 0-5 0c0 .81.7 1.8 0 2.5l-7 7c-.7.7-1.69 0-2.5 0a2.5 2.5 0 0 0 0 5c.28 0 .5.22.5.5a2.5 2.5 0 1 0 5 0c0-.81-.7-1.8 0-2.5Z"/></svg></span>
         <div class="item-name">Knee Replacements</div>
         <div class="big-num">5,714</div>
         <div class="per-label">per day · at $35,000 each</div>
         <div class="cost-note">~1M knee replacements/year in the U.S. This rate covers the annual need in 175 days.</div>
       </div>
       <div class="comp-card fade-in">
-        <span class="icon">❤️</span>
+        <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="1em" height="1em"><path d="m11.645 20.91-.007-.003-.022-.012a15.247 15.247 0 0 1-.383-.218 25.18 25.18 0 0 1-4.244-3.17C4.688 15.36 2.25 12.174 2.25 8.25 2.25 5.322 4.714 3 7.688 3A5.5 5.5 0 0 1 12 5.052 5.5 5.5 0 0 1 16.313 3c2.973 0 5.437 2.322 5.437 5.25 0 3.925-2.438 7.111-4.739 9.256a25.175 25.175 0 0 1-4.244 3.17 15.247 15.247 0 0 1-.383.219l-.022.012-.007.004-.003.001a.752.752 0 0 1-.704 0l-.003-.001Z"/></svg></span>
         <div class="item-name">Heart Bypass Surgeries</div>
         <div class="big-num">3,509</div>
         <div class="per-label">per day · at $57,000 each</div>
         <div class="cost-note">The most expensive common surgery in America, averaging $70K in Alaska.</div>
       </div>
       <div class="comp-card fade-in">
-        <span class="icon">🔬</span>
+        <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 18h8"/><path d="M3 22h18"/><path d="M14 22a7 7 0 1 0 0-14h-1"/><path d="M9 14h2"/><path d="M9 12a2 2 0 0 1-2-2V6h6v4a2 2 0 0 1-2 2Z"/><path d="M12 6V3a1 1 0 0 0-1-1H9a1 1 0 0 0-1 1v3"/></svg></span>
         <div class="item-name">MRI Scans</div>
         <div class="big-num">166,667</div>
         <div class="per-label">per day · at $1,200 each</div>
         <div class="cost-note">Diagnostic imaging is critical for early detection of cancers, injuries, and disease.</div>
       </div>
       <div class="comp-card fade-in">
-        <span class="icon">👶</span>
+        <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12h.01"/><path d="M15 12h.01"/><path d="M10 16c.5.3 1.2.5 2 .5s1.5-.2 2-.5"/><path d="M19 6.3a9 9 0 0 1 1.8 3.9 2 2 0 0 1 0 3.6 9 9 0 0 1-17.6 0 2 2 0 0 1 0-3.6A9 9 0 0 1 12 3c2 0 3.5 1.1 3.5 2.5s-.9 2.5-2 2.5c-.8 0-1.5-.4-1.5-1"/></svg></span>
         <div class="item-name">Hospital Childbirths</div>
         <div class="big-num">11,111</div>
         <div class="per-label">per day · at $18,000 each</div>
@@ -649,32 +656,32 @@
       <div class="thaad-price">$12.7 MILLION</div>
       <div class="thaad-grid">
         <div class="thaad-item">
-          <div class="t-icon">💉</div>
+          <div class="t-icon"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m18 2 4 4"/><path d="m17 7 3-3"/><path d="M19 9 8.7 19.3c-1 1-2.5 1-3.4 0l-.6-.6c-1-1-1-2.5 0-3.4L15 5"/><path d="m9 11 4 4"/><path d="m5 19-3 3"/><path d="m14 4 6 6"/></svg></div>
           <div class="t-num">2,117</div>
           <div class="t-label">Insulin Pumps</div>
         </div>
         <div class="thaad-item">
-          <div class="t-icon">🧠</div>
+          <div class="t-icon"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5a3 3 0 1 0-5.997.125 4 4 0 0 0-2.526 5.77 4 4 0 0 0 .556 6.588A4 4 0 1 0 12 18Z"/><path d="M12 5a3 3 0 1 1 5.997.125 4 4 0 0 1 2.526 5.77 4 4 0 0 1-.556 6.588A4 4 0 1 1 12 18Z"/><path d="M15 13a4.5 4.5 0 0 1-3-4 4.5 4.5 0 0 1-3 4"/><path d="M17.599 6.5a3 3 0 0 0 .399-1.375"/><path d="M6.003 5.125A3 3 0 0 0 6.401 6.5"/><path d="M3.477 10.896a4 4 0 0 1 .585-.396"/><path d="M19.938 10.5a4 4 0 0 1 .585.396"/><path d="M6 18a4 4 0 0 1-1.967-.516"/><path d="M19.967 17.484A4 4 0 0 1 18 18"/></svg></div>
           <div class="t-num">84,667</div>
           <div class="t-label">Therapy Sessions</div>
         </div>
         <div class="thaad-item">
-          <div class="t-icon">♿</div>
+          <div class="t-icon"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="16" cy="4" r="1"/><path d="m18 19 1-7-6 1"/><path d="m5 8 3-3 5.5 3-2.36 3.5"/><path d="M4.24 14.5a5 5 0 0 0 6.88 6"/><path d="M13.76 17.5a5 5 0 0 0-6.88-6"/></svg></div>
           <div class="t-num">3,629</div>
           <div class="t-label">Power Wheelchairs</div>
         </div>
         <div class="thaad-item">
-          <div class="t-icon">🦻</div>
+          <div class="t-icon"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8.5a6.5 6.5 0 1 1 13 0c0 6-6 6-6 10a3.5 3.5 0 1 1-7 0"/><path d="M15 8.5a2.5 2.5 0 0 0-5 0v1a2 2 0 1 1 0 4"/></svg></div>
           <div class="t-num">3,175</div>
           <div class="t-label">Hearing Aid Pairs</div>
         </div>
         <div class="thaad-item">
-          <div class="t-icon">🦴</div>
+          <div class="t-icon"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 10c.7-.7 1.69 0 2.5 0a2.5 2.5 0 1 0 0-5 .5.5 0 0 1-.5-.5 2.5 2.5 0 1 0-5 0c0 .81.7 1.8 0 2.5l-7 7c-.7.7-1.69 0-2.5 0a2.5 2.5 0 0 0 0 5c.28 0 .5.22.5.5a2.5 2.5 0 1 0 5 0c0-.81-.7-1.8 0-2.5Z"/></svg></div>
           <div class="t-num">363</div>
           <div class="t-label">Knee Replacements</div>
         </div>
         <div class="thaad-item">
-          <div class="t-icon">❤️</div>
+          <div class="t-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="1em" height="1em"><path d="m11.645 20.91-.007-.003-.022-.012a15.247 15.247 0 0 1-.383-.218 25.18 25.18 0 0 1-4.244-3.17C4.688 15.36 2.25 12.174 2.25 8.25 2.25 5.322 4.714 3 7.688 3A5.5 5.5 0 0 1 12 5.052 5.5 5.5 0 0 1 16.313 3c2.973 0 5.437 2.322 5.437 5.25 0 3.925-2.438 7.111-4.739 9.256a25.175 25.175 0 0 1-4.244 3.17 15.247 15.247 0 0 1-.383.219l-.022.012-.007.004-.003.001a.752.752 0 0 1-.704 0l-.003-.001Z"/></svg></div>
           <div class="t-num">223</div>
           <div class="t-label">Heart Bypasses</div>
         </div>
@@ -692,37 +699,37 @@
     </div>
     <div class="comparison-grid" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));">
       <div class="comp-card fade-in">
-        <span class="icon">💉</span>
+        <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m18 2 4 4"/><path d="m17 7 3-3"/><path d="M19 9 8.7 19.3c-1 1-2.5 1-3.4 0l-.6-.6c-1-1-1-2.5 0-3.4L15 5"/><path d="m9 11 4 4"/><path d="m5 19-3 3"/><path d="m14 4 6 6"/></svg></span>
         <div class="item-name">Insulin Pumps</div>
         <div class="big-num">5,000</div>
         <div class="per-label">per day</div>
       </div>
       <div class="comp-card fade-in">
-        <span class="icon">🧠</span>
+        <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5a3 3 0 1 0-5.997.125 4 4 0 0 0-2.526 5.77 4 4 0 0 0 .556 6.588A4 4 0 1 0 12 18Z"/><path d="M12 5a3 3 0 1 1 5.997.125 4 4 0 0 1 2.526 5.77 4 4 0 0 1-.556 6.588A4 4 0 1 1 12 18Z"/><path d="M15 13a4.5 4.5 0 0 1-3-4 4.5 4.5 0 0 1-3 4"/><path d="M17.599 6.5a3 3 0 0 0 .399-1.375"/><path d="M6.003 5.125A3 3 0 0 0 6.401 6.5"/><path d="M3.477 10.896a4 4 0 0 1 .585-.396"/><path d="M19.938 10.5a4 4 0 0 1 .585.396"/><path d="M6 18a4 4 0 0 1-1.967-.516"/><path d="M19.967 17.484A4 4 0 0 1 18 18"/></svg></span>
         <div class="item-name">Therapy Sessions</div>
         <div class="big-num">200,000</div>
         <div class="per-label">per day</div>
       </div>
       <div class="comp-card fade-in">
-        <span class="icon">🚑</span>
+        <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 10H6"/><path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/><path d="M19 18h2a1 1 0 0 0 1-1v-3.28a1 1 0 0 0-.684-.948l-1.923-.641a1 1 0 0 1-.578-.502l-1.539-3.076A1 1 0 0 0 16.382 8H14"/><path d="M8 8v4"/><path d="M9 18h6"/><circle cx="17" cy="18" r="2"/><circle cx="7" cy="18" r="2"/></svg></span>
         <div class="item-name">Ambulance Rides</div>
         <div class="big-num">25,000</div>
         <div class="per-label">per day</div>
       </div>
       <div class="comp-card fade-in">
-        <span class="icon">🦴</span>
+        <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 10c.7-.7 1.69 0 2.5 0a2.5 2.5 0 1 0 0-5 .5.5 0 0 1-.5-.5 2.5 2.5 0 1 0-5 0c0 .81.7 1.8 0 2.5l-7 7c-.7.7-1.69 0-2.5 0a2.5 2.5 0 0 0 0 5c.28 0 .5.22.5.5a2.5 2.5 0 1 0 5 0c0-.81-.7-1.8 0-2.5Z"/></svg></span>
         <div class="item-name">Knee Replacements</div>
         <div class="big-num">857</div>
         <div class="per-label">per day</div>
       </div>
       <div class="comp-card fade-in">
-        <span class="icon">😴</span>
+        <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="1em" height="1em"><path fill-rule="evenodd" d="M9.528 1.718a.75.75 0 0 1 .162.819A8.97 8.97 0 0 0 9 6a9 9 0 0 0 9 9 8.97 8.97 0 0 0 3.463-.69.75.75 0 0 1 .981.98 10.503 10.503 0 0 1-9.694 6.46c-5.799 0-10.5-4.7-10.5-10.5 0-4.368 2.667-8.112 6.46-9.694a.75.75 0 0 1 .818.162Z" clip-rule="evenodd"/></svg></span>
         <div class="item-name">CPAP Machines</div>
         <div class="big-num">20,000</div>
         <div class="per-label">per day</div>
       </div>
       <div class="comp-card fade-in">
-        <span class="icon">🦻</span>
+        <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8.5a6.5 6.5 0 1 1 13 0c0 6-6 6-6 10a3.5 3.5 0 1 1-7 0"/><path d="M15 8.5a2.5 2.5 0 0 0-5 0v1a2 2 0 1 1 0 4"/></svg></span>
         <div class="item-name">Hearing Aid Pairs</div>
         <div class="big-num">7,500</div>
         <div class="per-label">per day</div>
@@ -735,7 +742,7 @@
 <section class="section" style="padding-top:20px;">
   <div class="container">
     <div class="duration-card fade-in">
-      <h3>IF THE WAR LASTS 4 WEEKS (TRUMP'S ESTIMATE) AT $200M/DAY</h3>
+      <h3>IF THE WAR LASTS 4 WEEKS (CURRENT ESTIMATE) AT $200M/DAY</h3>
       <div class="duration-row">
         <span class="dur-time">28 Days</span>
         <span class="dur-cost">$5.6 BILLION</span>
