@@ -397,8 +397,13 @@ window.va = window.va || function () { (window.vaq = window.vaq || []).push(argu
     position: relative;
     overflow: hidden;
   }
-  .comp-card:last-child {
-    border-bottom: none;
+  /* Remove bottom border from last row (column-count-aware) */
+  .comp-card:last-child { border-bottom: none; }
+  @media (min-width: 528px) and (max-width: 767px) {
+    .comp-card:nth-last-child(2):nth-child(odd) { border-bottom: none; }
+  }
+  @media (min-width: 768px) {
+    .comp-card:nth-last-child(-n+3) { border-bottom: none; }
   }
   .comp-card .icon {
     display: none;
