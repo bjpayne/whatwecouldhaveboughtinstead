@@ -14,7 +14,7 @@ window.va = window.va || function () { (window.vaq = window.vaq || []).push(argu
 <title>Iran War Cost: What $220M/Day Could Buy Instead</title>
 
 <!-- SEO Meta -->
-<meta name="description" content="The Iran war costs $220 million per day. Operation Epic Fury has spent $43 billion since 2024. See what that money could buy instead — insulin pumps, teacher salaries, bridge repairs, and more. A data-driven comparison of U.S. military spending vs. domestic needs.">
+<meta name="description" content="The Iran war costs $220 million per day. Operation Epic Fury has spent $43.7 billion since 2024. See what that money could buy instead — insulin pumps, teacher salaries, bridge repairs, and more. A data-driven comparison of U.S. military spending vs. domestic needs.">
 <meta name="keywords" content="Iran war cost, cost of Iran war, Operation Epic Fury cost, Iran war spending, how much does Iran war cost, Iran war cost per day, Iran war taxpayer cost, US military spending Iran, war spending vs healthcare, war spending vs education, war spending vs infrastructure, what could we buy instead, Iran war 2026, cost of war, military budget, $220 million per day, Iran war cost tracker, Iran conflict cost, US Iran war budget, war vs healthcare, war vs education, THAAD missile cost, Iran war daily cost, Iran war total cost, what we could have bought instead">
 <meta name="author" content="What We Could Have Bought Instead">
 <meta name="theme-color" content="#f0f0ec">
@@ -65,9 +65,9 @@ window.va = window.va || function () { (window.vaq = window.vaq || []).push(argu
   "@context": "https://schema.org",
   "@type": "Article",
   "headline": "Iran War Cost: What $220 Million Per Day Could Buy for America",
-  "description": "Operation Epic Fury costs $220 million per day. The $43 billion spent since 2024 could replace nearly all lead pipes in America, fund 83,000 teacher salaries, or cover 41 million therapy sessions. A data-driven breakdown.",
+  "description": "Operation Epic Fury costs $220 million per day. The $43.7 billion spent since 2024 could replace nearly all lead pipes in America, fund 83,000 teacher salaries, or cover 41 million therapy sessions. A data-driven breakdown.",
   "datePublished": "2026-03-03",
-  "dateModified": "2026-03-03",
+  "dateModified": "2026-03-05",
   "author": {
     "@type": "Organization",
     "name": "What We Could Have Bought Instead"
@@ -105,7 +105,7 @@ window.va = window.va || function () { (window.vaq = window.vaq || []).push(argu
       "name": "How much has the Iran war cost in total?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "As of March 2026, cumulative U.S. conflict-related spending since April 2024 has reached approximately $43 billion, including military aid to Israel, operations in Yemen, and Operation Epic Fury."
+        "text": "As of March 2026, cumulative U.S. conflict-related spending since April 2024 has reached approximately $43.7 billion, including military aid to Israel, operations in Yemen, and Operation Epic Fury."
       }
     },
     {
@@ -113,7 +113,7 @@ window.va = window.va || function () { (window.vaq = window.vaq || []).push(argu
       "name": "What could the Iran war money buy instead?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Each day of war spending ($220M) could fund 36,667 insulin pumps, 1.47 million therapy sessions, 18,410 college tuitions, 2,966 teacher salaries, or 9,167 lane-miles of road maintenance. The $43B total could replace nearly all lead pipes in America or fully fund the federal broadband expansion program."
+        "text": "Each day of war spending ($220M) could fund 36,667 insulin pumps, 1.47 million therapy sessions, 18,410 college tuitions, 2,966 teacher salaries, or 9,167 lane-miles of road maintenance. The $43.7B total could replace nearly all lead pipes in America or fully fund the federal broadband expansion program."
       }
     },
     {
@@ -121,7 +121,7 @@ window.va = window.va || function () { (window.vaq = window.vaq || []).push(argu
       "name": "How much does the Iran war cost per taxpayer?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Based on 150 million U.S. tax filers, the $43 billion cumulative cost equals approximately $287 per taxpayer. The daily active operations rate works out to $1.47 per taxpayer per day."
+        "text": "Based on 150 million U.S. tax filers, the $43.7 billion cumulative cost equals approximately $291 per taxpayer. The daily active operations rate works out to $1.47 per taxpayer per day."
       }
     },
     {
@@ -244,12 +244,18 @@ window.va = window.va || function () { (window.vaq = window.vaq || []).push(argu
     position: relative;
     padding: 100px 24px 60px;
   }
+  .hero > * {
+    position: relative;
+    z-index: 1;
+  }
   .hero::before {
     content: '';
     position: absolute;
     top: 0; left: 0; right: 0; bottom: 0;
-    background: transparent;
+    background: url('/background.png') center center / cover no-repeat;
+    opacity: 0.08;
     pointer-events: none;
+    z-index: 0;
   }
   .hero-tag {
     font-family: 'DM Sans', sans-serif;
@@ -289,8 +295,6 @@ window.va = window.va || function () { (window.vaq = window.vaq || []).push(argu
   /* ── COUNTER BANNER ── */
   .counter-banner {
     background: var(--bg);
-    border-top: 2px solid var(--dark);
-    border-bottom: 2px solid var(--dark);
     padding: 56px 24px;
     text-align: center;
   }
@@ -466,7 +470,6 @@ window.va = window.va || function () { (window.vaq = window.vaq || []).push(argu
     grid-template-columns: 1fr 1fr;
     gap: 0;
     margin: 40px 0;
-    border: 1px solid var(--dark);
     border-radius: 0;
     overflow: hidden;
   }
@@ -476,7 +479,7 @@ window.va = window.va || function () { (window.vaq = window.vaq || []).push(argu
     background: transparent;
   }
   .sbs-panel + .sbs-panel {
-    border-left: 1px solid var(--dark);
+    border-left: 3px solid var(--dark);
   }
   .sbs-panel .sbs-label {
     font-size: 0.7rem;
@@ -585,7 +588,6 @@ window.va = window.va || function () { (window.vaq = window.vaq || []).push(argu
     padding: 60px 24px;
     text-align: center;
     border-top: 2px solid var(--dark);
-    border-bottom: 2px solid var(--dark);
     background: var(--bg);
   }
   .ticker-label {
@@ -677,11 +679,18 @@ window.va = window.va || function () { (window.vaq = window.vaq || []).push(argu
     margin-top: 20px;
     line-height: 1.8;
   }
+  .footer .footer-nav-link {
+    font-size: 0.65rem;
+    color: var(--muted);
+  }
 
   /* ── RESPONSIVE ── */
   @media (max-width: 600px) {
-    .side-by-side { grid-template-columns: 1fr; }
-    .sbs-panel + .sbs-panel { border-left: none; border-top: 1px solid var(--dark); }
+    .side-by-side {
+      border-left: none;
+      grid-template-columns: 1fr;
+    }
+    .sbs-panel + .sbs-panel { border-left: none; border-top: 3px solid var(--dark); }
     .sbs-panel { padding: 28px 20px; }
     .duration-row { flex-direction: column; gap: 6px; text-align: center; }
     .dur-time, .dur-cost, .dur-equiv { width: auto; text-align: center; }
@@ -724,7 +733,7 @@ window.va = window.va || function () { (window.vaq = window.vaq || []).push(argu
     The Iran war costs $220 million per day. What could that money buy if invested in healthcare, education, and infrastructure?
     A data-driven comparison of Operation Epic Fury's military spending and what America actually needs.
   </p>
-  <span class="hero-date">Data as of March 3, 2026 · All figures are estimates from public sources</span>
+  <span class="hero-date">Data as of March 5, 2026 · All figures are estimates from public sources</span>
 </section>
 
 <!-- ═══════════ TICKER ═══════════ -->
@@ -750,7 +759,7 @@ window.va = window.va || function () { (window.vaq = window.vaq || []).push(argu
         <div class="label">Per Day — Broader Deployment<br><em style="font-size:0.7rem;color:#444">Pre-strike buildup baseline</em></div>
       </div>
       <div class="counter-stat fade-in">
-        <div class="num">$43B</div>
+        <div class="num">$43.7B</div>
         <div class="label">Cumulative Total<br><em style="font-size:0.7rem;color:#444">All conflict spending since April 2024</em></div>
       </div>
     </div>
@@ -1074,16 +1083,16 @@ window.va = window.va || function () { (window.vaq = window.vaq || []).push(argu
       <div class="comp-card infra-card fade-in">
         <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/></svg></span>
         <div class="item-name">Lead Pipe Replacement</div>
-        <div class="big-num">48–96%</div>
-        <div class="per-label">of all U.S. lead pipes with $43B cumulative</div>
-        <div class="cost-note">~9 million lead service lines remain in use. The $43B already spent could potentially replace most or all of them.</div>
+        <div class="big-num">49–97%</div>
+        <div class="per-label">of all U.S. lead pipes with $43.7B cumulative</div>
+        <div class="cost-note">~9 million lead service lines remain in use. The $43.7B already spent could potentially replace most or all of them.</div>
       </div>
       <div class="comp-card infra-card fade-in">
         <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M3 9h18"/><path d="M3 15h18"/><path d="M9 3v18"/><path d="M15 3v18"/></svg></span>
         <div class="item-name">Broadband for All</div>
         <div class="big-num">43 DAYS</div>
         <div class="per-label">to connect all 10M unserved households for a year</div>
-        <div class="cost-note">22.3% of rural Americans lack basic 25/3 Mbps broadband. The entire BEAD program ($42B) equals the cumulative war spend.</div>
+        <div class="cost-note">22.3% of rural Americans lack basic 25/3 Mbps broadband. The entire BEAD program ($42B) is less than the cumulative war spend.</div>
       </div>
       <div class="comp-card infra-card fade-in">
         <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-2 2Zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2"/><path d="M18 14h-8"/><path d="M15 18h-5"/><path d="M10 6h8v4h-8V6Z"/></svg></span>
@@ -1100,42 +1109,42 @@ window.va = window.va || function () { (window.vaq = window.vaq || []).push(argu
 <section class="section" style="padding-top:0">
   <div class="container">
     <div class="section-header fade-in">
-      <h2>WHAT <span style="color:var(--war-red)">$43 BILLION</span> CUMULATIVE COULD DO</h2>
+      <h2>WHAT <span style="color:var(--war-red)">$43.7 BILLION</span> CUMULATIVE COULD DO</h2>
       <p>The total conflict spending since April 2024, measured against America's infrastructure needs.</p>
     </div>
     <div class="side-by-side fade-in">
       <div class="sbs-panel war">
         <div class="sbs-label">Cumulative War Spend</div>
-        <div class="sbs-num">$43B</div>
+        <div class="sbs-num">$43.7B</div>
         <div class="sbs-desc">Total since April 2024</div>
       </div>
       <div class="sbs-panel infra">
         <div class="sbs-label">Bridge Repair Backlog</div>
-        <div class="sbs-num">36.7%</div>
+        <div class="sbs-num">37.3%</div>
         <div class="sbs-desc">of the $117.1B backlog covered</div>
       </div>
     </div>
     <div class="side-by-side fade-in">
       <div class="sbs-panel war">
         <div class="sbs-label">Cumulative War Spend</div>
-        <div class="sbs-num">$43B</div>
+        <div class="sbs-num">$43.7B</div>
         <div class="sbs-desc">Total since April 2024</div>
       </div>
       <div class="sbs-panel infra">
         <div class="sbs-label">Federal Broadband Program</div>
-        <div class="sbs-num">102%</div>
+        <div class="sbs-num">104%</div>
         <div class="sbs-desc">Could fully fund the entire $42B BEAD program</div>
       </div>
     </div>
     <div class="side-by-side fade-in">
       <div class="sbs-panel war">
         <div class="sbs-label">Cumulative War Spend</div>
-        <div class="sbs-num">$43B</div>
+        <div class="sbs-num">$43.7B</div>
         <div class="sbs-desc">Total since April 2024</div>
       </div>
       <div class="sbs-panel infra">
         <div class="sbs-label">Annual Wastewater Shortfall</div>
-        <div class="sbs-num">62.3%</div>
+        <div class="sbs-num">63.3%</div>
         <div class="sbs-desc">of the $69B/yr gap covered</div>
       </div>
     </div>
@@ -1291,15 +1300,15 @@ window.va = window.va || function () { (window.vaq = window.vaq || []).push(argu
     <div class="comparison-grid" style="grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));" >
       <div class="comp-card fade-in" style="border-color: var(--gold);">
         <div class="item-name" style="color:var(--gold)">Your share of total conflict</div>
-        <div class="big-num" style="color:var(--gold)">$287</div>
-        <div class="per-label">per taxpayer ($43B total)</div>
+        <div class="big-num" style="color:var(--gold)">$291</div>
+        <div class="per-label">per taxpayer ($43.7B total)</div>
         <div class="cost-note">That's 1.9 therapy sessions, ~1 month of community college, or 3.7 months of home internet.</div>
       </div>
       <div class="comp-card fade-in" style="border-color: var(--gold);">
         <div class="item-name" style="color:var(--gold)">4-week campaign share</div>
-        <div class="big-num" style="color:var(--gold)">$37</div>
-        <div class="per-label">per taxpayer ($5.6B est.)</div>
-        <div class="cost-note">Enough for 7+ months of insulin copays, 8 school lunches, or 1.5 lane-miles of road maintenance.</div>
+        <div class="big-num" style="color:var(--gold)">$41</div>
+        <div class="per-label">per taxpayer ($6.16B est.)</div>
+        <div class="cost-note">Enough for 8+ months of insulin copays, 9 school lunches, or 1.7 lane-miles of road maintenance.</div>
       </div>
       <div class="comp-card fade-in" style="border-color: var(--gold);">
         <div class="item-name" style="color:var(--gold)">Daily share</div>
@@ -1328,6 +1337,7 @@ window.va = window.va || function () { (window.vaq = window.vaq || []).push(argu
     IRS Statistics of Income · JINSA
   </div>
   <p>Built with Claude Code</p>
+  <a href="/analysis.pdf" class="footer-nav-link" target="_blank">Analysis</a>
 </footer>
 
 <script>

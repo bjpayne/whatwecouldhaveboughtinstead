@@ -6,7 +6,7 @@ Live site: [whatwecouldhaveboughtinstead.com](https://www.whatwecouldhaveboughti
 
 ## About
 
-Operation Epic Fury costs approximately **$220 million per day** (Phase 2 sustained operations rate) — $2,546 every second. Since April 2024, the U.S. has spent an estimated **$43 billion** on Iran-related conflict operations.
+Operation Epic Fury costs approximately **$220 million per day** (Phase 2 sustained operations rate) — $2,546 every second. Since April 2024, the U.S. has spent an estimated **$43.7 billion** on Iran-related conflict operations.
 
 This project puts that spending in context by showing what the same money could buy if invested domestically:
 
@@ -14,7 +14,7 @@ This project puts that spending in context by showing what the same money could 
 - **Education**: 18,410 college tuitions, 2,966 teacher salaries, or 49.9 million school lunches — per day
 - **Infrastructure**: 9,167 lane-miles of road maintenance, or the entire bridge repair backlog cleared in 1.5 years
 
-All figures are estimates based on publicly available data as of March 3, 2026.
+All figures are estimates based on publicly available data as of March 5, 2026.
 
 ## Data Sources
 
