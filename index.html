@@ -513,6 +513,37 @@ window.va = window.va || function () { (window.vaq = window.vaq || []).push(argu
     height: 16px;
   }
 
+  /* ── SHOW ALL / SHOW FEWER TOGGLE ── */
+  .section-toggle {
+    display: none;
+    width: 100%;
+    padding: var(--spacing-16) var(--spacing-24);
+    margin-top: var(--spacing-8);
+    background: transparent;
+    border: 1px solid var(--divider);
+    border-radius: 0;
+    font-family: 'Inter', sans-serif;
+    font-size: var(--fs-xs);
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    cursor: pointer;
+    transition: color 0.2s, border-color 0.2s;
+  }
+  .section-toggle:hover {
+    color: var(--dark);
+    border-color: var(--dark);
+  }
+  .section-toggle:focus-visible {
+    outline: 2px solid var(--dark);
+    outline-offset: 2px;
+  }
+  @media (max-width: 768px) {
+    .section-toggle { display: block; }
+    .comp-card.card-hidden { display: none; }
+  }
+
   /* Card big-nums — all dark, no color accents */
   .comp-card .big-num { color: var(--dark); }
 
@@ -1073,7 +1104,7 @@ window.va = window.va || function () { (window.vaq = window.vaq || []).push(argu
     MEASURED AT <span class="home">HOME</span>
   </h1>
   <p class="hero-sub">
-    The Iran war costs $220 million per day. What could that money buy if invested in healthcare, education, and infrastructure?
+    Daily Iran war spending: $220 million. See how that compares to domestic needs.
     A data-driven comparison of Operation Epic Fury's military spending and what America actually needs.
   </p>
   <span class="hero-date">Data as of March 5, 2026 · All figures are estimates from public sources</span>
@@ -1956,6 +1987,94 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Scroll progress bar
   const progressBar = document.getElementById('scroll-progress');
+
+  // ── Show All / Show Fewer toggle for tablet and below ──
+  const CARD_LIMIT = 3;
+  const TABLET_BP = 768;
+  const sectionIds = ['health', 'education', 'infrastructure'];
+
+  function getSectionElements(sectionId) {
+    const divider = document.getElementById(sectionId);
+    if (!divider) return { cards: [], sections: [], lastSection: null };
+    const cards = [];
+    const sections = [];
+    let lastSection = null;
+    let el = divider.nextElementSibling;
+    while (el) {
+      if (el.classList.contains('section-divider') || el.classList.contains('pull-quote')) break;
+      if (el.classList.contains('section') && el.querySelector('.comparison-grid')) {
+        el.querySelectorAll('.comp-card').forEach(c => cards.push(c));
+        sections.push(el);
+        lastSection = el;
+      } else if (el.classList.contains('section')) {
+        break; // Hit a section without comparison cards — stop
+      }
+      el = el.nextElementSibling;
+    }
+    return { cards, sections, lastSection };
+  }
+
+  sectionIds.forEach(sectionId => {
+    const { cards, sections, lastSection } = getSectionElements(sectionId);
+    if (cards.length <= CARD_LIMIT || !lastSection) return;
+
+    // Create the toggle button — placed after the last section
+    const btn = document.createElement('button');
+    btn.className = 'section-toggle';
+    btn.setAttribute('aria-expanded', 'false');
+    btn.textContent = 'Show All';
+    btn.dataset.section = sectionId;
+
+    // Wrap in a container div for consistent padding
+    const btnWrap = document.createElement('div');
+    btnWrap.className = 'container';
+    btnWrap.style.paddingTop = '0';
+    btnWrap.appendChild(btn);
+    lastSection.after(btnWrap);
+
+    function applyToggle() {
+      const isTablet = window.innerWidth <= TABLET_BP;
+      const expanded = btn.getAttribute('aria-expanded') === 'true';
+
+      if (isTablet && !expanded) {
+        cards.forEach((card, i) => {
+          if (i >= CARD_LIMIT) card.classList.add('card-hidden');
+          else card.classList.remove('card-hidden');
+        });
+        // Hide sections where ALL cards are hidden
+        sections.forEach(sec => {
+          const secCards = sec.querySelectorAll('.comp-card');
+          const allHidden = Array.from(secCards).every(c => c.classList.contains('card-hidden'));
+          if (allHidden && secCards.length > 0) {
+            sec.style.display = 'none';
+          } else {
+            sec.style.display = '';
+          }
+        });
+        btn.style.display = 'block';
+      } else if (isTablet && expanded) {
+        cards.forEach(card => card.classList.remove('card-hidden'));
+        sections.forEach(sec => sec.style.display = '');
+        btn.style.display = 'block';
+      } else {
+        // Desktop — show all, hide button
+        cards.forEach(card => card.classList.remove('card-hidden'));
+        sections.forEach(sec => sec.style.display = '');
+        btn.style.display = 'none';
+      }
+    }
+
+    btn.addEventListener('click', () => {
+      const expanded = btn.getAttribute('aria-expanded') === 'true';
+      btn.setAttribute('aria-expanded', String(!expanded));
+      btn.textContent = expanded ? 'Show All' : 'Show Fewer';
+      applyToggle();
+    });
+
+    // Initial setup + resize handler
+    applyToggle();
+    window.addEventListener('resize', applyToggle);
+  });
 
   // Navbar scroll effect + active state
   const navbar = document.getElementById('navbar');
