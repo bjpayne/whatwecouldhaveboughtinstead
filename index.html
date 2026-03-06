@@ -146,7 +146,7 @@ window.va = window.va || function () { (window.vaq = window.vaq || []).push(argu
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=DM+Sans:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&display=swap" rel="stylesheet">
 <style>
   :root {
     --bg: #f0f0ec;
@@ -506,10 +506,6 @@ window.va = window.va || function () { (window.vaq = window.vaq || []).push(argu
   /* Highlight bar — subtle teal accent */
   .highlight-bar { border-left: 4px solid var(--dark); }
 
-  /* Side-by-side panel accents — war red vs home teal */
-  .sbs-panel.war .sbs-num { color: var(--war-red); }
-  .sbs-panel.home .sbs-num { color: var(--home-teal); }
-  .sbs-panel.war + .sbs-panel { border-left-color: var(--dark); }
 
   /* THAAD section accents */
   .thaad-price { color: var(--war-red) !important; }
@@ -534,42 +530,6 @@ window.va = window.va || function () { (window.vaq = window.vaq || []).push(argu
     margin-top: var(--spacing-8);
   }
 
-  /* ── SIDE BY SIDE ── */
-  .side-by-side {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 0;
-    margin: var(--spacing-40) 0;
-    border-radius: 0;
-    overflow: hidden;
-  }
-  .sbs-panel {
-    padding: var(--spacing-40) var(--spacing-32);
-    text-align: center;
-    background: transparent;
-  }
-  .sbs-panel + .sbs-panel {
-    border-left: 3px solid var(--dark);
-  }
-  .sbs-panel .sbs-label {
-    font-size: var(--fs-caption);
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    color: var(--muted);
-    margin-bottom: var(--spacing-16);
-  }
-  .sbs-panel .sbs-num {
-    font-family: 'Playfair Display', serif;
-    font-weight: 900;
-    font-size: var(--fs-h1);
-    color: var(--dark);
-    line-height: 1;
-    margin-bottom: var(--spacing-8);
-  }
-  .sbs-panel .sbs-desc {
-    font-size: var(--fs-small-body);
-    color: var(--muted);
-  }
 
   /* ── THAAD MISSILE SECTION ── */
   .thaad-section {
@@ -691,8 +651,8 @@ window.va = window.va || function () { (window.vaq = window.vaq || []).push(argu
     margin-bottom: var(--spacing-16);
   }
   .ticker-amount {
-    font-family: 'Playfair Display', serif;
-    font-weight: 900;
+    font-family: 'DM Mono', monospace;
+    font-weight: 500;
     font-size: var(--fs-xx-large);
     color: var(--dark);
     line-height: 1;
@@ -802,12 +762,6 @@ window.va = window.va || function () { (window.vaq = window.vaq || []).push(argu
 
   /* ── RESPONSIVE ── */
   @media (max-width: 600px) {
-    .side-by-side {
-      border-left: none;
-      grid-template-columns: 1fr;
-    }
-    .sbs-panel + .sbs-panel { border-left: none; border-top: 3px solid var(--dark); }
-    .sbs-panel { padding: var(--spacing-24) var(--spacing-16); }
     .duration-row { flex-direction: column; gap: 6px; text-align: center; }
     .dur-time, .dur-cost, .dur-equiv { width: auto; text-align: center; }
     .comp-card { padding: var(--spacing-24) var(--spacing-16); }
@@ -837,7 +791,6 @@ window.va = window.va || function () { (window.vaq = window.vaq || []).push(argu
     .navbar { padding: var(--spacing-8) var(--spacing-16); }
     .nav-link { font-size: var(--fs-caption); padding: var(--spacing-8) var(--spacing-16); }
     .counter-grid { grid-template-columns: repeat(2, 1fr); gap: 24px; }
-    .side-by-side { grid-template-columns: 1fr 1fr; }
     .progress-ring-grid { grid-template-columns: repeat(2, 1fr); }
     .thaad-grid { grid-template-columns: repeat(3, 1fr); }
     .duration-row { gap: 8px; }
@@ -1066,7 +1019,7 @@ window.va = window.va || function () { (window.vaq = window.vaq || []).push(argu
     <div class="counter-grid">
       <div class="counter-stat fade-in">
         <div class="num">$220M</div>
-        <div class="label">Per Day — Active Ops Rate (Phase 2)<br><em class="fs-caption-em">Since Feb 28 strikes began</em></div>
+        <div class="label">Per Day — Active Ops Rate<br><em class="fs-caption-em">Since Feb 28 strikes began</em></div>
       </div>
       <div class="counter-stat fade-in">
         <div class="num">$30M</div>
@@ -1308,45 +1261,12 @@ window.va = window.va || function () { (window.vaq = window.vaq || []).push(argu
 
     <!-- Education highlight -->
     <div class="highlight-bar edu-hl fade-in">
-      <div class="hl-num">~23 YEARS</div>
-      <div class="hl-text">At $220M/day erasing 5,587 student loan balances daily, all 42.8 million federal borrowers could be debt-free. The entire teacher shortage could be funded in under 34 days.</div>
+      <div class="hl-num">34 days</div>
+      <div class="hl-text">At $220M/day the entire teacher shortage could be funded in under 34 days or erase the student loan balances for ~189,000 students.</div>
     </div>
   </div>
 </section>
 
-<!-- ═══════════ EDU: SIDE BY SIDE COMPARISONS ═══════════ -->
-<section class="section pt-0">
-  <div class="container">
-    <div class="section-header fade-in">
-      <h1>ONE DAY OF WAR COULD FUND</h1>
-      <p>Direct comparisons at the $220M/day active operations rate.</p>
-    </div>
-    <div class="side-by-side fade-in">
-      <div class="sbs-panel war">
-        <div class="sbs-label">First 24 Hours of Strikes</div>
-        <div class="sbs-num">$779M</div>
-        <div class="sbs-desc">Actual cost of opening salvo</div>
-      </div>
-      <div class="sbs-panel home">
-        <div class="sbs-label">In-State College Tuitions</div>
-        <div class="sbs-num">65,188</div>
-        <div class="sbs-desc">Full-year tuitions funded</div>
-      </div>
-    </div>
-    <div class="side-by-side fade-in">
-      <div class="sbs-panel war">
-        <div class="sbs-label">4-Week Campaign Est.</div>
-        <div class="sbs-num">$6.16B</div>
-        <div class="sbs-desc">28 days at $220M/day</div>
-      </div>
-      <div class="sbs-panel home">
-        <div class="sbs-label">Teacher Salaries Funded</div>
-        <div class="sbs-num">83,048</div>
-        <div class="sbs-desc">Full-year salaries at national average</div>
-      </div>
-    </div>
-  </div>
-</section>
 
 <!-- ═══════════ PULL QUOTE 2 ═══════════ -->
 <div class="pull-quote fade-in">
@@ -1685,14 +1605,11 @@ document.addEventListener('DOMContentLoaded', () => {
   const START_DATE = new Date('2026-02-28T00:00:00Z');
   const PRE_STRIKE_TOTAL = 43.7e9 - (5 * 220e6);
   const tickerEl = document.getElementById('live-ticker');
-  let tickerRAF;
+  let tickerInterval;
   let isVisible = true;
 
   function formatDollars(n) {
-    if (n >= 1e12) return '$' + (n / 1e12).toFixed(2) + ' T';
-    if (n >= 1e9) return '$' + (n / 1e9).toFixed(3) + ' B';
-    if (n >= 1e6) return '$' + (n / 1e6).toFixed(2) + ' M';
-    return '$' + Math.floor(n).toLocaleString('en-US');
+    return '$' + String(Math.round(n / 5000) * 5000);
   }
 
   function updateTicker() {
@@ -1700,19 +1617,18 @@ document.addEventListener('DOMContentLoaded', () => {
     if (elapsed < 0) { tickerEl.textContent = '$0'; return; }
     const total = PRE_STRIKE_TOTAL + (elapsed * RATE_PER_MS);
     tickerEl.textContent = formatDollars(total);
-    if (isVisible) {
-      tickerRAF = requestAnimationFrame(updateTicker);
-    }
   }
-  tickerRAF = requestAnimationFrame(updateTicker);
+  updateTicker();
+  tickerInterval = setInterval(updateTicker, 1000);
 
   // Page Visibility API — pause ticker when tab hidden
   document.addEventListener('visibilitychange', () => {
     isVisible = !document.hidden;
     if (isVisible) {
-      tickerRAF = requestAnimationFrame(updateTicker);
+      updateTicker();
+      tickerInterval = setInterval(updateTicker, 1000);
     } else {
-      cancelAnimationFrame(tickerRAF);
+      clearInterval(tickerInterval);
     }
   });
 
