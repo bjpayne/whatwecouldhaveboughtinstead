@@ -157,16 +157,30 @@ window.va = window.va || function () { (window.vaq = window.vaq || []).push(argu
     --dark: #1a1a18;
     --muted: #5c574f;
     --divider: #c8c0b4;
+    --text-light: #e4e4e4;
 
-    /* Typography Scale (8 sizes) */
-    --fs-caption: 0.72rem;
-    --fs-label: 0.78rem;
-    --fs-small-body: 0.85rem;
-    --fs-body: 0.95rem;
-    --fs-large: 1.15rem;
-    --fs-h3: 1.5rem;
-    --fs-h2: 1.8rem;
-    --fs-h1: clamp(2rem, 6vw, 2.8rem);
+    /* Typography Scale (6 sizes) */
+    --fs-xs-body: 0.75rem;
+    --fs-small-body: 1rem;
+    --fs-body: 1.3rem;
+    --fs-large: 3rem;
+    --fs-x-large: 5rem;
+    --fs-xx-large: 8rem;
+    --fs-caption: var(--fs-small-body);
+    --fs-label: var(--fs-small-body);
+    --fs-h1: var(--fs-large);
+
+    /* Layout Scale (8 step) */
+    --spacing-4: 4px;
+    --spacing-8: 8px;
+    --spacing-16: 16px;
+    --spacing-24: 24px;
+    --spacing-32: 32px;
+    --spacing-40: 40px;
+    --spacing-48: 48px;
+    --spacing-56: 56px;
+    --spacing-64: 64px;
+    --spacing-72: 72px;
   }
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -183,7 +197,7 @@ window.va = window.va || function () { (window.vaq = window.vaq || []).push(argu
   .container {
     max-width: 880px;
     margin: 0 auto;
-    padding: 0 24px;
+    padding: 0 var(--spacing-24);
   }
 
   /* ── NAVBAR (Editorial top bar) ── */
@@ -199,7 +213,7 @@ window.va = window.va || function () { (window.vaq = window.vaq || []).push(argu
     gap: 4px;
     background: var(--bg);
     border-bottom: 2px solid var(--dark);
-    padding: 10px 8px;
+    padding: var(--spacing-16) var(--spacing-8);
     transition: box-shadow 0.3s;
   }
   .navbar.scrolled {
@@ -213,7 +227,7 @@ window.va = window.va || function () { (window.vaq = window.vaq || []).push(argu
     text-transform: uppercase;
     color: var(--muted);
     text-decoration: none;
-    padding: 8px 18px;
+    padding: var(--spacing-8) var(--spacing-16);
     transition: color 0.25s;
     white-space: nowrap;
   }
@@ -234,8 +248,8 @@ window.va = window.va || function () { (window.vaq = window.vaq || []).push(argu
   }
 
   @media (max-width: 480px) {
-    .navbar { padding: 8px 6px; gap: 2px; }
-    .nav-link { font-size: 0.7rem; padding: 7px 12px; }
+    .navbar { padding: var(--spacing-8); gap: 2px; }
+    .nav-link { padding: var(--spacing-8) var(--spacing-16); }
   }
 
   /* ── HERO ── */
@@ -247,7 +261,7 @@ window.va = window.va || function () { (window.vaq = window.vaq || []).push(argu
     align-items: center;
     text-align: center;
     position: relative;
-    padding: 100px 24px 60px;
+    padding: 100px var(--spacing-24) var(--spacing-64);
   }
   .hero > * {
     position: relative;
@@ -276,7 +290,7 @@ window.va = window.va || function () { (window.vaq = window.vaq || []).push(argu
   .hero h1 {
     font-family: 'Playfair Display', serif;
     font-weight: 900;
-    font-size: clamp(3rem, 8vw, 6.5rem);
+    font-size: var(--fs-x-large);
     line-height: 0.95;
     letter-spacing: -1px;
     margin-bottom: 24px;
@@ -285,7 +299,7 @@ window.va = window.va || function () { (window.vaq = window.vaq || []).push(argu
   .hero h1 .home { color: var(--home-teal); font-style: italic; }
   .hero-sub {
     font-family: 'DM Sans', sans-serif;
-    font-size: var(--fs-large);
+    font-size: var(--fs-body);
     color: var(--muted);
     max-width: 580px;
     line-height: 1.7;
@@ -300,7 +314,7 @@ window.va = window.va || function () { (window.vaq = window.vaq || []).push(argu
   /* ── COUNTER BANNER ── */
   .counter-banner {
     background: var(--bg);
-    padding: 56px 24px;
+    padding: var(--spacing-56) var(--spacing-24);
     text-align: center;
   }
   .counter-label {
@@ -313,7 +327,7 @@ window.va = window.va || function () { (window.vaq = window.vaq || []).push(argu
   .counter-number {
     font-family: 'Playfair Display', serif;
     font-weight: 900;
-    font-size: clamp(3rem, 10vw, 7rem);
+    font-size: var(--fs-h1);
     color: var(--dark);
     line-height: 1;
     margin-bottom: 8px;
@@ -327,7 +341,7 @@ window.va = window.va || function () { (window.vaq = window.vaq || []).push(argu
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 40px;
     max-width: 880px;
-    margin: 40px auto 0;
+    margin: var(--spacing-40) auto 0;
   }
   .counter-stat {
     text-align: center;
@@ -335,7 +349,7 @@ window.va = window.va || function () { (window.vaq = window.vaq || []).push(argu
   .counter-stat .num {
     font-family: 'Playfair Display', serif;
     font-weight: 900;
-    font-size: 2.5rem;
+    font-size: var(--fs-body);
     color: var(--dark);
   }
   .counter-stat .label {
@@ -355,7 +369,7 @@ window.va = window.va || function () { (window.vaq = window.vaq || []).push(argu
   .section-header h2 {
     font-family: 'Playfair Display', serif;
     font-weight: 900;
-    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    font-size: var(--fs-h1);
     letter-spacing: -0.5px;
     margin-bottom: 12px;
   }
@@ -369,7 +383,7 @@ window.va = window.va || function () { (window.vaq = window.vaq || []).push(argu
   /* ── SECTION DIVIDER ── */
   .section-divider {
     text-align: center;
-    padding: 64px 24px;
+    padding: var(--spacing-64) var(--spacing-24);
     position: relative;
   }
   .section-divider::before {
@@ -386,7 +400,7 @@ window.va = window.va || function () { (window.vaq = window.vaq || []).push(argu
     font-size: var(--fs-caption);
     letter-spacing: 5px;
     text-transform: uppercase;
-    padding: 10px 28px;
+    padding: var(--spacing-8) var(--spacing-24);
     border: 1px solid var(--dark);
     border-radius: 0;
   }
@@ -408,7 +422,7 @@ window.va = window.va || function () { (window.vaq = window.vaq || []).push(argu
     border: none;
     border-bottom: 1px solid var(--divider);
     border-radius: 0;
-    padding: 32px 24px;
+    padding: var(--spacing-32) var(--spacing-24);
     position: relative;
     overflow: hidden;
     transition: background 0.2s ease;
@@ -444,7 +458,7 @@ window.va = window.va || function () { (window.vaq = window.vaq || []).push(argu
   .comp-card .big-num {
     font-family: 'Playfair Display', serif;
     font-weight: 900;
-    font-size: 3.2rem;
+    font-size: var(--fs-large);
     color: var(--dark);
     line-height: 1;
     margin-bottom: 6px;
@@ -454,7 +468,7 @@ window.va = window.va || function () { (window.vaq = window.vaq || []).push(argu
     color: var(--muted);
   }
   .comp-card .cost-note {
-    font-size: 0.75rem;
+    font-size: var(--fs-xs-body);
     color: var(--muted);
     margin-top: 12px;
     padding-top: 0;
@@ -472,7 +486,7 @@ window.va = window.va || function () { (window.vaq = window.vaq || []).push(argu
     background: none;
     border: none;
     cursor: pointer;
-    padding: 4px;
+    padding: var(--spacing-4);
     color: var(--muted);
   }
   .comp-card:hover .share-btn {
@@ -504,13 +518,13 @@ window.va = window.va || function () { (window.vaq = window.vaq || []).push(argu
   .highlight-bar {
     background: transparent;
     border-radius: 0;
-    padding: 28px 32px;
-    margin: 48px 0;
+    padding: var(--spacing-24) var(--spacing-32);
+    margin: var(--spacing-48) 0;
   }
   .highlight-bar .hl-num {
     font-family: 'Playfair Display', serif;
     font-weight: 900;
-    font-size: 3.5rem;
+    font-size: var(--fs-h1);
     color: var(--dark);
     line-height: 1;
   }
@@ -525,12 +539,12 @@ window.va = window.va || function () { (window.vaq = window.vaq || []).push(argu
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 0;
-    margin: 40px 0;
+    margin: var(--spacing-40) 0;
     border-radius: 0;
     overflow: hidden;
   }
   .sbs-panel {
-    padding: 40px 32px;
+    padding: var(--spacing-40) var(--spacing-32);
     text-align: center;
     background: transparent;
   }
@@ -547,7 +561,7 @@ window.va = window.va || function () { (window.vaq = window.vaq || []).push(argu
   .sbs-panel .sbs-num {
     font-family: 'Playfair Display', serif;
     font-weight: 900;
-    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-size: var(--fs-h1);
     color: var(--dark);
     line-height: 1;
     margin-bottom: 8px;
@@ -562,21 +576,21 @@ window.va = window.va || function () { (window.vaq = window.vaq || []).push(argu
     background: transparent;
     border: 1px solid var(--dark);
     border-radius: 0;
-    padding: 48px 32px;
-    margin: 40px 0;
+    padding: var(--spacing-48) var(--spacing-32);
+    margin: var(--spacing-40) 0;
     text-align: center;
   }
   .thaad-section h3 {
     font-family: 'Playfair Display', serif;
     font-weight: 900;
-    font-size: 1.8rem;
+    font-size: var(--fs-body);
     letter-spacing: -0.5px;
     margin-bottom: 6px;
   }
   .thaad-price {
     font-family: 'Playfair Display', serif;
     font-weight: 900;
-    font-size: 3rem;
+    font-size: var(--fs-h1);
     color: var(--dark);
     margin-bottom: 24px;
   }
@@ -591,7 +605,7 @@ window.va = window.va || function () { (window.vaq = window.vaq || []).push(argu
   .thaad-item .t-num {
     font-family: 'Playfair Display', serif;
     font-weight: 900;
-    font-size: 2rem;
+    font-size: var(--fs-large);
     color: var(--dark);
   }
   .thaad-item .t-label {
@@ -605,16 +619,13 @@ window.va = window.va || function () { (window.vaq = window.vaq || []).push(argu
     letter-spacing: 3px;
     text-transform: uppercase;
     color: var(--muted);
-    margin: 24px 0 12px;
+    margin: var(--spacing-24) 0 12px;
     padding-top: 16px;
     border-top: 1px solid var(--divider);
   }
 
   /* ── JOBS SECTION (Bar Chart) ── */
-  .jobs-chart {
-    margin: 40px 0;
-    max-width: 640px;
-  }
+  .jobs-chart { margin: var(--spacing-40) 0  }
   .jobs-bar-row {
     display: flex;
     align-items: center;
@@ -622,11 +633,12 @@ window.va = window.va || function () { (window.vaq = window.vaq || []).push(argu
     gap: 16px;
   }
   .jobs-bar-label {
-    font-size: 0.78rem;
+    font-size: var(--fs-small-body);
     color: var(--muted);
     text-transform: uppercase;
     letter-spacing: 1px;
-    width: 120px;
+    width: 20%;
+    max-width: 140px;
     text-align: right;
     flex-shrink: 0;
   }
@@ -647,26 +659,26 @@ window.va = window.va || function () { (window.vaq = window.vaq || []).push(argu
   .jobs-bar-fill .j-num {
     font-family: 'Playfair Display', serif;
     font-weight: 900;
-    font-size: 1.4rem;
+    font-size: var(--fs-body);
     color: #fff;
     line-height: 1;
   }
   .jobs-bar-fill.military { background: var(--dark); }
-  .jobs-bar-fill.military .j-num { color: var(--war-red); }
+  .jobs-bar-fill.military .j-num { color: var(--text-light); }
   .jobs-bar-fill.infra,
   .jobs-bar-fill.health,
   .jobs-bar-fill.edu { background: var(--dark); }
   .jobs-bar-fill.infra .j-num,
   .jobs-bar-fill.health .j-num,
-  .jobs-bar-fill.edu .j-num { color: var(--home-teal); }
+  .jobs-bar-fill.edu .j-num { color: var(--text-light); }
 
   @media (max-width: 480px) {
-    .jobs-bar-label { width: 80px; font-size: 0.7rem; }
+    .jobs-bar-label { width: 80px; }
   }
 
   /* ── TICKER (PER SECOND) ── */
   .ticker-section {
-    padding: 60px 24px;
+    padding: var(--spacing-64) var(--spacing-24);
     text-align: center;
     border-top: 2px solid var(--dark);
     background: var(--bg);
@@ -681,7 +693,7 @@ window.va = window.va || function () { (window.vaq = window.vaq || []).push(argu
   .ticker-amount {
     font-family: 'Playfair Display', serif;
     font-weight: 900;
-    font-size: clamp(4rem, 12vw, 8rem);
+    font-size: var(--fs-xx-large);
     color: var(--dark);
     line-height: 1;
     margin-bottom: 3rem;
@@ -708,13 +720,13 @@ window.va = window.va || function () { (window.vaq = window.vaq || []).push(argu
     background: transparent;
     border: 1px solid var(--dark);
     border-radius: 0;
-    padding: 48px 40px;
-    margin: 40px 0;
+    padding: var(--spacing-48) var(--spacing-40);
+    margin: var(--spacing-40) 0;
   }
-  .duration-card h3 {
+  .duration-card p {
     font-family: 'Playfair Display', serif;
     font-weight: 900;
-    font-size: var(--fs-h3);
+    font-size: var(--fs-large);
     letter-spacing: -0.5px;
     margin-bottom: 24px;
     text-align: center;
@@ -766,7 +778,7 @@ window.va = window.va || function () { (window.vaq = window.vaq || []).push(argu
 
   /* ── FOOTER ── */
   .footer {
-    padding: 60px 24px;
+    padding: var(--spacing-64) var(--spacing-24);
     text-align: center;
     border-top: 2px solid var(--dark);
   }
@@ -774,7 +786,7 @@ window.va = window.va || function () { (window.vaq = window.vaq || []).push(argu
     font-size: var(--fs-label);
     color: var(--muted);
     max-width: 650px;
-    margin: 0 auto 12px;
+    margin: 0 auto var(--spacing-16);
     line-height: 1.7;
   }
   .footer .sources {
@@ -795,22 +807,21 @@ window.va = window.va || function () { (window.vaq = window.vaq || []).push(argu
       grid-template-columns: 1fr;
     }
     .sbs-panel + .sbs-panel { border-left: none; border-top: 3px solid var(--dark); }
-    .sbs-panel { padding: 28px 20px; }
+    .sbs-panel { padding: var(--spacing-24) var(--spacing-16); }
     .duration-row { flex-direction: column; gap: 6px; text-align: center; }
     .dur-time, .dur-cost, .dur-equiv { width: auto; text-align: center; }
-    .comp-card { padding: 24px 20px; }
-    .thaad-section { padding: 32px 20px; }
-    .duration-card { padding: 32px 20px; }
+    .comp-card { padding: var(--spacing-24) var(--spacing-16); }
+    .thaad-section { padding: var(--spacing-32) var(--spacing-16); }
+    .duration-card { padding: var(--spacing-32) var(--spacing-16); }
   }
 
   /* Small phones */
   @media (max-width: 360px) {
-    .navbar { padding: 6px 4px; gap: 0; }
-    .nav-link { font-size: 0.65rem; padding: 6px 8px; letter-spacing: 0; }
+    .navbar { padding: var(--spacing-8) var(--spacing-4); gap: 0; }
+    .nav-link { padding: var(--spacing-8); letter-spacing: 0; }
     .nav-divider { display: none; }
-    .comp-card .cost-note { font-size: 0.75rem; }
-    .hero { padding: 80px 16px 40px; }
-    .hero-tag { font-size: 0.65rem; letter-spacing: 2px; }
+    .hero { padding: var(--spacing-72) var(--spacing-16) 40px; }
+    .hero-tag { letter-spacing: 2px; }
   }
 
   /* Wide screens */
@@ -825,13 +836,12 @@ window.va = window.va || function () { (window.vaq = window.vaq || []).push(argu
     .comparison-grid { grid-template-columns: repeat(2, 1fr); gap: 0; }
     .navbar { padding: 8px 12px; }
     .nav-link { font-size: var(--fs-caption); padding: 7px 14px; }
-    .hero h1 { font-size: clamp(2.4rem, 7vw, 4rem); }
     .counter-grid { grid-template-columns: repeat(2, 1fr); gap: 24px; }
     .side-by-side { grid-template-columns: 1fr 1fr; }
     .progress-ring-grid { grid-template-columns: repeat(2, 1fr); }
     .thaad-grid { grid-template-columns: repeat(3, 1fr); }
     .duration-row { gap: 8px; }
-    .dur-cost { font-size: 1.2rem; width: 120px; }
+    .dur-cost { width: 120px; }
   }
 
   /* ── PULL QUOTE ── */
@@ -843,7 +853,7 @@ window.va = window.va || function () { (window.vaq = window.vaq || []).push(argu
   }
   .pull-quote blockquote {
     font-family: 'Playfair Display', serif;
-    font-size: clamp(1.4rem, 3vw, 2rem);
+    font-size: var(--fs-large);
     font-weight: 400;
     font-style: italic;
     line-height: 1.5;
@@ -852,7 +862,7 @@ window.va = window.va || function () { (window.vaq = window.vaq || []).push(argu
   }
   .pull-quote .pq-source {
     font-family: 'DM Sans', sans-serif;
-    font-size: 0.78rem;
+    font-size: var(--fs-caption);
     font-style: normal;
     color: var(--muted);
     margin-top: 16px;
@@ -868,7 +878,7 @@ window.va = window.va || function () { (window.vaq = window.vaq || []).push(argu
   .infra-grid-header h2 {
     font-family: 'Playfair Display', serif;
     font-weight: 900;
-    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    font-size: var(--fs-h1);
     letter-spacing: -0.5px;
     margin-bottom: 12px;
   }
@@ -911,12 +921,12 @@ window.va = window.va || function () { (window.vaq = window.vaq || []).push(argu
   /* All rings use --home-teal uniformly */
   .progress-ring-value {
     font-family: 'Playfair Display', serif;
-    font-size: 1.4rem;
+    font-size: var(--fs-body);
     font-weight: 900;
     fill: var(--dark);
   }
   .progress-ring-sublabel {
-    font-size: 0.6rem;
+    font-size: var(--fs-xs-body);
     fill: var(--muted);
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -951,13 +961,13 @@ window.va = window.va || function () { (window.vaq = window.vaq || []).push(argu
   .insured-grid { grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
   .thaad-first-label { border-top: none; margin-top: 0; }
   .footer-pdf { margin-top: 16px; }
-  .footer-attribution { font-size: 0.6rem; opacity: 0.5; margin-top: 8px; }
+  .footer-attribution { font-size: var(--fs-caption); opacity: 0.5; margin-top: 8px; }
 
   /* ── HEALTH EXPAND (Progressive disclosure) ── */
   .health-expand-btn {
     display: none;
-    margin: 1.5rem auto;
-    padding: 0.75rem 1.5rem;
+    margin: var(--spacing-24) auto;
+    padding: var(--spacing-24);
     background: var(--home-teal);
     color: white;
     border: none;
@@ -986,6 +996,30 @@ window.va = window.va || function () { (window.vaq = window.vaq || []).push(argu
   .fade-in.visible {
     opacity: 1;
     transform: translateY(0);
+  }
+  .share-dropdown {
+    display:none;
+    position:absolute;
+    right:0;
+    top:28px;
+    background:#fff;
+    border:1px solid var(--divider);
+    border-radius:4px;
+    box-shadow:0 2px 8px rgba(0,0,0,0.1);
+    z-index:100;
+    min-width:140px;
+  }
+  .share-dropdown button {
+    display:block;
+    width:100%;
+    text-align:left;
+    padding:8px 12px;
+    border:none;
+    background:none;
+    cursor:pointer;
+    font-size:var(--fs-small-body);
+    color:var(--dark);
+    font-family:DM Sans,sans-serif;
   }
 </style>
 </head>
@@ -1060,7 +1094,7 @@ window.va = window.va || function () { (window.vaq = window.vaq || []).push(argu
 <section class="section pt-0">
   <div class="container">
     <div class="section-header fade-in">
-      <h2><span class="color-home">HEALTHCARE</span> AT <span class="color-war">$220 MILLION</span>/DAY</h2>
+      <h1><span class="color-home">HEALTHCARE</span> AT <span class="color-war">$220 MILLION</span>/DAY</h1>
       <p>At the active operations rate, each day of the Iran conflict could instead fund:</p>
     </div>
 
@@ -1162,7 +1196,7 @@ window.va = window.va || function () { (window.vaq = window.vaq || []).push(argu
 <section class="section pt-0">
   <div class="container">
     <div class="section-header fade-in">
-      <h2>INSURANCE-ADJUSTED EQUIVALENTS</h2>
+      <h1>INSURANCE-ADJUSTED EQUIVALENTS</h1>
       <p>One day of war (<span class="color-war fw-600">$220M</span>) compared to insured copay costs stretches astronomically further.</p>
     </div>
     <div class="comparison-grid insured-grid">
@@ -1203,7 +1237,7 @@ window.va = window.va || function () { (window.vaq = window.vaq || []).push(argu
 <section class="section pt-0">
   <div class="container">
     <div class="section-header fade-in">
-      <h2><span class="color-home">EDUCATION</span> AT <span class="color-war">$220 MILLION</span>/DAY</h2>
+      <h1><span class="color-home">EDUCATION</span> AT <span class="color-war">$220 MILLION</span>/DAY</h1>
       <p>The same daily war budget could reshape American education — from preschool to postgraduate.</p>
     </div>
 
@@ -1285,7 +1319,7 @@ window.va = window.va || function () { (window.vaq = window.vaq || []).push(argu
 <section class="section pt-0">
   <div class="container">
     <div class="section-header fade-in">
-      <h2>ONE DAY OF WAR COULD FUND</h2>
+      <h1>ONE DAY OF WAR COULD FUND</h1>
       <p>Direct comparisons at the $220M/day active operations rate.</p>
     </div>
     <div class="side-by-side fade-in">
@@ -1332,7 +1366,7 @@ window.va = window.va || function () { (window.vaq = window.vaq || []).push(argu
 <section class="section pt-0">
   <div class="container">
     <div class="section-header fade-in">
-      <h2><span class="color-home">INFRASTRUCTURE</span> AT <span class="color-war">$220 MILLION</span>/DAY</h2>
+      <h1><span class="color-home">INFRASTRUCTURE</span> AT <span class="color-war">$220 MILLION</span>/DAY</h1>
       <p>America's infrastructure earns a C grade from the ASCE with a $3.7 trillion investment gap. Here's what the daily war budget could do instead.</p>
     </div>
 
@@ -1387,7 +1421,7 @@ window.va = window.va || function () { (window.vaq = window.vaq || []).push(argu
 <section class="section pt-0">
   <div class="container">
     <div class="infra-grid-header fade-in">
-      <h2>CUMULATIVE WAR SPEND: $43.7 BILLION</h2>
+      <h1>CUMULATIVE WAR SPEND: $43.7 BILLION</h1>
       <p class="infra-grid-reference">Total conflict spending since April 2024, measured against America's infrastructure needs.</p>
     </div>
     <div class="progress-ring-grid fade-in">
@@ -1502,7 +1536,7 @@ window.va = window.va || function () { (window.vaq = window.vaq || []).push(argu
 <section class="section pt-0">
   <div class="container">
     <div class="duration-card fade-in">
-      <h3>4-WEEK CAMPAIGN: $6.16 BILLION ACROSS SECTORS</h3>
+      <p>4-WEEK CAMPAIGN: $6.16 BILLION ACROSS SECTORS</p>
       <div class="duration-timeline">
         <div class="dur-bar-row">
           <span class="dur-bar-label">Therapy Sessions</span>
@@ -1548,30 +1582,30 @@ window.va = window.va || function () { (window.vaq = window.vaq || []).push(argu
 <section class="section pt-0">
   <div class="container">
     <div class="section-header fade-in">
-      <h2>JOBS CREATED PER $1 MILLION INVESTED</h2>
+      <h1>JOBS CREATED PER $1 MILLION INVESTED</h1>
       <p>Per Brown University's Costs of War project, military spending creates the fewest jobs per dollar of any major sector.</p>
     </div>
     <div class="jobs-chart fade-in">
       <div class="jobs-bar-row">
-        <div class="jobs-bar-label">Military</div>
+        <div class="jobs-bar-label color-war">Military</div>
         <div class="jobs-bar-track">
           <div class="jobs-bar-fill military" style="width:38.5%"><span class="j-num">5</span></div>
         </div>
       </div>
       <div class="jobs-bar-row">
-        <div class="jobs-bar-label">Infrastructure</div>
+        <div class="jobs-bar-label color-home">Infrastructure</div>
         <div class="jobs-bar-track">
           <div class="jobs-bar-fill infra" style="width:57.7%"><span class="j-num">7–8</span></div>
         </div>
       </div>
       <div class="jobs-bar-row">
-        <div class="jobs-bar-label">Healthcare</div>
+        <div class="jobs-bar-label color-home">Healthcare</div>
         <div class="jobs-bar-track">
           <div class="jobs-bar-fill health" style="width:69.2%"><span class="j-num">9</span></div>
         </div>
       </div>
       <div class="jobs-bar-row">
-        <div class="jobs-bar-label">Education</div>
+        <div class="jobs-bar-label color-home">Education</div>
         <div class="jobs-bar-track">
           <div class="jobs-bar-fill edu" style="width:100%"><span class="j-num">13</span></div>
         </div>
@@ -1588,7 +1622,7 @@ window.va = window.va || function () { (window.vaq = window.vaq || []).push(argu
 <section class="section pt-0">
   <div class="container">
     <div class="section-header fade-in">
-      <h2>WHAT IT COSTS <em class="color-home">YOU</em></h2>
+      <h1>WHAT IT COSTS <em class="color-home">YOU</em></h1>
       <p>Based on ~150 million U.S. tax filers — and what your share could buy instead.</p>
     </div>
     <div class="comparison-grid taxpayer-grid">
@@ -1697,11 +1731,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Multi-platform share buttons on comparison cards
   const SITE_URL = 'https://whatwecouldhaveboughtinstead.com';
-  function shareText(card) {
+  function shareText(card, platform) {
     const name = card.querySelector('.item-name');
     const num = card.querySelector('.big-num');
     const perLabel = card.querySelector('.per-label');
     if (!name || !num) return '';
+    if (platform === 'Copy Link') {
+      return 'https://whatwecouldhaveboughtinstead.com';
+    }
     return num.textContent + ' ' + name.textContent.toLowerCase() + (perLabel ? ' ' + perLabel.textContent : '') + ' — whatwecouldhaveboughtinstead.com';
   }
 
@@ -1727,7 +1764,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!toast) {
       toast = document.createElement('div');
       toast.id = 'share-toast';
-      toast.style.cssText = 'position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:var(--dark);color:#fff;padding:10px 20px;border-radius:4px;font-size:0.85rem;z-index:9999;opacity:0;transition:opacity 0.3s;pointer-events:none;';
+      toast.style.cssText = 'position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:var(--dark);color:#fff;padding:10px 20px;border-radius:4px;font-size:var(--fs-small-body);z-index:9999;opacity:0;transition:opacity 0.3s;pointer-events:none;';
       document.body.appendChild(toast);
     }
     toast.textContent = msg;
@@ -1751,16 +1788,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const menu = document.createElement('div');
     menu.className = 'share-dropdown';
-    menu.style.cssText = 'display:none;position:absolute;right:0;top:28px;background:#fff;border:1px solid var(--divider);border-radius:4px;box-shadow:0 2px 8px rgba(0,0,0,0.1);z-index:100;min-width:140px;';
     ['Twitter', 'Facebook', 'LinkedIn', 'Reddit', 'Copy Link'].forEach(platform => {
       const opt = document.createElement('button');
-      opt.style.cssText = 'display:block;width:100%;text-align:left;padding:8px 12px;border:none;background:none;cursor:pointer;font-size:0.78rem;color:var(--dark);font-family:DM Sans,sans-serif;';
+      opt.style.cssText = '';
       opt.textContent = platform;
       opt.addEventListener('mouseenter', () => { opt.style.background = 'rgba(0,0,0,0.04)'; });
       opt.addEventListener('mouseleave', () => { opt.style.background = 'none'; });
       opt.addEventListener('click', (e) => {
         e.stopPropagation();
-        openShare(platform.toLowerCase().replace(' link', ''), shareText(card));
+        openShare(platform.toLowerCase().replace(' link', ''), shareText(card, platform));
         menu.style.display = 'none';
       });
       menu.appendChild(opt);
