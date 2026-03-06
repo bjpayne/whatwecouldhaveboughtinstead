@@ -966,6 +966,20 @@ window.va = window.va || function () { (window.vaq = window.vaq || []).push(argu
     color:var(--dark);
     font-family:DM Sans,sans-serif;
   }
+
+  /* ── REDUCED-MOTION ACCESSIBILITY ── */
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+    .fade-in {
+      opacity: 1;
+      transform: none;
+    }
+  }
 </style>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 </head>
@@ -1348,7 +1362,7 @@ window.va = window.va || function () { (window.vaq = window.vaq || []).push(argu
       <div class="progress-ring-container">
         <svg viewBox="0 0 120 120" class="progress-ring-svg">
           <circle cx="60" cy="60" r="54" class="progress-ring-bg"></circle>
-          <circle cx="60" cy="60" r="54" class="progress-ring-fill ring-full" style="stroke-dasharray: 339.3 339.3;"></circle>
+          <circle cx="60" cy="60" r="54" class="progress-ring-fill" style="stroke-dasharray: 339.3 339.3;"></circle>
           <text x="60" y="52" text-anchor="middle" class="progress-ring-value">104%</text>
           <text x="60" y="68" text-anchor="middle" class="progress-ring-sublabel">Broadband</text>
           <text x="60" y="80" text-anchor="middle" class="progress-ring-sublabel">Program</text>
@@ -1538,20 +1552,20 @@ window.va = window.va || function () { (window.vaq = window.vaq || []).push(argu
     </div>
     <div class="comparison-grid taxpayer-grid">
       <div class="comp-card taxpayer-card fade-in">
-        <div class="item-name color-gold">Your share of total conflict</div>
-        <div class="big-num color-gold">$291</div>
+        <div class="item-name">Your share of total conflict</div>
+        <div class="big-num">$291</div>
         <div class="per-label">per taxpayer ($43.7B total)</div>
         <div class="cost-note">That's 1.9 therapy sessions, ~1 month of community college, or 3.7 months of home internet.</div>
       </div>
       <div class="comp-card taxpayer-card fade-in">
-        <div class="item-name color-gold">4-week campaign share</div>
-        <div class="big-num color-gold">$41</div>
+        <div class="item-name">4-week campaign share</div>
+        <div class="big-num">$41</div>
         <div class="per-label">per taxpayer ($6.16B est.)</div>
         <div class="cost-note">Enough for 8+ months of insulin copays, 9 school lunches, or 1.7 lane-miles of road maintenance.</div>
       </div>
       <div class="comp-card taxpayer-card fade-in">
-        <div class="item-name color-gold">Daily share</div>
-        <div class="big-num color-gold">$1.47</div>
+        <div class="item-name">Daily share</div>
+        <div class="big-num">$1.47</div>
         <div class="per-label">per taxpayer per day</div>
         <div class="cost-note">$1.47 × 150 million taxpayers × 365 days = $80.5 billion per year.</div>
       </div>
@@ -1613,8 +1627,15 @@ document.addEventListener('DOMContentLoaded', () => {
   const tickerState = { value: getTargetTotal() };
   tickerEl.textContent = formatDollars(tickerState.value);
 
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+
   function tweenToTarget() {
     const target = getTargetTotal();
+    if (prefersReducedMotion.matches) {
+      tickerState.value = target;
+      tickerEl.textContent = formatDollars(target);
+      return;
+    }
     gsap.to(tickerState, {
       value: target,
       duration: 0.9,
