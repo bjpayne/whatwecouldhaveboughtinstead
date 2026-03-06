@@ -967,7 +967,7 @@ window.va = window.va || function () { (window.vaq = window.vaq || []).push(argu
     top: 0;
     left: 0;
     height: 3px;
-    background: var(--war-red);
+    background: var(--health);
     z-index: 1001;
     width: 0%;
     transition: width 0.1s linear;
@@ -2092,6 +2092,28 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Scroll progress bar
   const progressBar = document.getElementById('scroll-progress');
+
+  // Compute section color stops for the progress bar gradient
+  function updateProgressGradient() {
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    if (docHeight <= 0) return;
+    const eduDiv = document.getElementById('education');
+    const infraDiv = document.getElementById('infrastructure');
+    if (!eduDiv || !infraDiv) return;
+    const eduPct = (eduDiv.offsetTop / (docHeight + window.innerHeight)) * 100;
+    const infraPct = (infraDiv.offsetTop / (docHeight + window.innerHeight)) * 100;
+    const style = getComputedStyle(document.documentElement);
+    const cHealth = style.getPropertyValue('--health').trim();
+    const cEdu = style.getPropertyValue('--education').trim();
+    const cInfra = style.getPropertyValue('--infrastructure').trim();
+    progressBar.style.background =
+      'linear-gradient(to right, ' +
+      cHealth + ' 0%, ' + cHealth + ' ' + eduPct + '%, ' +
+      cEdu + ' ' + eduPct + '%, ' + cEdu + ' ' + infraPct + '%, ' +
+      cInfra + ' ' + infraPct + '%, ' + cInfra + ' 100%)';
+  }
+  updateProgressGradient();
+  window.addEventListener('resize', updateProgressGradient);
 
   // ── Show All / Show Fewer toggle for tablet and below ──
   const CARD_LIMIT = 3;
