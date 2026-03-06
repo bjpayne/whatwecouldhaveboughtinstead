@@ -153,17 +153,10 @@ window.va = window.va || function () { (window.vaq = window.vaq || []).push(argu
     --bg-card: transparent;
     --bg-card-alt: transparent;
     --war-red: #8b4a4a;
-    --war-glow: rgba(139, 74, 74, 0.06);
-    --care-teal: #4a7c6f;
-    --care-glow: rgba(74, 124, 111, 0.06);
-    --edu-blue: #4a6a8f;
-    --edu-glow: rgba(74, 106, 143, 0.06);
-    --infra-gold: #8a7a3a;
-    --infra-glow: rgba(138, 122, 58, 0.06);
+    --home-teal: #4a7c6f;
     --dark: #1a1a18;
     --muted: #5c574f;
     --divider: #c8c0b4;
-    --gold: #8a7a3a;
 
     /* Typography Scale (8 sizes) */
     --fs-caption: 0.72rem;
@@ -289,7 +282,7 @@ window.va = window.va || function () { (window.vaq = window.vaq || []).push(argu
     margin-bottom: 24px;
   }
   .hero h1 .war { color: var(--war-red); font-style: italic; }
-  .hero h1 .care { color: var(--care-teal); font-style: italic; }
+  .hero h1 .home { color: var(--home-teal); font-style: italic; }
   .hero-sub {
     font-family: 'DM Sans', sans-serif;
     font-size: var(--fs-large);
@@ -397,17 +390,11 @@ window.va = window.va || function () { (window.vaq = window.vaq || []).push(argu
     border: 1px solid var(--dark);
     border-radius: 0;
   }
-  .section-divider .divider-tag.health {
-    border-color: var(--care-teal);
-    color: var(--care-teal);
-  }
-  .section-divider .divider-tag.education {
-    border-color: var(--edu-blue);
-    color: var(--edu-blue);
-  }
+  .section-divider .divider-tag.health,
+  .section-divider .divider-tag.education,
   .section-divider .divider-tag.infrastructure {
-    border-color: var(--infra-gold);
-    color: var(--infra-gold);
+    border-color: var(--home-teal);
+    color: var(--home-teal);
   }
 
   /* ── COMPARISON CARDS ── */
@@ -442,9 +429,7 @@ window.va = window.va || function () { (window.vaq = window.vaq || []).push(argu
     opacity: 0.35;
     color: var(--dark);
   }
-  .health-card .icon { color: var(--care-teal); }
-  .edu-card .icon { color: var(--edu-blue); }
-  .infra-card .icon { color: var(--infra-gold); }
+  /* Icons use muted dark — no color accents on cards */
   .comp-card .icon svg {
     width: 100%;
     height: 100%;
@@ -501,24 +486,15 @@ window.va = window.va || function () { (window.vaq = window.vaq || []).push(argu
     height: 16px;
   }
 
-  /* Section-specific card accents */
+  /* Card big-nums — all dark, no color accents */
   .comp-card .big-num { color: var(--dark); }
-  .edu-card .big-num { color: var(--edu-blue); }
-  .infra-card .big-num { color: var(--infra-gold); }
 
-  .health-card .big-num { color: var(--care-teal); }
-
-  /* Highlight bar section accents */
+  /* Highlight bar — subtle teal accent */
   .highlight-bar { border-left: 4px solid var(--dark); }
-  .highlight-bar.health-hl { border-left-color: var(--care-teal); }
-  .highlight-bar.edu-hl { border-left-color: var(--edu-blue); }
-  .highlight-bar.infra-hl { border-left-color: var(--infra-gold); }
 
-  /* Side-by-side panel accents */
+  /* Side-by-side panel accents — war red vs home teal */
   .sbs-panel.war .sbs-num { color: var(--war-red); }
-  .sbs-panel.care .sbs-num { color: var(--care-teal); }
-  .sbs-panel.edu .sbs-num { color: var(--edu-blue); }
-  .sbs-panel.infra .sbs-num { color: var(--infra-gold); }
+  .sbs-panel.home .sbs-num { color: var(--home-teal); }
   .sbs-panel.war + .sbs-panel { border-left-color: var(--dark); }
 
   /* THAAD section accents */
@@ -675,10 +651,14 @@ window.va = window.va || function () { (window.vaq = window.vaq || []).push(argu
     color: #fff;
     line-height: 1;
   }
-  .jobs-bar-fill.military { background: var(--war-red); }
-  .jobs-bar-fill.infra { background: var(--infra-gold); }
-  .jobs-bar-fill.health { background: var(--care-teal); }
-  .jobs-bar-fill.edu { background: var(--edu-blue); }
+  .jobs-bar-fill.military { background: var(--dark); }
+  .jobs-bar-fill.military .j-num { color: var(--war-red); }
+  .jobs-bar-fill.infra,
+  .jobs-bar-fill.health,
+  .jobs-bar-fill.edu { background: var(--dark); }
+  .jobs-bar-fill.infra .j-num,
+  .jobs-bar-fill.health .j-num,
+  .jobs-bar-fill.edu .j-num { color: var(--home-teal); }
 
   @media (max-width: 480px) {
     .jobs-bar-label { width: 80px; font-size: 0.7rem; }
@@ -704,6 +684,7 @@ window.va = window.va || function () { (window.vaq = window.vaq || []).push(argu
     font-size: clamp(4rem, 12vw, 8rem);
     color: var(--dark);
     line-height: 1;
+    margin-bottom: 3rem;
   }
   .ticker-sub-rate {
     font-size: var(--fs-small-body);
@@ -767,9 +748,9 @@ window.va = window.va || function () { (window.vaq = window.vaq || []).push(argu
     border-radius: 0 2px 2px 0;
     transition: width 0.6s ease;
   }
-  .dur-bar-fill.health { background: var(--care-teal); }
-  .dur-bar-fill.edu { background: var(--edu-blue); }
-  .dur-bar-fill.infra { background: var(--infra-gold); }
+  .dur-bar-fill.health,
+  .dur-bar-fill.edu,
+  .dur-bar-fill.infra { background: var(--home-teal); }
   .dur-bar-value {
     font-family: 'Playfair Display', serif;
     font-weight: 700;
@@ -920,16 +901,14 @@ window.va = window.va || function () { (window.vaq = window.vaq || []).push(argu
   }
   .progress-ring-fill {
     fill: none;
-    stroke: var(--infra-gold);
+    stroke: var(--home-teal);
     stroke-width: 6;
     stroke-linecap: round;
     transform: rotate(-90deg);
     transform-origin: 50% 50%;
     transition: stroke-dasharray 0.8s ease;
   }
-  .progress-ring-fill.ring-full {
-    stroke: var(--care-teal);
-  }
+  /* All rings use --home-teal uniformly */
   .progress-ring-value {
     font-family: 'Playfair Display', serif;
     font-size: 1.4rem;
@@ -964,14 +943,11 @@ window.va = window.va || function () { (window.vaq = window.vaq || []).push(argu
   /* ── UTILITY CLASSES ── */
   .pt-0 { padding-top: 0; }
   .color-war { color: var(--war-red); }
-  .color-care { color: var(--care-teal); }
-  .color-edu { color: var(--edu-blue); }
-  .color-infra { color: var(--infra-gold); }
-  .color-gold { color: var(--gold); }
+  .color-home { color: var(--home-teal); }
   .fw-600 { font-weight: 600; }
   .fs-caption-em { font-size: var(--fs-caption); color: #444; }
   .taxpayer-grid { grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
-  .taxpayer-card { border-color: var(--gold); }
+  .taxpayer-card { border-color: var(--home-teal); }
   .insured-grid { grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
   .thaad-first-label { border-top: none; margin-top: 0; }
   .footer-pdf { margin-top: 16px; }
@@ -982,7 +958,7 @@ window.va = window.va || function () { (window.vaq = window.vaq || []).push(argu
     display: none;
     margin: 1.5rem auto;
     padding: 0.75rem 1.5rem;
-    background: var(--care-teal);
+    background: var(--home-teal);
     color: white;
     border: none;
     border-radius: 0.375rem;
@@ -1031,7 +1007,7 @@ window.va = window.va || function () { (window.vaq = window.vaq || []).push(argu
   <div class="hero-tag">The Cost of the Iran War — A Data-Driven Analysis</div>
   <h1>
     THE COST OF <span class="war">WAR</span>,<br>
-    MEASURED AT <span class="care">HOME</span>
+    MEASURED AT <span class="home">HOME</span>
   </h1>
   <p class="hero-sub">
     The Iran war costs $220 million per day. What could that money buy if invested in healthcare, education, and infrastructure?
@@ -1046,7 +1022,7 @@ window.va = window.va || function () { (window.vaq = window.vaq || []).push(argu
   <div class="ticker-amount" id="live-ticker">$0</div>
   <div class="ticker-sub-rate">That's <strong class="color-war">$2,546 every second</strong> · $220 million every day</div>
   <div class="ticker-equiv">
-    Every second buys <strong class="color-care">nearly 2 CPAP machines</strong>, <strong class="color-edu">577 school lunches</strong>, or <strong class="color-infra">0.1 lane-miles of road repair</strong>.
+    Every second buys <strong class="color-home">nearly 2 CPAP machines</strong>, <strong class="color-home">577 school lunches</strong>, or <strong class="color-home">0.1 lane-miles of road repair</strong>.
   </div>
 </section>
 
@@ -1084,7 +1060,7 @@ window.va = window.va || function () { (window.vaq = window.vaq || []).push(argu
 <section class="section pt-0">
   <div class="container">
     <div class="section-header fade-in">
-      <h2><span class="color-care">HEALTHCARE</span> AT <span class="color-war">$220 MILLION</span>/DAY</h2>
+      <h2><span class="color-home">HEALTHCARE</span> AT <span class="color-war">$220 MILLION</span>/DAY</h2>
       <p>At the active operations rate, each day of the Iran conflict could instead fund:</p>
     </div>
 
@@ -1227,7 +1203,7 @@ window.va = window.va || function () { (window.vaq = window.vaq || []).push(argu
 <section class="section pt-0">
   <div class="container">
     <div class="section-header fade-in">
-      <h2><span class="color-edu">EDUCATION</span> AT <span class="color-war">$220 MILLION</span>/DAY</h2>
+      <h2><span class="color-home">EDUCATION</span> AT <span class="color-war">$220 MILLION</span>/DAY</h2>
       <p>The same daily war budget could reshape American education — from preschool to postgraduate.</p>
     </div>
 
@@ -1318,7 +1294,7 @@ window.va = window.va || function () { (window.vaq = window.vaq || []).push(argu
         <div class="sbs-num">$779M</div>
         <div class="sbs-desc">Actual cost of opening salvo</div>
       </div>
-      <div class="sbs-panel edu">
+      <div class="sbs-panel home">
         <div class="sbs-label">In-State College Tuitions</div>
         <div class="sbs-num">65,188</div>
         <div class="sbs-desc">Full-year tuitions funded</div>
@@ -1330,7 +1306,7 @@ window.va = window.va || function () { (window.vaq = window.vaq || []).push(argu
         <div class="sbs-num">$6.16B</div>
         <div class="sbs-desc">28 days at $220M/day</div>
       </div>
-      <div class="sbs-panel edu">
+      <div class="sbs-panel home">
         <div class="sbs-label">Teacher Salaries Funded</div>
         <div class="sbs-num">83,048</div>
         <div class="sbs-desc">Full-year salaries at national average</div>
@@ -1356,7 +1332,7 @@ window.va = window.va || function () { (window.vaq = window.vaq || []).push(argu
 <section class="section pt-0">
   <div class="container">
     <div class="section-header fade-in">
-      <h2><span class="color-infra">INFRASTRUCTURE</span> AT <span class="color-war">$220 MILLION</span>/DAY</h2>
+      <h2><span class="color-home">INFRASTRUCTURE</span> AT <span class="color-war">$220 MILLION</span>/DAY</h2>
       <p>America's infrastructure earns a C grade from the ASCE with a $3.7 trillion investment gap. Here's what the daily war budget could do instead.</p>
     </div>
 
@@ -1612,7 +1588,7 @@ window.va = window.va || function () { (window.vaq = window.vaq || []).push(argu
 <section class="section pt-0">
   <div class="container">
     <div class="section-header fade-in">
-      <h2>WHAT IT COSTS <em class="color-gold">YOU</em></h2>
+      <h2>WHAT IT COSTS <em class="color-home">YOU</em></h2>
       <p>Based on ~150 million U.S. tax filers — and what your share could buy instead.</p>
     </div>
     <div class="comparison-grid taxpayer-grid">
