@@ -284,7 +284,7 @@ window.va = window.va || function () { (window.vaq = window.vaq || []).push(argu
     text-transform: uppercase;
     color: var(--muted);
     margin-bottom: 28px;
-    padding-bottom: 20px;
+    padding-bottom: var(--spacing-24);
     border-bottom: 1px solid var(--divider);
   }
   .hero h1 {
@@ -360,7 +360,7 @@ window.va = window.va || function () { (window.vaq = window.vaq || []).push(argu
 
   /* ── SECTION HEADERS ── */
   .section {
-    padding: 80px 0;
+    padding: var(--spacing-72) 0;
   }
   .section-header {
     text-align: center;
@@ -620,7 +620,7 @@ window.va = window.va || function () { (window.vaq = window.vaq || []).push(argu
     text-transform: uppercase;
     color: var(--muted);
     margin: var(--spacing-24) 0 12px;
-    padding-top: 16px;
+    padding-top: var(--spacing-16);
     border-top: 1px solid var(--divider);
   }
 
@@ -653,7 +653,7 @@ window.va = window.va || function () { (window.vaq = window.vaq || []).push(argu
     height: 100%;
     display: flex;
     align-items: center;
-    padding-left: 12px;
+    padding-left: var(--spacing-16);
     transition: width 0.8s ease;
   }
   .jobs-bar-fill .j-num {
@@ -820,7 +820,7 @@ window.va = window.va || function () { (window.vaq = window.vaq || []).push(argu
     .navbar { padding: var(--spacing-8) var(--spacing-4); gap: 0; }
     .nav-link { padding: var(--spacing-8); letter-spacing: 0; }
     .nav-divider { display: none; }
-    .hero { padding: var(--spacing-72) var(--spacing-16) 40px; }
+    .hero { padding: var(--spacing-72) var(--spacing-16) var(--spacing-40); }
     .hero-tag { letter-spacing: 2px; }
   }
 
@@ -834,8 +834,8 @@ window.va = window.va || function () { (window.vaq = window.vaq || []).push(argu
   /* Tablet (481–768px) */
   @media (min-width: 481px) and (max-width: 768px) {
     .comparison-grid { grid-template-columns: repeat(2, 1fr); gap: 0; }
-    .navbar { padding: 8px 12px; }
-    .nav-link { font-size: var(--fs-caption); padding: 7px 14px; }
+    .navbar { padding: var(--spacing-8) var(--spacing-16); }
+    .nav-link { font-size: var(--fs-caption); padding: var(--spacing-8) var(--spacing-16); }
     .counter-grid { grid-template-columns: repeat(2, 1fr); gap: 24px; }
     .side-by-side { grid-template-columns: 1fr 1fr; }
     .progress-ring-grid { grid-template-columns: repeat(2, 1fr); }
@@ -847,7 +847,7 @@ window.va = window.va || function () { (window.vaq = window.vaq || []).push(argu
   /* ── PULL QUOTE ── */
   .pull-quote {
     text-align: center;
-    padding: 56px 24px;
+    padding: var(--spacing-56) var(--spacing-24);
     max-width: 680px;
     margin: 0 auto;
   }
@@ -1013,7 +1013,7 @@ window.va = window.va || function () { (window.vaq = window.vaq || []).push(argu
     display:block;
     width:100%;
     text-align:left;
-    padding:8px 12px;
+    padding:var(--spacing-8) var(--spacing-16);
     border:none;
     background:none;
     cursor:pointer;
@@ -1054,7 +1054,6 @@ window.va = window.va || function () { (window.vaq = window.vaq || []).push(argu
 <section class="ticker-section">
   <div class="ticker-label">Since Operation Epic Fury began, the U.S. has spent</div>
   <div class="ticker-amount" id="live-ticker">$0</div>
-  <div class="ticker-sub-rate">That's <strong class="color-war">$2,546 every second</strong> · $220 million every day</div>
   <div class="ticker-equiv">
     Every second buys <strong class="color-home">nearly 2 CPAP machines</strong>, <strong class="color-home">577 school lunches</strong>, or <strong class="color-home">0.1 lane-miles of road repair</strong>.
   </div>
