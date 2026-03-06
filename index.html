@@ -481,25 +481,27 @@ window.va = window.va || function () { (window.vaq = window.vaq || []).push(argu
   .comp-card:hover {
     background: rgba(0,0,0,0.015);
   }
-  .comp-card .share-btn {
+  .share-btn-wrapper {
     position: absolute;
-    top: 12px;
-    right: 12px;
+    top: 8px;
+    right: 8px;
     opacity: 0;
     transition: opacity 0.2s;
+  }
+  .comp-card:hover .share-btn-wrapper {
+    opacity: 0.5;
+  }
+  .share-btn-wrapper:hover {
+    opacity: 1 !important;
+  }
+  .share-btn-wrapper .share-btn {
     background: none;
     border: none;
     cursor: pointer;
     padding: var(--spacing-4);
     color: var(--muted);
   }
-  .comp-card:hover .share-btn {
-    opacity: 0.5;
-  }
-  .comp-card .share-btn:hover {
-    opacity: 1;
-  }
-  .comp-card .share-btn svg {
+  .share-btn-wrapper .share-btn svg {
     width: 16px;
     height: 16px;
   }
@@ -966,6 +968,55 @@ window.va = window.va || function () { (window.vaq = window.vaq || []).push(argu
     color:var(--dark);
     font-family:DM Sans,sans-serif;
   }
+  .share-dropdown button:hover {
+    background:rgba(0,0,0,0.04);
+  }
+
+  /* ── FOCUS-VISIBLE INDICATORS (WCAG 2.4.7) ── */
+  *:focus {
+    outline: none;
+  }
+  *:focus-visible {
+    outline: 2px solid var(--home-teal);
+    outline-offset: 2px;
+  }
+  .nav-link:focus-visible {
+    outline-offset: 4px;
+    border-radius: 2px;
+  }
+  .share-btn-wrapper .share-btn:focus-visible {
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+  .share-btn-wrapper:has(.share-btn:focus-visible) {
+    opacity: 1 !important;
+  }
+  .share-dropdown button:focus-visible {
+    background: rgba(0,0,0,0.04);
+    outline-offset: -2px;
+  }
+  .skip-link:focus-visible {
+    outline: 2px solid #fff;
+    outline-offset: -4px;
+  }
+
+  /* ── SKIP-TO-CONTENT LINK ── */
+  .skip-link {
+    position: absolute;
+    top: -100%;
+    left: 16px;
+    z-index: 10000;
+    padding: var(--spacing-8) var(--spacing-16);
+    background: var(--dark);
+    color: #fff;
+    font-size: var(--fs-small-body);
+    font-family: DM Sans, sans-serif;
+    border-radius: 0 0 4px 4px;
+    text-decoration: none;
+  }
+  .skip-link:focus {
+    top: 0;
+  }
 
   /* ── REDUCED-MOTION ACCESSIBILITY ── */
   @media (prefers-reduced-motion: reduce) {
@@ -981,9 +1032,10 @@ window.va = window.va || function () { (window.vaq = window.vaq || []).push(argu
     }
   }
 </style>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 </head>
 <body>
+
+<a href="#main-content" class="skip-link">Skip to content</a>
 
 <div class="scroll-progress" id="scroll-progress"></div>
 
@@ -997,6 +1049,7 @@ window.va = window.va || function () { (window.vaq = window.vaq || []).push(argu
 </nav>
 
 <!-- ═══════════ HERO ═══════════ -->
+<main id="main-content">
 <section class="hero">
   <div class="hero-tag">The Cost of the Iran War — A Data-Driven Analysis</div>
   <h1>
@@ -1572,6 +1625,7 @@ window.va = window.va || function () { (window.vaq = window.vaq || []).push(argu
     </div>
   </div>
 </section>
+</main>
 
 <!-- ═══════════ FOOTER ═══════════ -->
 <footer class="footer">
@@ -1624,26 +1678,45 @@ document.addEventListener('DOMContentLoaded', () => {
     return PRE_STRIKE_TOTAL + (elapsed * RATE_PER_MS);
   }
 
-  const tickerState = { value: getTargetTotal() };
-  tickerEl.textContent = formatDollars(tickerState.value);
+  let tickerValue = getTargetTotal();
+  tickerEl.textContent = formatDollars(tickerValue);
 
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+  // Native rAF tween — replaces GSAP dependency
+  let tweenRAF = 0;
+  let tweenStart = 0;
+  let tweenFrom = 0;
+  let tweenTo = 0;
+  const TWEEN_DURATION = 900; // ms, matches old gsap duration
+
+  function easeOutCubic(t) {
+    return 1 - Math.pow(1 - t, 3);
+  }
+
+  function tweenStep(timestamp) {
+    if (!tweenStart) tweenStart = timestamp;
+    const elapsed = timestamp - tweenStart;
+    const progress = Math.min(elapsed / TWEEN_DURATION, 1);
+    tickerValue = tweenFrom + (tweenTo - tweenFrom) * easeOutCubic(progress);
+    tickerEl.textContent = formatDollars(tickerValue);
+    if (progress < 1) {
+      tweenRAF = requestAnimationFrame(tweenStep);
+    }
+  }
 
   function tweenToTarget() {
     const target = getTargetTotal();
     if (prefersReducedMotion.matches) {
-      tickerState.value = target;
+      tickerValue = target;
       tickerEl.textContent = formatDollars(target);
       return;
     }
-    gsap.to(tickerState, {
-      value: target,
-      duration: 0.9,
-      ease: 'power1.out',
-      onUpdate: function() {
-        tickerEl.textContent = formatDollars(tickerState.value);
-      }
-    });
+    cancelAnimationFrame(tweenRAF);
+    tweenFrom = tickerValue;
+    tweenTo = target;
+    tweenStart = 0;
+    tweenRAF = requestAnimationFrame(tweenStep);
   }
 
   tickerInterval = setInterval(tweenToTarget, 1000);
@@ -1652,12 +1725,12 @@ document.addEventListener('DOMContentLoaded', () => {
   document.addEventListener('visibilitychange', () => {
     isVisible = !document.hidden;
     if (isVisible) {
-      tickerState.value = getTargetTotal();
-      tickerEl.textContent = formatDollars(tickerState.value);
+      tickerValue = getTargetTotal();
+      tickerEl.textContent = formatDollars(tickerValue);
       tickerInterval = setInterval(tweenToTarget, 1000);
     } else {
       clearInterval(tickerInterval);
-      gsap.killTweensOf(tickerState);
+      cancelAnimationFrame(tweenRAF);
     }
   });
 
@@ -1712,7 +1785,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const wrapper = document.createElement('div');
     wrapper.className = 'share-btn-wrapper';
-    wrapper.style.cssText = 'position:absolute;top:8px;right:8px;opacity:0;transition:opacity 0.2s;';
 
     const btn = document.createElement('button');
     btn.className = 'share-btn';
@@ -1723,10 +1795,7 @@ document.addEventListener('DOMContentLoaded', () => {
     menu.className = 'share-dropdown';
     ['Twitter', 'Facebook', 'LinkedIn', 'Reddit', 'Copy Link'].forEach(platform => {
       const opt = document.createElement('button');
-      opt.style.cssText = '';
       opt.textContent = platform;
-      opt.addEventListener('mouseenter', () => { opt.style.background = 'rgba(0,0,0,0.04)'; });
-      opt.addEventListener('mouseleave', () => { opt.style.background = 'none'; });
       opt.addEventListener('click', (e) => {
         e.stopPropagation();
         openShare(platform.toLowerCase().replace(' link', ''), shareText(card, platform));
@@ -1747,9 +1816,7 @@ document.addEventListener('DOMContentLoaded', () => {
     wrapper.appendChild(menu);
     card.appendChild(wrapper);
 
-    card.addEventListener('mouseenter', () => { wrapper.style.opacity = '0.5'; });
-    card.addEventListener('mouseleave', () => { wrapper.style.opacity = '0'; menu.style.display = 'none'; });
-    wrapper.addEventListener('mouseenter', () => { wrapper.style.opacity = '1'; });
+    card.addEventListener('mouseleave', () => { menu.style.display = 'none'; });
   });
 
   // Scroll progress bar
