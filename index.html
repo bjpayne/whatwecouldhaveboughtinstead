@@ -654,7 +654,6 @@ window.va = window.va || function () { (window.vaq = window.vaq || []).push(argu
     display: flex;
     align-items: center;
     padding-left: var(--spacing-16);
-    transition: width 0.8s ease;
   }
   .jobs-bar-fill .j-num {
     font-family: 'Playfair Display', serif;
@@ -753,9 +752,8 @@ window.va = window.va || function () { (window.vaq = window.vaq || []).push(argu
   }
   .dur-bar-fill {
     height: 100%;
-    min-width: 4px;
+    min-width: 0;
     border-radius: 0 2px 2px 0;
-    transition: width 0.6s ease;
   }
   .dur-bar-fill.health,
   .dur-bar-fill.edu,
@@ -1558,41 +1556,41 @@ window.va = window.va || function () { (window.vaq = window.vaq || []).push(argu
     <div class="duration-card fade-in">
       <p>4-WEEK CAMPAIGN: $6.16 BILLION ACROSS SECTORS</p>
       <div class="duration-timeline">
-        <div class="dur-bar-row">
+        <div class="dur-bar-row" data-target-width="100" data-target-value="6511628">
           <span class="dur-bar-label label-xs">Broadband Connections</span>
-          <div class="dur-bar-inner"><div class="dur-bar-track"><div class="dur-bar-fill infra" style="width:100%"></div></div><span class="dur-bar-value">6,511,628</span></div>
+          <div class="dur-bar-inner"><div class="dur-bar-track"><div class="dur-bar-fill infra" style="width:0%"></div></div><span class="dur-bar-value">0</span></div>
         </div>
-        <div class="dur-bar-row">
+        <div class="dur-bar-row" data-target-width="77.5" data-target-value="5049184">
           <span class="dur-bar-label label-xs">Textbook Sets</span>
-          <div class="dur-bar-inner"><div class="dur-bar-track"><div class="dur-bar-fill edu" style="width:77.5%"></div></div><span class="dur-bar-value">5,049,184</span></div>
+          <div class="dur-bar-inner"><div class="dur-bar-track"><div class="dur-bar-fill edu" style="width:0%"></div></div><span class="dur-bar-value">0</span></div>
         </div>
-        <div class="dur-bar-row">
+        <div class="dur-bar-row" data-target-width="63.1" data-target-value="4106676">
           <span class="dur-bar-label label-xs">CPAP Machines</span>
-          <div class="dur-bar-inner"><div class="dur-bar-track"><div class="dur-bar-fill health" style="width:63.1%"></div></div><span class="dur-bar-value">4,106,676</span></div>
+          <div class="dur-bar-inner"><div class="dur-bar-track"><div class="dur-bar-fill health" style="width:0%"></div></div><span class="dur-bar-value">0</span></div>
         </div>
-        <div class="dur-bar-row">
+        <div class="dur-bar-row" data-target-width="27" data-target-value="1759996">
           <span class="dur-bar-label label-xs">Power Wheelchairs</span>
-          <div class="dur-bar-inner"><div class="dur-bar-track"><div class="dur-bar-fill health" style="width:27%"></div></div><span class="dur-bar-value">1,759,996</span></div>
+          <div class="dur-bar-inner"><div class="dur-bar-track"><div class="dur-bar-fill health" style="width:0%"></div></div><span class="dur-bar-value">0</span></div>
         </div>
-        <div class="dur-bar-row">
+        <div class="dur-bar-row" data-target-width="22.8" data-target-value="1484336">
           <span class="dur-bar-label label-xs">CC Tuitions</span>
-          <div class="dur-bar-inner"><div class="dur-bar-track"><div class="dur-bar-fill edu" style="width:22.8%"></div></div><span class="dur-bar-value">1,484,336</span></div>
+          <div class="dur-bar-inner"><div class="dur-bar-track"><div class="dur-bar-fill edu" style="width:0%"></div></div><span class="dur-bar-value">0</span></div>
         </div>
-        <div class="dur-bar-row">
+        <div class="dur-bar-row" data-target-width="19.5" data-target-value="1268477">
           <span class="dur-bar-label label-xs">Lead Pipes Replaced</span>
-          <div class="dur-bar-inner"><div class="dur-bar-track"><div class="dur-bar-fill infra" style="width:19.5%"></div></div><span class="dur-bar-value">1,268,477</span></div>
+          <div class="dur-bar-inner"><div class="dur-bar-track"><div class="dur-bar-fill infra" style="width:0%"></div></div><span class="dur-bar-value">0</span></div>
         </div>
-        <div class="dur-bar-row">
+        <div class="dur-bar-row" data-target-width="15.8" data-target-value="1026667">
           <span class="dur-bar-label label-xs">Insulin Pumps</span>
-          <div class="dur-bar-inner"><div class="dur-bar-track"><div class="dur-bar-fill health" style="width:15.8%"></div></div><span class="dur-bar-value">1,026,667</span></div>
+          <div class="dur-bar-inner"><div class="dur-bar-track"><div class="dur-bar-fill health" style="width:0%"></div></div><span class="dur-bar-value">0</span></div>
         </div>
-        <div class="dur-bar-row">
+        <div class="dur-bar-row" data-target-width="12.8" data-target-value="832972">
           <span class="dur-bar-label label-xs">Pell Grant Awards</span>
-          <div class="dur-bar-inner"><div class="dur-bar-track"><div class="dur-bar-fill edu" style="width:12.8%"></div></div><span class="dur-bar-value">832,972</span></div>
+          <div class="dur-bar-inner"><div class="dur-bar-track"><div class="dur-bar-fill edu" style="width:0%"></div></div><span class="dur-bar-value">0</span></div>
         </div>
-        <div class="dur-bar-row">
+        <div class="dur-bar-row" data-target-width="3.9" data-target-value="256676">
           <span class="dur-bar-label label-xs">Lane-Miles Maintained</span>
-          <div class="dur-bar-inner"><div class="dur-bar-track"><div class="dur-bar-fill infra" style="width:3.9%"></div></div><span class="dur-bar-value">256,676</span></div>
+          <div class="dur-bar-inner"><div class="dur-bar-track"><div class="dur-bar-fill infra" style="width:0%"></div></div><span class="dur-bar-value">0</span></div>
         </div>
       </div>
     </div>
@@ -1610,25 +1608,25 @@ window.va = window.va || function () { (window.vaq = window.vaq || []).push(argu
       <div class="jobs-bar-row">
         <div class="jobs-bar-label label-xs color-war">Military</div>
         <div class="jobs-bar-track">
-          <div class="jobs-bar-fill military" style="width:38.5%"><span class="j-num">5</span></div>
+          <div class="jobs-bar-fill military" data-target-width="38.5" style="width:0%"><span class="j-num">5</span></div>
         </div>
       </div>
       <div class="jobs-bar-row">
         <div class="jobs-bar-label label-xs color-home">Infrastructure</div>
         <div class="jobs-bar-track">
-          <div class="jobs-bar-fill infra" style="width:57.7%"><span class="j-num">8</span></div>
+          <div class="jobs-bar-fill infra" data-target-width="57.7" style="width:0%"><span class="j-num">8</span></div>
         </div>
       </div>
       <div class="jobs-bar-row">
         <div class="jobs-bar-label label-xs color-home">Healthcare</div>
         <div class="jobs-bar-track">
-          <div class="jobs-bar-fill health" style="width:69.2%"><span class="j-num">9</span></div>
+          <div class="jobs-bar-fill health" data-target-width="69.2" style="width:0%"><span class="j-num">9</span></div>
         </div>
       </div>
       <div class="jobs-bar-row">
         <div class="jobs-bar-label label-xs color-home">Education</div>
         <div class="jobs-bar-track">
-          <div class="jobs-bar-fill edu" style="width:100%"><span class="j-num">13</span></div>
+          <div class="jobs-bar-fill edu" data-target-width="100" style="width:0%"><span class="j-num">13</span></div>
         </div>
       </div>
     </div>
@@ -1759,6 +1757,99 @@ document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('.progress-ring-container[data-target-dash]').forEach(el => {
     ringObserver.observe(el);
   });
+
+  // ── Bar chart animation (4-week campaign) ──
+  const BAR_DURATION = 1200;
+  const BAR_STAGGER = 80;
+
+  function formatNumber(n) {
+    return Math.round(n).toLocaleString('en-US');
+  }
+
+  function animateBar(row, delay) {
+    const fill = row.querySelector('.dur-bar-fill');
+    const valueEl = row.querySelector('.dur-bar-value');
+    const targetWidth = parseFloat(row.dataset.targetWidth);
+    const targetValue = parseInt(row.dataset.targetValue, 10);
+
+    if (prefersReducedMotion.matches) {
+      fill.style.width = targetWidth + '%';
+      if (targetWidth > 0) fill.style.minWidth = '4px';
+      valueEl.textContent = formatNumber(targetValue);
+      return;
+    }
+
+    let start = 0;
+    function step(timestamp) {
+      if (!start) start = timestamp;
+      const elapsed = timestamp - start;
+      const progress = Math.min(elapsed / BAR_DURATION, 1);
+      const eased = easeOutCubic(progress);
+
+      fill.style.width = (eased * targetWidth) + '%';
+      if (eased * targetWidth > 0) fill.style.minWidth = '4px';
+      valueEl.textContent = formatNumber(eased * targetValue);
+
+      if (progress < 1) {
+        requestAnimationFrame(step);
+      }
+    }
+    setTimeout(() => requestAnimationFrame(step), delay);
+  }
+
+  const barObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const rows = entry.target.querySelectorAll('.dur-bar-row[data-target-width]');
+        rows.forEach((row, i) => animateBar(row, i * BAR_STAGGER));
+        barObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.2 });
+
+  const durationTimeline = document.querySelector('.duration-timeline');
+  if (durationTimeline) barObserver.observe(durationTimeline);
+
+  // ── Jobs bar chart animation (bars only, not numbers) ──
+  const JOBS_BAR_DURATION = 1200;
+  const JOBS_BAR_STAGGER = 100;
+
+  function animateJobsBar(fill, delay) {
+    const targetWidth = parseFloat(fill.dataset.targetWidth);
+
+    if (prefersReducedMotion.matches) {
+      fill.style.width = targetWidth + '%';
+      return;
+    }
+
+    let start = 0;
+    function step(timestamp) {
+      if (!start) start = timestamp;
+      const elapsed = timestamp - start;
+      const progress = Math.min(elapsed / JOBS_BAR_DURATION, 1);
+      const eased = easeOutCubic(progress);
+
+      fill.style.width = (eased * targetWidth) + '%';
+
+      if (progress < 1) {
+        requestAnimationFrame(step);
+      }
+    }
+    setTimeout(() => requestAnimationFrame(step), delay);
+  }
+
+  const jobsObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const fills = entry.target.querySelectorAll('.jobs-bar-fill[data-target-width]');
+        fills.forEach((fill, i) => animateJobsBar(fill, i * JOBS_BAR_STAGGER));
+        jobsObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.2 });
+
+  const jobsChart = document.querySelector('.jobs-chart');
+  if (jobsChart) jobsObserver.observe(jobsChart);
 
   // Live ticker counter — $2,546/second since Feb 28, 2026 00:00 UTC
   const RATE_PER_MS = 2546 / 1000;
