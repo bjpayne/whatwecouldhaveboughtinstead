@@ -467,10 +467,12 @@ window.va = window.va || function () { (window.vaq = window.vaq || []).push(argu
     display: block;
     width: 22px;
     height: 22px;
-    opacity: 0.35;
+    opacity: 0.45;
     color: var(--dark);
   }
-  /* Icons use muted dark — no color accents on cards */
+  .health-card .icon { color: var(--health); }
+  .edu-card .icon { color: var(--education); }
+  .infra-card .icon { color: var(--infrastructure); }
   .comp-card .icon svg {
     width: 100%;
     height: 100%;
