@@ -975,6 +975,7 @@ window.va = window.va || function () { (window.vaq = window.vaq || []).push(argu
     font-family:DM Sans,sans-serif;
   }
 </style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 </head>
 <body>
 
@@ -1612,23 +1613,39 @@ document.addEventListener('DOMContentLoaded', () => {
     return '$' + String(Math.round(n / 5000) * 5000);
   }
 
-  function updateTicker() {
+  function getTargetTotal() {
     const elapsed = Date.now() - START_DATE.getTime();
-    if (elapsed < 0) { tickerEl.textContent = '$0'; return; }
-    const total = PRE_STRIKE_TOTAL + (elapsed * RATE_PER_MS);
-    tickerEl.textContent = formatDollars(total);
+    if (elapsed < 0) return 0;
+    return PRE_STRIKE_TOTAL + (elapsed * RATE_PER_MS);
   }
-  updateTicker();
-  tickerInterval = setInterval(updateTicker, 1000);
+
+  const tickerState = { value: getTargetTotal() };
+  tickerEl.textContent = formatDollars(tickerState.value);
+
+  function tweenToTarget() {
+    const target = getTargetTotal();
+    gsap.to(tickerState, {
+      value: target,
+      duration: 0.9,
+      ease: 'power1.out',
+      onUpdate: function() {
+        tickerEl.textContent = formatDollars(tickerState.value);
+      }
+    });
+  }
+
+  tickerInterval = setInterval(tweenToTarget, 1000);
 
   // Page Visibility API — pause ticker when tab hidden
   document.addEventListener('visibilitychange', () => {
     isVisible = !document.hidden;
     if (isVisible) {
-      updateTicker();
-      tickerInterval = setInterval(updateTicker, 1000);
+      tickerState.value = getTargetTotal();
+      tickerEl.textContent = formatDollars(tickerState.value);
+      tickerInterval = setInterval(tweenToTarget, 1000);
     } else {
       clearInterval(tickerInterval);
+      gsap.killTweensOf(tickerState);
     }
   });
 
