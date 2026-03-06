@@ -438,7 +438,7 @@ window.va = window.va || function () { (window.vaq = window.vaq || []).push(argu
   }
   /* Remove bottom border from last row (column-count-aware) */
   .comp-card:last-child { border-bottom: none; }
-  @media (min-width: 528px) and (max-width: 767px) {
+  @media (min-width: 481px) and (max-width: 767px) {
     .comp-card:nth-last-child(2):nth-child(odd) { border-bottom: none; }
   }
   @media (min-width: 768px) {
@@ -786,12 +786,20 @@ window.va = window.va || function () { (window.vaq = window.vaq || []).push(argu
 
   /* Tablet (481–768px) */
   @media (min-width: 481px) and (max-width: 768px) {
-    .comparison-grid { grid-template-columns: 1fr; gap: 0; }
-    .navbar { padding: var(--spacing-8) var(--spacing-16); }
-    .nav-link { font-size: var(--fs-sm); padding: var(--spacing-8) var(--spacing-16); }
+    /* 2-column card grids */
+    .comparison-grid { grid-template-columns: repeat(2, 1fr); }
+    .thaad-cards { grid-template-columns: repeat(2, 1fr); }
     .counter-grid { grid-template-columns: repeat(2, 1fr); gap: var(--spacing-24); }
     .progress-ring-grid { grid-template-columns: repeat(2, 1fr); }
-    .thaad-cards { grid-template-columns: 1fr; }
+
+    /* Larger touch targets (WCAG 2.5.8 — 44px minimum) */
+    .nav-link { font-size: var(--fs-sm); padding: var(--spacing-16); min-height: 44px; display: inline-flex; align-items: center; }
+    .share-btn-wrapper .share-btn { padding: var(--spacing-8); }
+    .share-dropdown button { padding: var(--spacing-16); }
+
+    /* Layout adjustments */
+    .navbar { padding: var(--spacing-8) var(--spacing-16); }
+    .comp-card { padding: var(--spacing-32) var(--spacing-16); }
     .duration-row { gap: var(--spacing-8); }
     .dur-cost { width: 120px; }
   }
