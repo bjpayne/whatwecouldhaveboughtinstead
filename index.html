@@ -159,13 +159,17 @@ window.va = window.va || function () { (window.vaq = window.vaq || []).push(argu
     --divider: #c8c0b4;
     --text-light: #e4e4e4;
 
-    /* Typography Scale — strict 6-step, no aliases */
-    --fs-xs: 0.75rem;                        /* 12px · fine print, sublabels */
-    --fs-sm: 1rem;                           /* 16px · labels, nav, captions */
-    --fs-base: clamp(1.06rem, 2vw, 1.25rem); /* 17–20px · body copy */
-    --fs-lg: clamp(1.5rem, 4vw, 2.5rem);    /* 24–40px · card numbers, headings */
-    --fs-xl: clamp(2.25rem, 7vw, 5rem);     /* 36–80px · hero h1 */
-    --fs-display: clamp(3rem, 12vw, 8rem);  /* 48–128px · ticker */
+    /* Typography Scale — strict 6-step, device-specific
+       Mobile  (≤600px):  compact, readability-first
+       Tablet  (601–768px): mid-range, balanced
+       Desktop (769px+):   full-size, editorial presence
+     */
+    --fs-xs: 0.75rem;         /* 12px · fine print, sublabels */
+    --fs-sm: 1rem;            /* 16px · labels, nav, captions */
+    --fs-base: 1.25rem;       /* 20px · body copy */
+    --fs-lg: 2.5rem;          /* 40px · card numbers, headings */
+    --fs-xl: 5rem;            /* 80px · hero h1 */
+    --fs-display: 8rem;       /* 128px · ticker */
 
     /* Layout Scale (8 step) */
     --spacing-4: 4px;
@@ -359,7 +363,7 @@ window.va = window.va || function () { (window.vaq = window.vaq || []).push(argu
   .counter-stat .num {
     font-family: 'Playfair Display', serif;
     font-weight: 900;
-    font-size: var(--fs-base);
+    font-size: var(--fs-lg);
     color: var(--dark);
   }
   .counter-stat .label {
@@ -758,14 +762,35 @@ window.va = window.va || function () { (window.vaq = window.vaq || []).push(argu
   }
 
   /* ── RESPONSIVE ── */
+
+  /* ── MOBILE TYPOGRAPHY (≤600px) ── */
   @media (max-width: 600px) {
-    :root { --fs-xs: 0.875rem; } /* 14px min for mobile readability */
+    :root {
+      --fs-xs: 0.8125rem;   /* 13px · bumped for mobile readability */
+      --fs-sm: 0.9375rem;   /* 15px · slightly compact labels */
+      --fs-base: 1.0625rem; /* 17px · comfortable mobile body */
+      --fs-lg: 1.5rem;      /* 24px · compact headings & card nums */
+      --fs-xl: 2.25rem;     /* 36px · hero fits small screens */
+      --fs-display: 3rem;   /* 48px · ticker stays impactful */
+    }
     .duration-row { flex-direction: column; gap: var(--spacing-8); text-align: center; }
     .dur-time, .dur-cost, .dur-equiv { width: auto; text-align: center; }
     .comp-card { padding: var(--spacing-24) var(--spacing-16); }
     .thaad-section { padding: var(--spacing-32) var(--spacing-16); }
     .thaad-cards { grid-template-columns: 1fr; }
     .duration-card { padding: var(--spacing-32) var(--spacing-16); }
+  }
+
+  /* ── TABLET TYPOGRAPHY (601–768px) ── */
+  @media (min-width: 601px) and (max-width: 768px) {
+    :root {
+      --fs-xs: 0.75rem;     /* 12px · fine print */
+      --fs-sm: 1rem;        /* 16px · labels & nav */
+      --fs-base: 1.125rem;  /* 18px · slightly larger body than mobile */
+      --fs-lg: 2rem;        /* 32px · mid-range headings */
+      --fs-xl: 3.25rem;     /* 52px · balanced hero */
+      --fs-display: 5rem;   /* 80px · strong ticker presence */
+    }
   }
 
   /* Small phones */
@@ -784,7 +809,7 @@ window.va = window.va || function () { (window.vaq = window.vaq || []).push(argu
     .thaad-cards { grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
   }
 
-  /* Tablet (481–768px) */
+  /* Tablet layout (481–768px) */
   @media (min-width: 481px) and (max-width: 768px) {
     /* 2-column card grids */
     .comparison-grid { grid-template-columns: repeat(2, 1fr); }
@@ -912,7 +937,7 @@ window.va = window.va || function () { (window.vaq = window.vaq || []).push(argu
   .color-war { color: var(--war-red); }
   .color-home { color: var(--home-teal); }
   .fw-600 { font-weight: 600; }
-  .fs-caption-em { font-size: var(--fs-sm); color: #444; }
+  .fs-caption-em { font-size: var(--fs-xs); color: #444; }
   .taxpayer-grid { grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
   .taxpayer-card { border-color: var(--home-teal); }
   .insured-grid { grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
@@ -1067,16 +1092,16 @@ window.va = window.va || function () { (window.vaq = window.vaq || []).push(argu
     <div class="counter-label label">Two Estimates of Daily Iran War Spending</div>
     <div class="counter-grid">
       <div class="counter-stat fade-in">
-        <div class="num">$220M</div>
-        <div class="label">Per Day — Active Ops Rate<br><em class="fs-caption-em">Since Feb 28 strikes began</em></div>
+        <div class="num">$220M / day</div>
+        <div class="label">Active Ops Rate<br><em class="fs-caption-em">Since Feb 28 strikes began</em></div>
       </div>
       <div class="counter-stat fade-in">
-        <div class="num">$30M</div>
-        <div class="label">Per Day — Broader Deployment<br><em class="fs-caption-em">Pre-strike buildup baseline</em></div>
+        <div class="num">$30M / day</div>
+        <div class="label">Broader Deployment<br><em class="fs-caption-em">Pre-strike buildup baseline</em></div>
       </div>
       <div class="counter-stat fade-in">
-        <div class="num">$43.7B</div>
-        <div class="label">Cumulative Total<br><em class="fs-caption-em">All conflict spending since April 2024</em></div>
+        <div class="num">$43.7B / year</div>
+        <div class="label">Cumulative Total<br><em class="fs-caption-em">All conflict spending</em></div>
       </div>
     </div>
   </div>
