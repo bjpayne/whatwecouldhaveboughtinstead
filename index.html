@@ -552,36 +552,46 @@ window.va = window.va || function () { (window.vaq = window.vaq || []).push(argu
     font-weight: 900;
     font-size: var(--fs-h1);
     color: var(--dark);
-    margin-bottom: var(--spacing-24);
+    margin-bottom: var(--spacing-32);
   }
-  .thaad-grid {
+  .thaad-cards {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
-    gap: 16px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-24);
+  }
+  .thaad-card {
+    border: 1px solid var(--divider);
+    padding: var(--spacing-24) var(--spacing-16);
     text-align: center;
   }
-  .thaad-item .t-icon { display: block; margin: 0 auto var(--spacing-4); width: 18px; height: 18px; opacity: 0.3; }
-  .thaad-item .t-icon svg { width: 100%; height: 100%; }
-  .thaad-item .t-num {
-    font-family: 'Playfair Display', serif;
-    font-weight: 900;
-    font-size: var(--fs-large);
-    color: var(--dark);
-  }
-  .thaad-item .t-label {
-    font-size: var(--fs-caption);
-    color: var(--muted);
-    text-transform: uppercase;
-    letter-spacing: 1px;
-  }
-  .thaad-sector-label {
+  .thaad-card-header {
     font-size: var(--fs-caption);
     letter-spacing: 3px;
     text-transform: uppercase;
     color: var(--muted);
-    margin: var(--spacing-24) 0 var(--spacing-16);
-    padding-top: var(--spacing-16);
+    margin-bottom: var(--spacing-16);
+    padding-bottom: var(--spacing-8);
+    border-bottom: 2px solid var(--home-teal);
+  }
+  .thaad-card-item {
+    padding: var(--spacing-16) 0;
+  }
+  .thaad-card-item + .thaad-card-item {
     border-top: 1px solid var(--divider);
+  }
+  .thaad-card-item .t-num {
+    font-family: 'Playfair Display', serif;
+    font-weight: 900;
+    font-size: var(--fs-body);
+    color: var(--dark);
+    line-height: 1.1;
+  }
+  .thaad-card-item .t-label {
+    font-size: var(--fs-xs-body);
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: var(--spacing-4);
   }
 
   /* ── JOBS SECTION (Bar Chart) ── */
@@ -766,6 +776,7 @@ window.va = window.va || function () { (window.vaq = window.vaq || []).push(argu
     .dur-time, .dur-cost, .dur-equiv { width: auto; text-align: center; }
     .comp-card { padding: var(--spacing-24) var(--spacing-16); }
     .thaad-section { padding: var(--spacing-32) var(--spacing-16); }
+    .thaad-cards { grid-template-columns: 1fr; }
     .duration-card { padding: var(--spacing-32) var(--spacing-16); }
   }
 
@@ -782,7 +793,7 @@ window.va = window.va || function () { (window.vaq = window.vaq || []).push(argu
   @media (min-width: 1200px) {
     .container { max-width: 1040px; }
     .comparison-grid { grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
-    .thaad-grid { grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); }
+    .thaad-cards { grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
   }
 
   /* Tablet (481–768px) */
@@ -792,7 +803,7 @@ window.va = window.va || function () { (window.vaq = window.vaq || []).push(argu
     .nav-link { font-size: var(--fs-caption); padding: var(--spacing-8) var(--spacing-16); }
     .counter-grid { grid-template-columns: repeat(2, 1fr); gap: 24px; }
     .progress-ring-grid { grid-template-columns: repeat(2, 1fr); }
-    .thaad-grid { grid-template-columns: repeat(3, 1fr); }
+    .thaad-cards { grid-template-columns: repeat(3, 1fr); }
     .duration-row { gap: 8px; }
     .dur-cost { width: 120px; }
   }
@@ -912,7 +923,9 @@ window.va = window.va || function () { (window.vaq = window.vaq || []).push(argu
   .taxpayer-grid { grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
   .taxpayer-card { border-color: var(--home-teal); }
   .insured-grid { grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
-  .thaad-first-label { border-top: none; margin-top: 0; }
+  .thaad-card-header.health-header { border-bottom-color: var(--home-teal); }
+  .thaad-card-header.edu-header { border-bottom-color: var(--home-teal); }
+  .thaad-card-header.infra-header { border-bottom-color: var(--home-teal); }
   .footer-pdf { margin-top: var(--spacing-16); }
   .footer-attribution { font-size: var(--fs-caption); opacity: 0.5; margin-top: var(--spacing-8); }
 
@@ -935,9 +948,8 @@ window.va = window.va || function () { (window.vaq = window.vaq || []).push(argu
     opacity: 0.85;
   }
   @media (max-width: 768px) {
-    .health-expand-btn { display: block; }
-    .health-cards-hidden { display: none; }
-    .health-cards-hidden.visible { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 0; }
+    .health-expand-btn { display: none; }
+    .health-cards-hidden { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 0; }
   }
 
   /* ── SCROLL ANIMATIONS ── */
@@ -1401,51 +1413,51 @@ window.va = window.va || function () { (window.vaq = window.vaq || []).push(argu
       <h3>ONE THAAD INTERCEPTOR MISSILE — THREE WAYS TO SPEND IT</h3>
       <div class="thaad-price">$12.7 MILLION</div>
 
-      <div class="thaad-sector-label thaad-first-label">Health</div>
-      <div class="thaad-grid">
-        <div class="thaad-item">
-          <div class="t-num">2,117</div>
-          <div class="t-label">Insulin Pumps</div>
+      <div class="thaad-cards">
+        <div class="thaad-card">
+          <div class="thaad-card-header health-header">Health</div>
+          <div class="thaad-card-item">
+            <div class="t-num">2,117</div>
+            <div class="t-label">Insulin Pumps</div>
+          </div>
+          <div class="thaad-card-item">
+            <div class="t-num">84,667</div>
+            <div class="t-label">Therapy Sessions</div>
+          </div>
+          <div class="thaad-card-item">
+            <div class="t-num">363</div>
+            <div class="t-label">Knee Replacements</div>
+          </div>
         </div>
-        <div class="thaad-item">
-          <div class="t-num">84,667</div>
-          <div class="t-label">Therapy Sessions</div>
+        <div class="thaad-card">
+          <div class="thaad-card-header edu-header">Education</div>
+          <div class="thaad-card-item">
+            <div class="t-num">3,060</div>
+            <div class="t-label">Community College Tuitions</div>
+          </div>
+          <div class="thaad-card-item">
+            <div class="t-num">171</div>
+            <div class="t-label">Teacher Salaries</div>
+          </div>
+          <div class="thaad-card-item">
+            <div class="t-num">2,879,819</div>
+            <div class="t-label">School Lunches</div>
+          </div>
         </div>
-        <div class="thaad-item">
-          <div class="t-num">363</div>
-          <div class="t-label">Knee Replacements</div>
-        </div>
-      </div>
-
-      <div class="thaad-sector-label">Education</div>
-      <div class="thaad-grid">
-        <div class="thaad-item edu-item">
-          <div class="t-num">3,060</div>
-          <div class="t-label">Community College Tuitions</div>
-        </div>
-        <div class="thaad-item edu-item">
-          <div class="t-num">171</div>
-          <div class="t-label">Teacher Salaries</div>
-        </div>
-        <div class="thaad-item edu-item">
-          <div class="t-num">2,879,819</div>
-          <div class="t-label">School Lunches</div>
-        </div>
-      </div>
-
-      <div class="thaad-sector-label">Infrastructure</div>
-      <div class="thaad-grid">
-        <div class="thaad-item infra-item">
-          <div class="t-num">529</div>
-          <div class="t-label">Lane-Miles Maintained</div>
-        </div>
-        <div class="thaad-item infra-item">
-          <div class="t-num">13,568</div>
-          <div class="t-label">Households' Internet (1 Yr)</div>
-        </div>
-        <div class="thaad-item infra-item">
-          <div class="t-num">323</div>
-          <div class="t-label">Student Loans Erased</div>
+        <div class="thaad-card">
+          <div class="thaad-card-header infra-header">Infrastructure</div>
+          <div class="thaad-card-item">
+            <div class="t-num">529</div>
+            <div class="t-label">Lane-Miles Maintained</div>
+          </div>
+          <div class="thaad-card-item">
+            <div class="t-num">13,568</div>
+            <div class="t-label">Households' Internet (1 Yr)</div>
+          </div>
+          <div class="thaad-card-item">
+            <div class="t-num">323</div>
+            <div class="t-label">Student Loans Erased</div>
+          </div>
         </div>
       </div>
     </div>
@@ -1525,7 +1537,7 @@ window.va = window.va || function () { (window.vaq = window.vaq || []).push(argu
       <div class="jobs-bar-row">
         <div class="jobs-bar-label color-home">Infrastructure</div>
         <div class="jobs-bar-track">
-          <div class="jobs-bar-fill infra" style="width:57.7%"><span class="j-num">7–8</span></div>
+          <div class="jobs-bar-fill infra" style="width:57.7%"><span class="j-num">8</span></div>
         </div>
       </div>
       <div class="jobs-bar-row">
