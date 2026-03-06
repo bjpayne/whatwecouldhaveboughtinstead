@@ -154,6 +154,9 @@ window.va = window.va || function () { (window.vaq = window.vaq || []).push(argu
     --bg-card-alt: transparent;
     --war-red: #8b4a4a;
     --home-teal: #4a7c6f;
+    --health: #506078;
+    --education: #7a6252;
+    --infrastructure: #5e6e4a;
     --dark: #1a1a18;
     --muted: #5c574f;
     --divider: #c8c0b4;
@@ -418,11 +421,17 @@ window.va = window.va || function () { (window.vaq = window.vaq || []).push(argu
     border: 1px solid var(--dark);
     border-radius: 0;
   }
-  .section-divider .divider-tag.health,
-  .section-divider .divider-tag.education,
+  .section-divider .divider-tag.health {
+    border-color: var(--health);
+    color: var(--health);
+  }
+  .section-divider .divider-tag.education {
+    border-color: var(--education);
+    color: var(--education);
+  }
   .section-divider .divider-tag.infrastructure {
-    border-color: var(--home-teal);
-    color: var(--home-teal);
+    border-color: var(--infrastructure);
+    color: var(--infrastructure);
   }
 
   /* ── COMPARISON CARDS ── */
@@ -756,9 +765,9 @@ window.va = window.va || function () { (window.vaq = window.vaq || []).push(argu
     min-width: 0;
     border-radius: 0 2px 2px 0;
   }
-  .dur-bar-fill.health,
-  .dur-bar-fill.edu,
-  .dur-bar-fill.infra { background: var(--home-teal); }
+  .dur-bar-fill.health { background: var(--health); }
+  .dur-bar-fill.edu { background: var(--education); }
+  .dur-bar-fill.infra { background: var(--infrastructure); }
   .dur-bar-value {
     font-family: 'Playfair Display', serif;
     font-weight: 700;
@@ -931,13 +940,13 @@ window.va = window.va || function () { (window.vaq = window.vaq || []).push(argu
   }
   .progress-ring-fill {
     fill: none;
-    stroke: var(--home-teal);
+    stroke: var(--infrastructure);
     stroke-width: 6;
     stroke-linecap: round;
     transform: rotate(-90deg);
     transform-origin: 50% 50%;
   }
-  /* All rings use --home-teal uniformly */
+  /* All rings use --infrastructure */
   .progress-ring-value {
     font-family: 'Playfair Display', serif;
     font-size: 28px;
@@ -968,14 +977,17 @@ window.va = window.va || function () { (window.vaq = window.vaq || []).push(argu
   .pt-0 { padding-top: 0; }
   .color-war { color: var(--war-red); }
   .color-home { color: var(--home-teal); }
+  .color-health { color: var(--health); }
+  .color-education { color: var(--education); }
+  .color-infrastructure { color: var(--infrastructure); }
   .fw-600 { font-weight: 600; }
   .fs-caption-em { font-size: var(--fs-xs); color: #444; }
   .taxpayer-grid { grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
   .taxpayer-card { border-color: var(--home-teal); }
   .insured-grid { grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
-  .thaad-card-header.health-header { border-bottom-color: var(--home-teal); }
-  .thaad-card-header.edu-header { border-bottom-color: var(--home-teal); }
-  .thaad-card-header.infra-header { border-bottom-color: var(--home-teal); }
+  .thaad-card-header.health-header { border-bottom-color: var(--health); }
+  .thaad-card-header.edu-header { border-bottom-color: var(--education); }
+  .thaad-card-header.infra-header { border-bottom-color: var(--infrastructure); }
   .footer-pdf { margin-top: var(--spacing-16); }
   .footer-attribution { font-size: var(--fs-sm); opacity: 0.5; margin-top: var(--spacing-8); }
 
@@ -1153,7 +1165,7 @@ window.va = window.va || function () { (window.vaq = window.vaq || []).push(argu
 <section class="section pt-0">
   <div class="container">
     <div class="section-header fade-in">
-      <h1><span class="color-home">HEALTHCARE</span> AT <span class="color-war">$220 MILLION</span>/DAY</h1>
+      <h1><span class="color-health">HEALTHCARE</span> AT <span class="color-war">$220 MILLION</span>/DAY</h1>
       <p>At the active operations rate, each day of the Iran conflict could instead fund:</p>
     </div>
 
@@ -1294,7 +1306,7 @@ window.va = window.va || function () { (window.vaq = window.vaq || []).push(argu
 <section class="section pt-0">
   <div class="container">
     <div class="section-header fade-in">
-      <h1><span class="color-home">EDUCATION</span> AT <span class="color-war">$220 MILLION</span>/DAY</h1>
+      <h1><span class="color-education">EDUCATION</span> AT <span class="color-war">$220 MILLION</span>/DAY</h1>
       <p>The same daily war budget could reshape American education — from preschool to postgraduate.</p>
     </div>
 
@@ -1390,7 +1402,7 @@ window.va = window.va || function () { (window.vaq = window.vaq || []).push(argu
 <section class="section pt-0">
   <div class="container">
     <div class="section-header fade-in">
-      <h1><span class="color-home">INFRASTRUCTURE</span> AT <span class="color-war">$220 MILLION</span>/DAY</h1>
+      <h1><span class="color-infrastructure">INFRASTRUCTURE</span> AT <span class="color-war">$220 MILLION</span>/DAY</h1>
       <p>America's infrastructure earns a C grade from the ASCE with a $3.7 trillion investment gap. Here's what the daily war budget could do instead.</p>
     </div>
 
@@ -1614,19 +1626,19 @@ window.va = window.va || function () { (window.vaq = window.vaq || []).push(argu
         </div>
       </div>
       <div class="jobs-bar-row">
-        <div class="jobs-bar-label label-xs color-home">Infrastructure</div>
+        <div class="jobs-bar-label label-xs color-infrastructure">Infrastructure</div>
         <div class="jobs-bar-track">
           <div class="jobs-bar-fill infra" data-target-width="57.7" style="width:0%"><span class="j-num">8</span></div>
         </div>
       </div>
       <div class="jobs-bar-row">
-        <div class="jobs-bar-label label-xs color-home">Healthcare</div>
+        <div class="jobs-bar-label label-xs color-health">Healthcare</div>
         <div class="jobs-bar-track">
           <div class="jobs-bar-fill health" data-target-width="69.2" style="width:0%"><span class="j-num">9</span></div>
         </div>
       </div>
       <div class="jobs-bar-row">
-        <div class="jobs-bar-label label-xs color-home">Education</div>
+        <div class="jobs-bar-label label-xs color-education">Education</div>
         <div class="jobs-bar-track">
           <div class="jobs-bar-fill edu" data-target-width="100" style="width:0%"><span class="j-num">13</span></div>
         </div>
