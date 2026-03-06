@@ -1993,44 +1993,41 @@ document.addEventListener('DOMContentLoaded', () => {
   const TABLET_BP = 768;
   const sectionIds = ['health', 'education', 'infrastructure'];
 
-  function getSectionElements(sectionId) {
+  function getFirstSectionCards(sectionId) {
     const divider = document.getElementById(sectionId);
-    if (!divider) return { cards: [], sections: [], lastSection: null };
-    const cards = [];
-    const sections = [];
-    let lastSection = null;
+    if (!divider) return { cards: [], section: null };
     let el = divider.nextElementSibling;
     while (el) {
-      if (el.classList.contains('section-divider') || el.classList.contains('pull-quote')) break;
       if (el.classList.contains('section') && el.querySelector('.comparison-grid')) {
-        el.querySelectorAll('.comp-card').forEach(c => cards.push(c));
-        sections.push(el);
-        lastSection = el;
-      } else if (el.classList.contains('section')) {
-        break; // Hit a section without comparison cards — stop
+        const cards = Array.from(el.querySelectorAll('.comp-card'));
+        return { cards, section: el };
       }
       el = el.nextElementSibling;
     }
-    return { cards, sections, lastSection };
+    return { cards: [], section: null };
   }
 
   sectionIds.forEach(sectionId => {
-    const { cards, sections, lastSection } = getSectionElements(sectionId);
-    if (cards.length <= CARD_LIMIT || !lastSection) return;
+    const { cards, section } = getFirstSectionCards(sectionId);
+    if (cards.length <= CARD_LIMIT || !section) return;
 
-    // Create the toggle button — placed after the last section
+    const container = section.querySelector('.container');
+    if (!container) return;
+
+    // Create the toggle button
     const btn = document.createElement('button');
     btn.className = 'section-toggle';
     btn.setAttribute('aria-expanded', 'false');
     btn.textContent = 'Show All';
     btn.dataset.section = sectionId;
 
-    // Wrap in a container div for consistent padding
-    const btnWrap = document.createElement('div');
-    btnWrap.className = 'container';
-    btnWrap.style.paddingTop = '0';
-    btnWrap.appendChild(btn);
-    lastSection.after(btnWrap);
+    // Place before highlight-bar if present, otherwise at end of container
+    const highlightBar = container.querySelector('.highlight-bar');
+    if (highlightBar) {
+      highlightBar.before(btn);
+    } else {
+      container.appendChild(btn);
+    }
 
     function applyToggle() {
       const isTablet = window.innerWidth <= TABLET_BP;
@@ -2041,25 +2038,12 @@ document.addEventListener('DOMContentLoaded', () => {
           if (i >= CARD_LIMIT) card.classList.add('card-hidden');
           else card.classList.remove('card-hidden');
         });
-        // Hide sections where ALL cards are hidden
-        sections.forEach(sec => {
-          const secCards = sec.querySelectorAll('.comp-card');
-          const allHidden = Array.from(secCards).every(c => c.classList.contains('card-hidden'));
-          if (allHidden && secCards.length > 0) {
-            sec.style.display = 'none';
-          } else {
-            sec.style.display = '';
-          }
-        });
         btn.style.display = 'block';
       } else if (isTablet && expanded) {
         cards.forEach(card => card.classList.remove('card-hidden'));
-        sections.forEach(sec => sec.style.display = '');
         btn.style.display = 'block';
       } else {
-        // Desktop — show all, hide button
         cards.forEach(card => card.classList.remove('card-hidden'));
-        sections.forEach(sec => sec.style.display = '');
         btn.style.display = 'none';
       }
     }
@@ -2071,7 +2055,6 @@ document.addEventListener('DOMContentLoaded', () => {
       applyToggle();
     });
 
-    // Initial setup + resize handler
     applyToggle();
     window.addEventListener('resize', applyToggle);
   });
