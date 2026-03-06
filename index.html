@@ -758,6 +758,7 @@ window.va = window.va || function () { (window.vaq = window.vaq || []).push(argu
 
   /* ── RESPONSIVE ── */
   @media (max-width: 600px) {
+    :root { --fs-xs: 0.875rem; } /* 14px min for mobile readability */
     .duration-row { flex-direction: column; gap: 6px; text-align: center; }
     .dur-time, .dur-cost, .dur-equiv { width: auto; text-align: center; }
     .comp-card { padding: var(--spacing-24) var(--spacing-16); }
