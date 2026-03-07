@@ -1,7 +1,7 @@
 # The Cost of War vs. The Cost of Care, Education & Infrastructure
 ## A Comparative Analysis of U.S. Military Spending on the Iran Conflict vs. Domestic Needs
 
-**Report Date:** March 3, 2026  
+**Report Date:** March 7, 2026
 **Data Sources:** Brown University Costs of War Project, Al Jazeera, CSIS, IranWarCost.com, CBO, KFF, Medicare.gov, GoodRx, SimplePractice, BetterCare, NEA, College Board, ASCE, Education Data Initiative, Federal Student Aid, USDA, and others as cited below.
 
 ---
@@ -17,7 +17,7 @@
 | Daily carrier strike group ops (per group) | ~$6.5 million/day | Center for New American Security |
 | **Phase 2 sustained operations rate** | **~$220 million/day** | Iran War Cost Tracker (Days 3-10 phase) |
 | Broader deployment cost estimate | ~$30 million/day | Mishpacha / Brown University comparable est. |
-| Total cumulative spending (as of Mar 2, 2026) | ~$43 billion | Iran War Cost Tracker (includes all appropriations since April 2024) |
+| Total cumulative spending (as of Mar 7, 2026) | ~$44.1 billion | Iran War Cost Tracker (includes all appropriations since April 2024) |
 | Per-second burn rate (active ops) | ~$2,546/second | Iran War Cost Tracker |
 
 ### Phased Cost Model
@@ -41,7 +41,7 @@ The Iran War Cost Tracker employs a three-phase model reflecting operational int
 | Non-tracked Ordnance | $35 million/day | Munitions not individually itemized |
 | C4ISR/Cyber/Space | $10 million/day | Communications, cyberwarfare, satellite ops |
 | Overhead & Unmodeled | $50 million/day | Administrative, maintenance, contingencies |
-| **Total (Phase 2)** | **~$220 million/day** | Confirmed March 2, 2026 |
+| **Total (Phase 2)** | **~$220 million/day** | Confirmed March 7, 2026 |
 
 ### Projections
 
@@ -440,22 +440,22 @@ All costs reflect 2024–2026 U.S. estimates unless otherwise noted.
 | **Per week** ($1.54B) | $1,540,000,000 | 1.3% of the bridge repair backlog OR 0.50% of the drinking water gap |
 | **4 weeks** (Trump's est.) | $6,160,000,000 | 5.3% of bridge repair backlog OR 2.0% of drinking water gap OR 0.17% of total ASCE gap |
 | **First 24 hrs (actual)** ($779M) | $779,000,000 | 0.67% of bridge repair backlog OR 0.25% of drinking water gap |
-| **$43B cumulative** | $43,000,000,000 | 36.7% of bridge repair backlog OR 6.9% of drinking water needs OR 1.16% of total ASCE gap |
+| **$44.1B cumulative** | $44,100,000,000 | 37.7% of bridge repair backlog OR 7.1% of drinking water needs OR 1.19% of total ASCE gap |
 
 ---
 
-### 7D. What the $43 Billion Cumulative Spend Could Do for Infrastructure
+### 7D. What the $44.1 Billion Cumulative Spend Could Do for Infrastructure
 
-> **Base figure:** $43,000,000,000 — total cumulative conflict spending as of March 2, 2026.
+> **Base figure:** $44,100,000,000 — total cumulative conflict spending as of March 7, 2026.
 
-| Infrastructure Need | Total Cost | $43B as % of Need | What $43B Covers |
+| Infrastructure Need | Total Cost | $44.1B as % of Need | What $44.1B Covers |
 |--------------------|-----------|-------------------|-----------------|
-| Bridge repair/replacement backlog | $117.1 billion | **36.7%** | Over one-third of all U.S. bridge repairs |
-| Road rehabilitation backlog | $435 billion | **9.9%** | Nearly 10% of road rehab needs |
-| Drinking water gap (2024) | $309 billion | **13.9%** | Significant dent in clean water needs |
-| Lead service line replacement (~9M lines) | ~$45–90 billion (est. $5,000–$10,000/line) | **48–96%** | Could potentially replace most or all lead pipes in America |
-| BEAD broadband program | $42 billion | **102%** | Could fully fund the entire federal broadband expansion program |
-| Annual wastewater/stormwater gap | $69 billion/year | **62.3%** | Over half the annual shortfall |
+| Bridge repair/replacement backlog | $117.1 billion | **37.7%** | Over one-third of all U.S. bridge repairs |
+| Road rehabilitation backlog | $435 billion | **10.1%** | 10% of road rehab needs |
+| Drinking water gap (2024) | $309 billion | **14.3%** | Significant dent in clean water needs |
+| Lead service line replacement (~9M lines) | ~$45–90 billion (est. $5,000–$10,000/line) | **49–98%** | Could potentially replace most or all lead pipes in America |
+| BEAD broadband program | $42 billion | **105%** | Could fully fund the entire federal broadband expansion program |
+| Annual wastewater/stormwater gap | $69 billion/year | **63.9%** | Over half the annual shortfall |
 
 ---
 
@@ -513,25 +513,25 @@ Per Brown University Costs of War Project data:
 
 | Metric | Amount |
 |--------|--------|
-| Total conflict spending ($43B) / taxpayer | ~$287 per taxpayer |
+| Total conflict spending ($44.1B) / taxpayer | ~$294 per taxpayer |
 | Daily active ops ($220M) / taxpayer | ~$1.47 per taxpayer per day |
-| Projected 4-week campaign ($6.16B) / taxpayer | ~$41 per taxpayer |
+| Projected 4-week campaign ($6.16B) / taxpayer | ~$41.07 per taxpayer |
 
-For context — what $287 per taxpayer could buy:
+For context — what $294 per taxpayer could buy:
 
-| Sector | $287 Could Provide |
+| Sector | $294 Could Provide |
 |--------|-------------------|
-| Healthcare | ~1.9 therapy sessions, or 1 ambulance ride copay, or 2.4 months of insulin at the $35 cap |
-| Education | ~1 month of community college tuition, or ~24% of annual textbook costs, or ~65 school lunches |
-| Infrastructure | ~12 lane-miles of road maintenance contribution, or ~3.7 months of household internet |
+| Healthcare | ~2.0 therapy sessions, or 1 ambulance ride copay, or 2.4 months of insulin at the $35 cap |
+| Education | ~1 month of community college tuition, or ~24% of annual textbook costs, or ~67 school lunches |
+| Infrastructure | ~12 lane-miles of road maintenance contribution, or ~3.8 months of household internet |
 
-For context — what $37 per taxpayer (4-week campaign) could buy:
+For context — what $41 per taxpayer (4-week campaign) could buy:
 
-| Sector | $37 Could Provide |
+| Sector | $41 Could Provide |
 |--------|------------------|
-| Healthcare | ~7.4 months of insulin copays at $35/mo |
-| Education | ~8.4 school lunches, or half an annual Pell Grant increase |
-| Infrastructure | ~1.5 lane-miles of road maintenance contribution |
+| Healthcare | ~8.2 months of insulin copays at $35/mo |
+| Education | ~9.3 school lunches, or half an annual Pell Grant increase |
+| Infrastructure | ~1.7 lane-miles of road maintenance contribution |
 
 ---
 
@@ -557,15 +557,15 @@ For context — what $37 per taxpayer (4-week campaign) could buy:
 | Students receiving free school lunch | ~30 million/day | 49.9 million lunches/day — full coverage with surplus |
 | **Infrastructure** | | |
 | Bridges needing repair | ~221,791 | Bridge backlog ($117.1B) cleared in ~1.5 years |
-| Lead service lines in use | ~9 million | Potentially all replaced with $43B cumulative spending |
+| Lead service lines in use | ~9 million | Potentially all replaced with $44.1B cumulative spending |
 | Households without internet | ~10 million | All connected for a year in ~43 days |
-| Total ASCE infrastructure gap | $3.7–$4.4 trillion | $43B cumulative = 1.0–1.2% of total gap |
+| Total ASCE infrastructure gap | $3.7–$4.4 trillion | $44.1B cumulative = 1.0–1.2% of total gap |
 
 ---
 
 ## 11. Methodology Notes
 
-1. **War cost figures** are estimates compiled from publicly available reporting. The Pentagon has not disclosed official totals. The $220M/day Phase 2 sustained operations rate is derived from the Iran War Cost Tracker, which employs a three-phase model ($380M/$220M/$155M/day) with seven component-level costs (personnel, naval forces, aircraft ops, fuel/logistics, ordnance, C4ISR/cyber/space, overhead) and is anchored at $43B cumulative spending on March 2, 2026, incrementing at $2,546/second. The Penn Wharton Budget Model projects up to $210B total economic cost if the conflict resolves in under 2 months ($65B direct military + $115B+ broader fallout). The $30M/day figure comes from comparable deployment estimates published by Mishpacha Magazine citing Brown University data.
+1. **War cost figures** are estimates compiled from publicly available reporting. The Pentagon has not disclosed official totals. The $220M/day Phase 2 sustained operations rate is derived from the Iran War Cost Tracker, which employs a three-phase model ($380M/$220M/$155M/day) with seven component-level costs (personnel, naval forces, aircraft ops, fuel/logistics, ordnance, C4ISR/cyber/space, overhead) and is anchored at $44.1B cumulative spending on March 7, 2026, incrementing at $2,546/second. The Penn Wharton Budget Model projects up to $210B total economic cost if the conflict resolves in under 2 months ($65B direct military + $115B+ broader fallout). The $30M/day figure comes from comparable deployment estimates published by Mishpacha Magazine citing Brown University data.
 
 2. **Healthcare costs** use national averages for uninsured/self-pay patients. Actual costs vary dramatically by geography, provider, and insurance plan. Where a range exists, we use the midpoint for calculations unless otherwise noted.
 
@@ -589,6 +589,7 @@ For context — what $37 per taxpayer (4-week campaign) could buy:
 - Al Jazeera, "How much could the Iran war cost the US?" (March 3, 2026)
 - Brown University Costs of War Project (costsofwar.watson.brown.edu)
 - CSIS, "Operation Epic Fury and the Remnants of Iran's Nuclear Program" (March 2026)
+- CSIS, "$3.7 Billion: Estimated Cost of Epic Fury's First 100 Hours" (March 2026)
 - Iran War Cost Tracker (iran-cost-ticker.com) — Phased cost model (Days 0–3: $380M, Days 3–10: $220M, Day 10+: $155M/day) with seven sourced component costs
 - Mishpacha Magazine, "The High Cost of a Hostile Iran" (February 2026)
 - JINSA, Missile and Interceptor Cost Estimates (July 2025)
@@ -648,4 +649,4 @@ For context — what $37 per taxpayer (4-week campaign) could buy:
 
 ---
 
-*This document is intended for analytical and educational purposes. All figures are estimates based on publicly available data as of March 3, 2026. Precise military expenditure totals are not disclosed by the U.S. government. Education and infrastructure cost estimates carry their own uncertainties and vary significantly by geography, institution, and project scope.*
+*This document is intended for analytical and educational purposes. All figures are estimates based on publicly available data as of March 7, 2026. Precise military expenditure totals are not disclosed by the U.S. government. Education and infrastructure cost estimates carry their own uncertainties and vary significantly by geography, institution, and project scope.*

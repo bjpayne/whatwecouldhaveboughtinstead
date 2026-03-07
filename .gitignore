@@ -1,5 +1,6 @@
 # Directories
 /.idea
+/.claude
 
 # Files
 .DS_Store
