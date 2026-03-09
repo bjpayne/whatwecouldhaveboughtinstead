@@ -14,7 +14,7 @@ window.va = window.va || function () { (window.vaq = window.vaq || []).push(argu
 <title>Iran War Cost: What $220M/Day Could Buy Instead</title>
 
 <!-- SEO Meta -->
-<meta name="description" content="The Iran war costs $220 million per day. Operation Epic Fury has spent $44.1 billion since 2024. See what that money could buy instead — insulin pumps, teacher salaries, bridge repairs, and more. A data-driven comparison of U.S. military spending vs. domestic needs.">
+<meta name="description" content="The Iran war costs $220 million per day. Operation Epic Fury has spent $51.2 billion since 2024. See what that money could buy instead — insulin pumps, teacher salaries, bridge repairs, and more. A data-driven comparison of U.S. military spending vs. domestic needs.">
 <meta name="keywords" content="Iran war cost, cost of Iran war, Operation Epic Fury cost, Iran war spending, how much does Iran war cost, Iran war cost per day, Iran war taxpayer cost, US military spending Iran, war spending vs healthcare, war spending vs education, war spending vs infrastructure, what could we buy instead, Iran war 2026, cost of war, military budget, $220 million per day, Iran war cost tracker, Iran conflict cost, US Iran war budget, war vs healthcare, war vs education, THAAD missile cost, Iran war daily cost, Iran war total cost, what we could have bought instead">
 <meta name="author" content="What We Could Have Bought Instead">
 <meta name="theme-color" content="#f0f0ec">
@@ -1147,7 +1147,7 @@ window.va = window.va || function () { (window.vaq = window.vaq || []).push(argu
         <div class="label">Broader Deployment<br><em class="fs-caption-em">Pre-strike buildup baseline</em></div>
       </div>
       <div class="counter-stat fade-in">
-        <div class="num">$44.1B total</div>
+        <div class="num">$51.2B total</div>
         <div class="label">Cumulative Total<br><em class="fs-caption-em">All conflict spending</em></div>
       </div>
     </div>
@@ -1705,6 +1705,7 @@ window.va = window.va || function () { (window.vaq = window.vaq || []).push(argu
 </footer>
 
 <script>
+let baseCostPerDay = 900_000_000;
 // Intersection Observer for fade-in animations
 document.addEventListener('DOMContentLoaded', () => {
   const observer = new IntersectionObserver((entries) => {
@@ -1868,7 +1869,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (jobsChart) jobsObserver.observe(jobsChart);
 
   // Live ticker counter — $2,546/second since Feb 28, 2026 00:00 UTC
-  const RATE_PER_MS = 2546 / 1000;
+  const RATE_PER_MS = (baseCostPerDay / 24 / 60 / 60) / 1000;
   const START_DATE = new Date('2026-02-28T00:00:00Z');
   const PRE_STRIKE_TOTAL = 44.1e9 - (7 * 220e6);
   const tickerEl = document.getElementById('live-ticker');
@@ -2175,6 +2176,10 @@ document.addEventListener('DOMContentLoaded', () => {
         cards.forEach(card => card.classList.remove('card-hidden'));
         btn.style.display = 'none';
       }
+    }
+
+    function calculateCostOfCompItem(itemCost) {
+      return baseCostPerDay * itemCost;
     }
 
     btn.addEventListener('click', () => {
