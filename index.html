@@ -332,46 +332,48 @@ window.va = window.va || function () { (window.vaq = window.vaq || []).push(argu
     opacity: 0.6;
   }
 
-  /* ── COUNTER BANNER ── */
-  .counter-banner {
+  /* ── COST CHART ── */
+  .cost-chart-section {
     background: var(--bg);
-    padding: var(--spacing-56) var(--spacing-24);
+    padding-bottom: var(--spacing-56);
     text-align: center;
   }
-  .counter-label {
-    letter-spacing: 3px;
-    margin-bottom: var(--spacing-16);
+  .chart-header {
+    margin-bottom: var(--spacing-32);
   }
-  .counter-number {
-    font-family: 'Playfair Display', serif;
-    font-weight: 900;
-    font-size: var(--fs-lg);
-    color: var(--dark);
-    line-height: 1;
-    margin-bottom: var(--spacing-8);
+  .chart-toggle {
+    display: inline-flex;
+    border: 1px solid var(--dark);
   }
-  .counter-sub {
-    font-size: var(--fs-base);
+  .chart-toggle-btn {
+    background: transparent;
+    border: none;
+    padding: var(--spacing-8) var(--spacing-24);
+    font-family: 'DM Sans', sans-serif;
+    font-size: var(--fs-xs);
+    letter-spacing: 2px;
+    text-transform: uppercase;
     color: var(--muted);
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
   }
-  .counter-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: var(--spacing-40);
-    max-width: 880px;
-    margin: var(--spacing-40) auto 0;
+  .chart-toggle-btn:hover {
+    background: rgba(26, 26, 24, 0.06);
   }
-  .counter-stat {
-    text-align: center;
+  .chart-toggle-btn.active {
+    background: var(--dark);
+    color: var(--text-light);
   }
-  .counter-stat .num {
-    font-family: 'Playfair Display', serif;
-    font-weight: 900;
-    font-size: var(--fs-lg);
-    color: var(--dark);
+  .chart-toggle-btn + .chart-toggle-btn {
+    border-left: 1px solid var(--dark);
   }
-  .counter-stat .label {
-    margin-top: var(--spacing-4);
+  .chart-container {
+    max-width: 1056px;
+    margin: 0 auto;
+  }
+  #cost-chart {
+    width: 100%;
+    display: block;
   }
 
   /* ── SECTION HEADERS ── */
@@ -685,7 +687,7 @@ window.va = window.va || function () { (window.vaq = window.vaq || []).push(argu
 
   /* ── TICKER (PER SECOND) ── */
   .ticker-section {
-    padding: var(--spacing-64) var(--spacing-24);
+    padding: var(--spacing-64) var(--spacing-24) var(--spacing-48) var(--spacing-24);
     text-align: center;
     border-top: 2px solid var(--dark);
     background: var(--bg);
@@ -700,7 +702,6 @@ window.va = window.va || function () { (window.vaq = window.vaq || []).push(argu
     font-size: var(--fs-display);
     color: var(--dark);
     line-height: 1;
-    margin-bottom: var(--spacing-48);
     overflow-wrap: break-word;
     word-break: break-word;
   }
@@ -708,17 +709,6 @@ window.va = window.va || function () { (window.vaq = window.vaq || []).push(argu
     font-size: var(--fs-sm);
     color: var(--muted);
     margin-top: var(--spacing-8);
-  }
-  .ticker-equiv {
-    margin-top: var(--spacing-24);
-    font-size: var(--fs-base);
-    color: var(--muted);
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  .ticker-equiv strong {
-    font-weight: 600;
   }
 
   /* ── DURATION ── */
@@ -1128,28 +1118,19 @@ window.va = window.va || function () { (window.vaq = window.vaq || []).push(argu
 <section class="ticker-section">
   <div class="ticker-label label">Since Operation Epic Fury began, the U.S. has spent</div>
   <div class="ticker-amount" id="live-ticker">$0</div>
-  <div class="ticker-equiv">
-    Every second buys <strong class="color-home">nearly 2 CPAP machines</strong>, <strong class="color-home">577 school lunches</strong>, or <strong class="color-home">0.1 lane-miles of road repair</strong>.
-  </div>
 </section>
 
 <!-- ═══════════ COST OVERVIEW ═══════════ -->
-<section class="counter-banner">
+<section class="cost-chart-section">
   <div class="container">
-    <div class="counter-label label">Two Estimates of Daily Iran War Spending</div>
-    <div class="counter-grid">
-      <div class="counter-stat fade-in">
-        <div class="num"><span class="daily-cost daily-cost-short">$900M</span> / day</div>
-        <div class="label">Active Ops Rate<br><em class="fs-caption-em">Since Feb 28 strikes began</em></div>
+    <div class="chart-header">
+      <div class="chart-toggle">
+        <button class="chart-toggle-btn active" data-view="daily">Daily Cost</button>
+        <button class="chart-toggle-btn" data-view="total">Total Spending</button>
       </div>
-      <div class="counter-stat fade-in">
-        <div class="num">$30M / day</div>
-        <div class="label">Broader Deployment<br><em class="fs-caption-em">Pre-strike buildup baseline</em></div>
-      </div>
-      <div class="counter-stat fade-in">
-        <div class="num">$51.2B total</div>
-        <div class="label">Cumulative Total<br><em class="fs-caption-em">All conflict spending</em></div>
-      </div>
+    </div>
+    <div class="chart-container">
+      <svg id="cost-chart" role="img" aria-label="Cost over time chart"></svg>
     </div>
   </div>
 </section>
@@ -1662,22 +1643,19 @@ window.va = window.va || function () { (window.vaq = window.vaq || []).push(argu
     </div>
     <div class="comparison-grid taxpayer-grid">
       <div class="comp-card taxpayer-card fade-in">
-        <div class="item-name label">Your share of total conflict</div>
+        <div class="item-name label">Total share</div>
         <div class="big-num">$294</div>
         <div class="per-label label">per taxpayer (<span>$52B</span> total)</div>
-        <div class="cost-note">That's 2.0 therapy sessions, ~1 month of community college, or 3.8 months of home internet.</div>
       </div>
       <div class="comp-card taxpayer-card fade-in">
         <div class="item-name label">4-week campaign share</div>
         <div class="big-num">$41</div>
         <div class="per-label label">per taxpayer (<span>$6.16B</span> est.)</div>
-        <div class="cost-note">Enough for 8+ months of insulin copays, 9 school lunches, or 1.7 lane-miles of road maintenance.</div>
       </div>
       <div class="comp-card taxpayer-card fade-in">
         <div class="item-name label">Daily share</div>
         <div class="big-num">$1.47</div>
         <div class="per-label label">per taxpayer per day</div>
-        <div class="cost-note">$1.47 × 150 million taxpayers × 365 days = $80.5 billion per year.</div>
       </div>
     </div>
   </div>
@@ -1887,8 +1865,24 @@ document.addEventListener('DOMContentLoaded', () => {
   const jobsChart = document.querySelector('.jobs-chart');
   if (jobsChart) jobsObserver.observe(jobsChart);
 
-  // Live ticker counter — $2,546/second since Feb 28, 2026 00:00 UTC
-  const RATE_PER_MS = (baseCostPerDay / 24 / 60 / 60) / 1000;
+  // ── Phased cost model (shared by ticker + chart) ──
+  const MS_DAY = 86400000;
+  const DEPLOY_RATE = 30_000_000;
+  const PHASE1_TS = Date.UTC(2026, 1, 25); // Feb 25
+  const PHASE1_RATE = 380_000_000;
+  const PHASE2_TS = Date.UTC(2026, 1, 28); // Feb 28
+  const PHASE2_RATE = 220_000_000;
+  const PHASE3_TS = Date.UTC(2026, 2, 9);  // Mar 9
+  const PHASE3_RATE = 900_000_000;
+
+  function phasedRate(ts) {
+    if (ts >= PHASE3_TS) return PHASE3_RATE;
+    if (ts >= PHASE2_TS) return PHASE2_RATE;
+    if (ts >= PHASE1_TS) return PHASE1_RATE;
+    return DEPLOY_RATE;
+  }
+
+  // Live ticker counter — phased cost model since Feb 28, 2026 00:00 UTC
   const START_DATE = new Date('2026-02-28T00:00:00Z');
   const PRE_STRIKE_TOTAL = 52e9 - (7 * 220e6);
   const tickerEl = document.getElementById('live-ticker');
@@ -1900,9 +1894,21 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function getTargetTotal() {
-    const elapsed = Date.now() - START_DATE.getTime();
-    if (elapsed < 0) return 0;
-    return PRE_STRIKE_TOTAL + (elapsed * RATE_PER_MS);
+    const now = Date.now();
+    if (now <= PHASE2_TS) return PRE_STRIKE_TOTAL;
+
+    let total = PRE_STRIKE_TOTAL;
+
+    // Phase 2: Feb 28 → min(now, Mar 9)
+    const p2End = Math.min(now, PHASE3_TS);
+    total += PHASE2_RATE * (p2End - PHASE2_TS) / MS_DAY;
+
+    // Phase 3: Mar 9 → now
+    if (now > PHASE3_TS) {
+      total += PHASE3_RATE * (now - PHASE3_TS) / MS_DAY;
+    }
+
+    return total;
   }
 
   let tickerValue = getTargetTotal();
@@ -1953,6 +1959,234 @@ document.addEventListener('DOMContentLoaded', () => {
       clearInterval(tickerInterval);
       cancelAnimationFrame(tweenRAF);
     }
+  });
+
+
+  // ── Cost Chart ──
+  const TWD_TOTAL = 3_700_000_000;
+  const TWD_START_TS = Date.UTC(2025, 5, 10);
+  const TWD_END_TS = Date.UTC(2025, 5, 22);
+
+  const MO_NAMES = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+  let chartView = 'daily';
+
+  function buildDailyData() {
+    const out = [];
+    const startTs = Date.UTC(2026, 1, 28); // Feb 28
+    const endTs   = Date.UTC(2026, 2, 10); // Mar 10
+    const p2      = Date.UTC(2026, 2, 4);  // Mar 4
+    const p3      = Date.UTC(2026, 2, 8);  // Mar 8
+
+    for (let ts = startTs; ts <= endTs; ts += MS_DAY) {
+      let rate;
+      if (ts >= p3) rate = 900_000_000;
+      else if (ts >= p2) rate = 330_000_000;
+      else rate = 220_000_000;
+      out.push({ ts, value: rate });
+    }
+    return out;
+  }
+
+  function buildTotalData() {
+    const out = [];
+    const junTs = Date.UTC(2025, 5, 1);
+    const epicTs = START_DATE.getTime();
+
+    // Backtrack from PRE_STRIKE_TOTAL to find June 1 total
+    const days = Math.round((epicTs - junTs) / MS_DAY);
+    let back = 0;
+    for (let i = 0; i < days; i++) {
+      const t = junTs + i * MS_DAY;
+      back += DEPLOY_RATE;
+      if (t >= TWD_START_TS && t < TWD_END_TS) back += TWD_TOTAL / 12;
+    }
+    const junTotal = PRE_STRIKE_TOTAL - back;
+
+    // Weekly from Jun 2025 → Epic Fury
+    let cum = junTotal, t = junTs;
+    while (t < epicTs) {
+      out.push({ ts: t, value: cum });
+      const nxt = Math.min(t + 7 * MS_DAY, epicTs);
+      for (let d = t; d < nxt; d += MS_DAY) {
+        cum += DEPLOY_RATE;
+        if (d >= TWD_START_TS && d < TWD_END_TS) cum += TWD_TOTAL / 12;
+      }
+      t = nxt;
+    }
+
+    // Daily from Epic Fury → today
+    cum = PRE_STRIKE_TOTAL;
+    t = epicTs;
+    const now = new Date();
+    const todayTs = Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate());
+    while (t <= todayTs) {
+      out.push({ ts: t, value: cum });
+      cum += phasedRate(t);
+      t += MS_DAY;
+    }
+
+    // Live endpoint
+    out.push({ ts: Date.now(), value: getTargetTotal() });
+    return out;
+  }
+
+  function fmtVal(v) {
+    if (v >= 1e9) return '$' + (v / 1e9).toFixed(1) + 'B';
+    if (v >= 1e6) return '$' + Math.round(v / 1e6) + 'M';
+    return '$0';
+  }
+
+  function drawCostChart(view) {
+    const svg = document.getElementById('cost-chart');
+    if (!svg) return;
+
+    const W = svg.parentElement.clientWidth || 1056;
+    const H = Math.max(288, Math.min(408, W * 0.42));
+    const mob = W < 500;
+    const mg = { t: 24, r: mob ? 16 : 28, b: 48, l: mob ? 54 : 70 };
+    const pW = W - mg.l - mg.r, pH = H - mg.t - mg.b;
+    const data = view === 'daily' ? buildDailyData() : buildTotalData();
+    if (!data.length) return;
+
+    const x0 = data[0].ts;
+    const x1 = data[data.length - 1].ts;
+    const xR = x1 - x0 || 1;
+
+    const vals = data.map(d => d.value);
+    let y0, y1;
+    if (view === 'daily') {
+      y0 = 200_000_000; y1 = Math.max(...vals) * 1.05;
+    } else {
+      const lo = Math.min(...vals), hi = Math.max(...vals);
+      const pad = (hi - lo) * 0.12 || hi * 0.1;
+      y0 = Math.max(0, lo - pad); y1 = hi + pad;
+    }
+    const yR = y1 - y0 || 1;
+
+    const sx = t => mg.l + ((t - x0) / xR) * pW;
+    const sy = v => mg.t + pH - ((v - y0) / yR) * pH;
+
+    let s = '';
+
+    // Horizontal grid
+    for (let i = 0; i <= 5; i++) {
+      const v = y0 + (yR / 5) * i, yy = sy(v);
+      s += '<line x1="' + mg.l + '" y1="' + yy + '" x2="' + (W - mg.r) + '" y2="' + yy + '" stroke="#c8c0b4" stroke-width="' + (i === 0 ? 1 : 0.5) + '"' + (i > 0 ? ' stroke-dasharray="4,3"' : '') + '/>';
+      s += '<text x="' + (mg.l - 8) + '" y="' + (yy + 4) + '" text-anchor="end" fill="#5c574f" font-size="' + (mob ? 9 : 11) + '" font-family="\'DM Mono\',monospace">' + fmtVal(v) + '</text>';
+    }
+
+    if (view === 'daily') {
+      // Line chart (cumulative)
+      const ld = 'M' + data.map(d => sx(d.ts) + ',' + sy(d.value)).join('L');
+      const last = data[data.length - 1], first = data[0];
+
+      s += '<path d="' + ld + 'L' + sx(last.ts) + ',' + sy(y0) + 'L' + sx(first.ts) + ',' + sy(y0) + 'Z" fill="#1a1a18" opacity="0.05"/>';
+      s += '<path d="' + ld + '" fill="none" stroke="#1a1a18" stroke-width="2" stroke-linejoin="round"/>';
+
+      // Endpoint dot + value
+      const cx = sx(last.ts), cy = sy(last.value);
+      s += '<circle cx="' + cx + '" cy="' + cy + '" r="4" fill="#1a1a18"/>';
+      s += '<text x="' + (cx - 8) + '" y="' + (cy - 12) + '" text-anchor="end" fill="#1a1a18" font-size="' + (mob ? 10 : 12) + '" font-family="\'DM Mono\',monospace" font-weight="500">' + fmtVal(last.value) + '</text>';
+
+      // Phase markers
+      const phases = [
+        { ts: Date.UTC(2026, 1, 28), short: 'Phase 1', full: 'Phase 1' },
+        { ts: Date.UTC(2026, 2, 4),  short: 'Phase 2', full: 'Phase 2' },
+        { ts: Date.UTC(2026, 2, 8),  short: 'Phase 3', full: 'Phase 3' }
+      ];
+      phases.forEach((ph, idx) => {
+        if (ph.ts >= x0 && ph.ts <= x1) {
+          const ex = sx(ph.ts);
+          s += '<line x1="' + ex + '" y1="' + mg.t + '" x2="' + ex + '" y2="' + (mg.t + pH) + '" stroke="#8b4a4a" stroke-width="1" stroke-dasharray="4,3"/>';
+          s += '<text x="' + ex + '" y="' + (mg.t - 8) + '" text-anchor="middle" fill="#8b4a4a" font-size="' + (mob ? 8 : 10) + '" font-family="\'DM Sans\',sans-serif">' + (mob ? ph.short : ph.full) + '</text>';
+        }
+      });
+    } else {
+      // Line chart
+      const ld = 'M' + data.map(d => sx(d.ts) + ',' + sy(d.value)).join('L');
+      const last = data[data.length - 1], first = data[0];
+
+      s += '<path d="' + ld + 'L' + sx(last.ts) + ',' + sy(y0) + 'L' + sx(first.ts) + ',' + sy(y0) + 'Z" fill="#1a1a18" opacity="0.05"/>';
+      s += '<path d="' + ld + '" fill="none" stroke="#1a1a18" stroke-width="2" stroke-linejoin="round"/>';
+
+      // Endpoint dot + value
+      const cx = sx(last.ts), cy = sy(last.value);
+      s += '<circle cx="' + cx + '" cy="' + cy + '" r="4" fill="#1a1a18"/>';
+      s += '<text x="' + (cx - 8) + '" y="' + (cy - 12) + '" text-anchor="end" fill="#1a1a18" font-size="' + (mob ? 10 : 12) + '" font-family="\'DM Mono\',monospace"  style="transform: translate(25px, 5px);" font-weight="500">' + fmtVal(last.value) + '</text>';
+
+      // Epic Fury marker
+      const ets = START_DATE.getTime();
+      if (ets > x0 && ets < x1) {
+        const ex = sx(ets);
+        s += '<line x1="' + ex + '" y1="' + mg.t + '" x2="' + ex + '" y2="' + (mg.t + pH) + '" stroke="#8b4a4a" stroke-width="1" stroke-dasharray="4,3"/>';
+        s += '<text x="' + ex + '" y="' + (mg.t - 8) + '" text-anchor="middle" fill="#8b4a4a" font-size="' + (mob ? 8 : 10) + '" font-family="\'DM Sans\',sans-serif">Epic Fury</text>';
+      }
+    }
+
+    // X-axis labels
+    if (view === 'daily') {
+      const step = mob ? 3 : 2;
+      for (let i = 0; i < data.length; i += step) {
+        const d = data[i], dt = new Date(d.ts);
+        const tx = sx(d.ts), lx = sx(d.ts);
+        s += '<line x1="' + tx + '" y1="' + (mg.t + pH) + '" x2="' + tx + '" y2="' + (mg.t + pH + 5) + '" stroke="#c8c0b4"/>';
+        s += '<text x="' + lx + '" y="' + (H - 8) + '" text-anchor="middle" fill="#5c574f" font-size="' + (mob ? 8 : 11) + '" font-family="\'DM Sans\',sans-serif">' + MO_NAMES[dt.getUTCMonth()] + ' ' + dt.getUTCDate() + '</text>';
+      }
+    } else {
+      // Monthly labels
+      const unique = [];
+      const seen = new Set();
+      for (const d of data) {
+        const dt = new Date(d.ts);
+        const key = dt.getUTCFullYear() * 12 + dt.getUTCMonth();
+        if (!seen.has(key)) { seen.add(key); unique.push(d); }
+      }
+      const mStep = mob ? 3 : 2;
+      let prevYr = null;
+      function renderMonthLabel(d) {
+        const dt = new Date(d.ts);
+        const yr = dt.getUTCFullYear();
+        let label = MO_NAMES[dt.getUTCMonth()];
+        if (prevYr === null || yr !== prevYr) label += ' \'' + String(yr).slice(2);
+        prevYr = yr;
+        const xx = sx(d.ts);
+        s += '<line x1="' + xx + '" y1="' + (mg.t + pH) + '" x2="' + xx + '" y2="' + (mg.t + pH + 5) + '" stroke="#c8c0b4"/>';
+        s += '<text x="' + xx + '" y="' + (H - 8) + '" text-anchor="middle" fill="#5c574f" font-size="' + (mob ? 8 : 11) + '" font-family="\'DM Sans\',sans-serif">' + label + '</text>';
+      }
+      for (let i = 0; i < unique.length; i += mStep) renderMonthLabel(unique[i]);
+      if ((unique.length - 1) % mStep !== 0) renderMonthLabel(unique[unique.length - 1]);
+    }
+
+    // Bottom axis
+    s += '<line x1="' + mg.l + '" y1="' + (mg.t + pH) + '" x2="' + (W - mg.r) + '" y2="' + (mg.t + pH) + '" stroke="#c8c0b4"/>';
+
+    svg.setAttribute('viewBox', '0 0 ' + W + ' ' + H);
+    svg.style.width = '100%';
+    svg.style.height = H + 'px';
+    svg.innerHTML = s;
+  }
+
+  // Toggle handlers
+  document.querySelectorAll('.chart-toggle-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.chart-toggle-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      chartView = btn.dataset.view;
+      drawCostChart(chartView);
+    });
+  });
+
+  // Initial render
+  requestAnimationFrame(() => drawCostChart(chartView));
+
+  // Update every 60s to match ticker
+  setInterval(() => { if (isVisible) drawCostChart(chartView); }, 60000);
+
+  // Resize handler
+  let chartRszT;
+  window.addEventListener('resize', () => {
+    clearTimeout(chartRszT);
+    chartRszT = setTimeout(() => drawCostChart(chartView), 200);
   });
 
 
@@ -2203,8 +2437,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     document.querySelectorAll('.per-label-cost').forEach(cost => {
       let amount = cost.innerText.replace(/[^0-9.]/g, '');
-
-      console.log(amount);
 
       cost.closest('.comp-card').querySelector('.big-num').innerHTML = calculateCostOfCompItem(amount).toLocaleString();
     })
