@@ -24,11 +24,11 @@
 
 The Iran War Cost Tracker employs a three-phase model reflecting operational intensity:
 
-| Phase | Duration | Daily Cost | Operational Profile |
-|-------|----------|-----------|-------------------|
-| Phase 1: Initial Strikes | Days 0–3 | ~$380 million/day | Intensive air campaign, rapid munitions deployment |
-| Phase 2: Sustained Operations | Days 3–10 | ~$220 million/day | Continuous air operations, logistics surge |
-| Phase 3: Air Dominance/ISR | Day 10+ | ~$155 million/day | Intelligence, surveillance, reconnaissance focus |
+| Phase | Duration  | Dates                     | Daily Cost        | Operational Profile |
+|-------|-----------|---------------------------|-------------------|-------------------|
+| Phase 1: Initial Strikes | Days 0–3  | February 25 - February 28 | ~$220 million/day | Intensive air campaign, rapid munitions deployment |
+| Phase 2: Sustained Operations | Days 3–10 | February 28 - March  9    | ~$380 million/day | Continuous air operations, logistics surge         |
+| Phase 3: Air Dominance/ISR | Day 10+ | March 9+                  | ~$900 million/day | Intelligence, surveillance, reconnaissance focus |
 
 ### Seven Component Cost Breakdown (Base Rate, Phase 2)
 
