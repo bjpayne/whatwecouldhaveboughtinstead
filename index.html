@@ -2113,9 +2113,8 @@ document.addEventListener('DOMContentLoaded', () => {
       phases.forEach((ph, idx) => {
         if (ph.ts >= x0 && ph.ts <= x1) {
           const ex = sx(ph.ts);
-          const ly = mg.t + 12 + idx * 14;
           s += '<line x1="' + ex + '" y1="' + mg.t + '" x2="' + ex + '" y2="' + (mg.t + pH) + '" stroke="#8b4a4a" stroke-width="1" stroke-dasharray="4,3"/>';
-          s += '<text x="' + (ex + 4) + '" y="' + ly + '" fill="#8b4a4a" font-size="' + (mob ? 8 : 10) + '" font-family="\'DM Sans\',sans-serif">' + (mob ? ph.short : ph.full) + '</text>';
+          s += '<text x="' + ex + '" y="' + (mg.t - 8) + '" text-anchor="middle" fill="#8b4a4a" font-size="' + (mob ? 8 : 10) + '" font-family="\'DM Sans\',sans-serif">' + (mob ? ph.short : ph.full) + '</text>';
         }
       });
     } else {
@@ -2136,7 +2135,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (ets > x0 && ets < x1) {
         const ex = sx(ets);
         s += '<line x1="' + ex + '" y1="' + mg.t + '" x2="' + ex + '" y2="' + (mg.t + pH) + '" stroke="#8b4a4a" stroke-width="1" stroke-dasharray="4,3"/>';
-        s += '<text x="' + (ex + 4) + '" y="' + (mg.t + 12) + '" fill="#8b4a4a" font-size="' + (mob ? 8 : 10) + '" font-family="\'DM Sans\',sans-serif" style="transform: translate(-25px, -20px)">Epic Fury</text>';
+        s += '<text x="' + ex + '" y="' + (mg.t - 8) + '" text-anchor="middle" fill="#8b4a4a" font-size="' + (mob ? 8 : 10) + '" font-family="\'DM Sans\',sans-serif">Epic Fury</text>';
       }
     }
 
