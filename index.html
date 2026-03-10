@@ -1643,22 +1643,19 @@ window.va = window.va || function () { (window.vaq = window.vaq || []).push(argu
     </div>
     <div class="comparison-grid taxpayer-grid">
       <div class="comp-card taxpayer-card fade-in">
-        <div class="item-name label">Your share of total conflict</div>
+        <div class="item-name label">Total share</div>
         <div class="big-num">$294</div>
         <div class="per-label label">per taxpayer (<span>$52B</span> total)</div>
-        <div class="cost-note">That's 2.0 therapy sessions, ~1 month of community college, or 3.8 months of home internet.</div>
       </div>
       <div class="comp-card taxpayer-card fade-in">
         <div class="item-name label">4-week campaign share</div>
         <div class="big-num">$41</div>
         <div class="per-label label">per taxpayer (<span>$6.16B</span> est.)</div>
-        <div class="cost-note">Enough for 8+ months of insulin copays, 9 school lunches, or 1.7 lane-miles of road maintenance.</div>
       </div>
       <div class="comp-card taxpayer-card fade-in">
         <div class="item-name label">Daily share</div>
         <div class="big-num">$1.47</div>
         <div class="per-label label">per taxpayer per day</div>
-        <div class="cost-note">$1.47 × 150 million taxpayers × 365 days = $80.5 billion per year.</div>
       </div>
     </div>
   </div>
@@ -1975,16 +1972,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function buildDailyData() {
     const out = [];
-    const now = new Date();
-    const todayTs = Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate());
-    let cum = 0;
-    let ts;
-    for (let i = 13; i >= 0; i--) {
-      ts = todayTs - i * MS_DAY;
-      cum += phasedRate(ts);
-      out.push({ ts, value: cum });
-    }
+    const startTs = Date.UTC(2026, 1, 28); // Feb 28
+    const endTs   = Date.UTC(2026, 2, 10); // Mar 10
+    const p2      = Date.UTC(2026, 2, 4);  // Mar 4
+    const p3      = Date.UTC(2026, 2, 8);  // Mar 8
 
+    for (let ts = startTs; ts <= endTs; ts += MS_DAY) {
+      let rate;
+      if (ts >= p3) rate = 900_000_000;
+      else if (ts >= p2) rate = 330_000_000;
+      else rate = 220_000_000;
+      out.push({ ts, value: rate });
+    }
     return out;
   }
 
@@ -2056,7 +2055,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const vals = data.map(d => d.value);
     let y0, y1;
     if (view === 'daily') {
-      y0 = 0; y1 = Math.max(...vals) * 1.18;
+      y0 = 200_000_000; y1 = Math.max(...vals) * 1.05;
     } else {
       const lo = Math.min(...vals), hi = Math.max(...vals);
       const pad = (hi - lo) * 0.12 || hi * 0.1;
@@ -2091,9 +2090,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
       // Phase markers
       const phases = [
-        { ts: PHASE1_TS, short: 'Phase 1', full: 'Phase 1' },
-        { ts: PHASE2_TS, short: 'Phase 2', full: 'Phase 2' },
-        { ts: PHASE3_TS, short: 'Phase 3', full: 'Phase 3' }
+        { ts: Date.UTC(2026, 1, 28), short: 'Phase 1', full: 'Phase 1' },
+        { ts: Date.UTC(2026, 2, 4),  short: 'Phase 2', full: 'Phase 2' },
+        { ts: Date.UTC(2026, 2, 8),  short: 'Phase 3', full: 'Phase 3' }
       ];
       phases.forEach((ph, idx) => {
         if (ph.ts >= x0 && ph.ts <= x1) {
