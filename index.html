@@ -335,7 +335,7 @@ window.va = window.va || function () { (window.vaq = window.vaq || []).push(argu
   /* ── COST CHART ── */
   .cost-chart-section {
     background: var(--bg);
-    padding: var(--spacing-56) var(--spacing-24);
+    padding-bottom: var(--spacing-56);
     text-align: center;
   }
   .chart-header {
@@ -687,7 +687,7 @@ window.va = window.va || function () { (window.vaq = window.vaq || []).push(argu
 
   /* ── TICKER (PER SECOND) ── */
   .ticker-section {
-    padding: var(--spacing-64) var(--spacing-24);
+    padding: var(--spacing-64) var(--spacing-24) var(--spacing-48) var(--spacing-24);
     text-align: center;
     border-top: 2px solid var(--dark);
     background: var(--bg);
@@ -702,7 +702,6 @@ window.va = window.va || function () { (window.vaq = window.vaq || []).push(argu
     font-size: var(--fs-display);
     color: var(--dark);
     line-height: 1;
-    margin-bottom: var(--spacing-48);
     overflow-wrap: break-word;
     word-break: break-word;
   }
@@ -710,17 +709,6 @@ window.va = window.va || function () { (window.vaq = window.vaq || []).push(argu
     font-size: var(--fs-sm);
     color: var(--muted);
     margin-top: var(--spacing-8);
-  }
-  .ticker-equiv {
-    margin-top: var(--spacing-24);
-    font-size: var(--fs-base);
-    color: var(--muted);
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  .ticker-equiv strong {
-    font-weight: 600;
   }
 
   /* ── DURATION ── */
@@ -1130,9 +1118,6 @@ window.va = window.va || function () { (window.vaq = window.vaq || []).push(argu
 <section class="ticker-section">
   <div class="ticker-label label">Since Operation Epic Fury began, the U.S. has spent</div>
   <div class="ticker-amount" id="live-ticker">$0</div>
-  <div class="ticker-equiv">
-    Every second buys <strong class="color-home">nearly 2 CPAP machines</strong>, <strong class="color-home">577 school lunches</strong>, or <strong class="color-home">0.1 lane-miles of road repair</strong>.
-  </div>
 </section>
 
 <!-- ═══════════ COST OVERVIEW ═══════════ -->
