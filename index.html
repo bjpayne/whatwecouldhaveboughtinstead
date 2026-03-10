@@ -1965,9 +1965,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const out = [];
     const now = new Date();
     const todayTs = Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate());
+    let cum = 0;
     for (let i = 13; i >= 0; i--) {
       const ts = todayTs - i * MS_DAY;
-      out.push({ ts, value: ts >= START_DATE.getTime() ? baseCostPerDay : DEPLOY_RATE });
+      cum += ts >= START_DATE.getTime() ? baseCostPerDay : DEPLOY_RATE;
+      out.push({ ts, value: cum });
     }
     return out;
   }
@@ -2034,7 +2036,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!data.length) return;
 
     const x0 = data[0].ts;
-    const x1 = view === 'daily' ? data[data.length - 1].ts + MS_DAY : data[data.length - 1].ts;
+    const x1 = data[data.length - 1].ts;
     const xR = x1 - x0 || 1;
 
     const vals = data.map(d => d.value);
@@ -2061,25 +2063,17 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     if (view === 'daily') {
-      // Step chart
-      let p = 'M' + sx(data[0].ts) + ',' + sy(data[0].value);
-      for (let i = 1; i < data.length; i++) p += 'H' + sx(data[i].ts) + 'V' + sy(data[i].value);
-      p += 'H' + sx(x1);
+      // Line chart (cumulative)
+      const ld = 'M' + data.map(d => sx(d.ts) + ',' + sy(d.value)).join('L');
+      const last = data[data.length - 1], first = data[0];
 
-      s += '<path d="' + p + 'V' + sy(y0) + 'H' + sx(x0) + 'Z" fill="#1a1a18" opacity="0.05"/>';
-      s += '<path d="' + p + '" fill="none" stroke="#1a1a18" stroke-width="2"/>';
+      s += '<path d="' + ld + 'L' + sx(last.ts) + ',' + sy(y0) + 'L' + sx(first.ts) + ',' + sy(y0) + 'Z" fill="#1a1a18" opacity="0.05"/>';
+      s += '<path d="' + ld + '" fill="none" stroke="#1a1a18" stroke-width="2" stroke-linejoin="round"/>';
 
-      // Rate labels
-      const ops = data.filter(d => d.value === baseCostPerDay);
-      if (ops.length) {
-        const mx = sx(ops[Math.floor(ops.length / 2)].ts + MS_DAY / 2);
-        s += '<text x="' + mx + '" y="' + (sy(baseCostPerDay) - 10) + '" text-anchor="middle" fill="#1a1a18" font-size="' + (mob ? 10 : 12) + '" font-family="\'DM Mono\',monospace" font-weight="500">' + fmtVal(baseCostPerDay) + '/day</text>';
-      }
-      const dep = data.filter(d => d.value === DEPLOY_RATE);
-      if (dep.length && !mob) {
-        const mx = sx(dep[Math.floor(dep.length / 2)].ts + MS_DAY / 2);
-        s += '<text x="' + mx + '" y="' + (sy(DEPLOY_RATE) - 10) + '" text-anchor="middle" fill="#5c574f" font-size="10" font-family="\'DM Mono\',monospace">' + fmtVal(DEPLOY_RATE) + '/day</text>';
-      }
+      // Endpoint dot + value
+      const cx = sx(last.ts), cy = sy(last.value);
+      s += '<circle cx="' + cx + '" cy="' + cy + '" r="4" fill="#1a1a18"/>';
+      s += '<text x="' + (cx - 8) + '" y="' + (cy - 12) + '" text-anchor="end" fill="#1a1a18" font-size="' + (mob ? 10 : 12) + '" font-family="\'DM Mono\',monospace" font-weight="500">' + fmtVal(last.value) + '</text>';
 
       // Epic Fury marker
       const ets = START_DATE.getTime();
@@ -2115,7 +2109,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const step = mob ? 3 : 2;
       for (let i = 0; i < data.length; i += step) {
         const d = data[i], dt = new Date(d.ts);
-        const tx = sx(d.ts), lx = sx(d.ts + MS_DAY / 2);
+        const tx = sx(d.ts), lx = sx(d.ts);
         s += '<line x1="' + tx + '" y1="' + (mg.t + pH) + '" x2="' + tx + '" y2="' + (mg.t + pH + 5) + '" stroke="#c8c0b4"/>';
         s += '<text x="' + lx + '" y="' + (H - 8) + '" text-anchor="middle" fill="#5c574f" font-size="' + (mob ? 8 : 11) + '" font-family="\'DM Sans\',sans-serif">' + MO_NAMES[dt.getUTCMonth()] + ' ' + dt.getUTCDate() + '</text>';
       }
