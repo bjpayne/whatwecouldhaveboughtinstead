@@ -1958,6 +1958,21 @@ document.addEventListener('DOMContentLoaded', () => {
   const TWD_START_TS = Date.UTC(2025, 5, 10);
   const TWD_END_TS = Date.UTC(2025, 5, 22);
   const MS_DAY = 86400000;
+
+  // Phased cost model (analysis.md §Phased Cost Model)
+  const PHASE1_TS = Date.UTC(2026, 1, 25); // Feb 25
+  const PHASE1_RATE = 380_000_000;
+  const PHASE2_TS = Date.UTC(2026, 1, 28); // Feb 28
+  const PHASE2_RATE = 220_000_000;
+  const PHASE3_TS = Date.UTC(2026, 2, 9);  // Mar 9
+  const PHASE3_RATE = 900_000_000;
+
+  function phasedRate(ts) {
+    if (ts >= PHASE3_TS) return PHASE3_RATE;
+    if (ts >= PHASE2_TS) return PHASE2_RATE;
+    if (ts >= PHASE1_TS) return PHASE1_RATE;
+    return DEPLOY_RATE;
+  }
   const MO_NAMES = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
   let chartView = 'daily';
 
@@ -1966,11 +1981,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const now = new Date();
     const todayTs = Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate());
     let cum = 0;
+    let ts;
     for (let i = 13; i >= 0; i--) {
-      const ts = todayTs - i * MS_DAY;
-      cum += ts >= START_DATE.getTime() ? baseCostPerDay : DEPLOY_RATE;
+      ts = todayTs - i * MS_DAY;
+      cum += phasedRate(ts);
       out.push({ ts, value: cum });
     }
+
     return out;
   }
 
@@ -2075,13 +2092,20 @@ document.addEventListener('DOMContentLoaded', () => {
       s += '<circle cx="' + cx + '" cy="' + cy + '" r="4" fill="#1a1a18"/>';
       s += '<text x="' + (cx - 8) + '" y="' + (cy - 12) + '" text-anchor="end" fill="#1a1a18" font-size="' + (mob ? 10 : 12) + '" font-family="\'DM Mono\',monospace" font-weight="500">' + fmtVal(last.value) + '</text>';
 
-      // Epic Fury marker
-      const ets = START_DATE.getTime();
-      if (ets >= x0 && ets <= x1) {
-        const ex = sx(ets);
-        s += '<line x1="' + ex + '" y1="' + mg.t + '" x2="' + ex + '" y2="' + (mg.t + pH) + '" stroke="#8b4a4a" stroke-width="1" stroke-dasharray="4,3"/>';
-        s += '<text x="' + (ex + 4) + '" y="' + (mg.t + 12) + '" fill="#8b4a4a" font-size="' + (mob ? 8 : 10) + '" font-family="\'DM Sans\',sans-serif">Epic Fury</text>';
-      }
+      // Phase markers
+      const phases = [
+        { ts: PHASE1_TS, short: 'Phase 1', full: 'Phase 1' },
+        { ts: PHASE2_TS, short: 'Phase 2', full: 'Phase 2' },
+        { ts: PHASE3_TS, short: 'Phase 3', full: 'Phase 3' }
+      ];
+      phases.forEach((ph, idx) => {
+        if (ph.ts >= x0 && ph.ts <= x1) {
+          const ex = sx(ph.ts);
+          const ly = mg.t + 12 + idx * 14;
+          s += '<line x1="' + ex + '" y1="' + mg.t + '" x2="' + ex + '" y2="' + (mg.t + pH) + '" stroke="#8b4a4a" stroke-width="1" stroke-dasharray="4,3"/>';
+          s += '<text x="' + (ex + 4) + '" y="' + ly + '" fill="#8b4a4a" font-size="' + (mob ? 8 : 10) + '" font-family="\'DM Sans\',sans-serif">' + (mob ? ph.short : ph.full) + '</text>';
+        }
+      });
     } else {
       // Line chart
       const ld = 'M' + data.map(d => sx(d.ts) + ',' + sy(d.value)).join('L');
