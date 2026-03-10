@@ -1883,8 +1883,24 @@ document.addEventListener('DOMContentLoaded', () => {
   const jobsChart = document.querySelector('.jobs-chart');
   if (jobsChart) jobsObserver.observe(jobsChart);
 
-  // Live ticker counter — $2,546/second since Feb 28, 2026 00:00 UTC
-  const RATE_PER_MS = (baseCostPerDay / 24 / 60 / 60) / 1000;
+  // ── Phased cost model (shared by ticker + chart) ──
+  const MS_DAY = 86400000;
+  const DEPLOY_RATE = 30_000_000;
+  const PHASE1_TS = Date.UTC(2026, 1, 25); // Feb 25
+  const PHASE1_RATE = 380_000_000;
+  const PHASE2_TS = Date.UTC(2026, 1, 28); // Feb 28
+  const PHASE2_RATE = 220_000_000;
+  const PHASE3_TS = Date.UTC(2026, 2, 9);  // Mar 9
+  const PHASE3_RATE = 900_000_000;
+
+  function phasedRate(ts) {
+    if (ts >= PHASE3_TS) return PHASE3_RATE;
+    if (ts >= PHASE2_TS) return PHASE2_RATE;
+    if (ts >= PHASE1_TS) return PHASE1_RATE;
+    return DEPLOY_RATE;
+  }
+
+  // Live ticker counter — phased cost model since Feb 28, 2026 00:00 UTC
   const START_DATE = new Date('2026-02-28T00:00:00Z');
   const PRE_STRIKE_TOTAL = 52e9 - (7 * 220e6);
   const tickerEl = document.getElementById('live-ticker');
@@ -1896,9 +1912,21 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function getTargetTotal() {
-    const elapsed = Date.now() - START_DATE.getTime();
-    if (elapsed < 0) return 0;
-    return PRE_STRIKE_TOTAL + (elapsed * RATE_PER_MS);
+    const now = Date.now();
+    if (now <= PHASE2_TS) return PRE_STRIKE_TOTAL;
+
+    let total = PRE_STRIKE_TOTAL;
+
+    // Phase 2: Feb 28 → min(now, Mar 9)
+    const p2End = Math.min(now, PHASE3_TS);
+    total += PHASE2_RATE * (p2End - PHASE2_TS) / MS_DAY;
+
+    // Phase 3: Mar 9 → now
+    if (now > PHASE3_TS) {
+      total += PHASE3_RATE * (now - PHASE3_TS) / MS_DAY;
+    }
+
+    return total;
   }
 
   let tickerValue = getTargetTotal();
@@ -1953,26 +1981,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   // ── Cost Chart ──
-  const DEPLOY_RATE = 30_000_000;
   const TWD_TOTAL = 3_700_000_000;
   const TWD_START_TS = Date.UTC(2025, 5, 10);
   const TWD_END_TS = Date.UTC(2025, 5, 22);
-  const MS_DAY = 86400000;
 
-  // Phased cost model (analysis.md §Phased Cost Model)
-  const PHASE1_TS = Date.UTC(2026, 1, 25); // Feb 25
-  const PHASE1_RATE = 380_000_000;
-  const PHASE2_TS = Date.UTC(2026, 1, 28); // Feb 28
-  const PHASE2_RATE = 220_000_000;
-  const PHASE3_TS = Date.UTC(2026, 2, 9);  // Mar 9
-  const PHASE3_RATE = 900_000_000;
-
-  function phasedRate(ts) {
-    if (ts >= PHASE3_TS) return PHASE3_RATE;
-    if (ts >= PHASE2_TS) return PHASE2_RATE;
-    if (ts >= PHASE1_TS) return PHASE1_RATE;
-    return DEPLOY_RATE;
-  }
   const MO_NAMES = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
   let chartView = 'daily';
 
@@ -2025,7 +2037,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const todayTs = Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate());
     while (t <= todayTs) {
       out.push({ ts: t, value: cum });
-      cum += baseCostPerDay;
+      cum += phasedRate(t);
       t += MS_DAY;
     }
 
