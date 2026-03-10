@@ -368,7 +368,7 @@ window.va = window.va || function () { (window.vaq = window.vaq || []).push(argu
     border-left: 1px solid var(--dark);
   }
   .chart-container {
-    max-width: 880px;
+    max-width: 1056px;
     margin: 0 auto;
   }
   #cost-chart {
@@ -2056,8 +2056,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const svg = document.getElementById('cost-chart');
     if (!svg) return;
 
-    const W = svg.parentElement.clientWidth || 880;
-    const H = Math.max(240, Math.min(340, W * 0.42));
+    const W = svg.parentElement.clientWidth || 1056;
+    const H = Math.max(288, Math.min(408, W * 0.42));
     const mob = W < 500;
     const mg = { t: 24, r: mob ? 16 : 28, b: 48, l: mob ? 54 : 70 };
     const pW = W - mg.l - mg.r, pH = H - mg.t - mg.b;
@@ -2454,8 +2454,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     document.querySelectorAll('.per-label-cost').forEach(cost => {
       let amount = cost.innerText.replace(/[^0-9.]/g, '');
-
-      console.log(amount);
 
       cost.closest('.comp-card').querySelector('.big-num').innerHTML = calculateCostOfCompItem(amount).toLocaleString();
     })
