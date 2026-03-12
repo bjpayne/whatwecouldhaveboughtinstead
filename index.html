@@ -885,73 +885,6 @@ window.va = window.va || function () { (window.vaq = window.vaq || []).push(argu
     margin-top: var(--spacing-16);
   }
 
-  /* ── PROGRESS RINGS ── */
-  .infra-grid-header {
-    text-align: center;
-    margin-bottom: var(--spacing-48);
-  }
-  .infra-grid-header h2 {
-    font-family: 'Playfair Display', serif;
-    font-weight: 900;
-    font-size: var(--fs-lg);
-    letter-spacing: -0.5px;
-    margin-bottom: var(--spacing-16);
-  }
-  .infra-grid-reference {
-    font-size: var(--fs-base);
-    color: var(--muted);
-    max-width: 560px;
-    margin: 0 auto;
-  }
-  .progress-ring-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-    gap: var(--spacing-32);
-    margin: 0 auto;
-  }
-  .progress-ring-container {
-    text-align: center;
-  }
-  .progress-ring-title {
-    font-size: var(--fs-xs);
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    color: var(--muted);
-    margin-bottom: var(--spacing-8);
-  }
-  .progress-ring-svg {
-    width: 140px;
-    height: 140px;
-    margin: 0 auto;
-    display: block;
-  }
-  .progress-ring-bg {
-    fill: none;
-    stroke: var(--divider);
-    stroke-width: 6;
-  }
-  .progress-ring-fill {
-    fill: none;
-    stroke: var(--infrastructure);
-    stroke-width: 6;
-    stroke-linecap: round;
-    transform: rotate(-90deg);
-    transform-origin: 50% 50%;
-  }
-  /* All rings use --infrastructure */
-  .progress-ring-value {
-    font-family: 'Playfair Display', serif;
-    font-size: 28px;
-    font-weight: 900;
-    fill: var(--dark);
-    dominant-baseline: central;
-  }
-  .progress-ring-desc {
-    font-size: var(--fs-sm);
-    color: var(--muted);
-    margin-top: var(--spacing-8);
-    line-height: 1.4;
-  }
 
   /* ── SCROLL PROGRESS BAR ── */
   .scroll-progress {
@@ -1192,7 +1125,7 @@ window.va = window.va || function () { (window.vaq = window.vaq || []).push(argu
         <div class="card-header"><span class="icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5a3 3 0 1 0-5.997.125 4 4 0 0 0-2.526 5.77 4 4 0 0 0 .556 6.588A4 4 0 1 0 12 18Z"/><path d="M12 5a3 3 0 1 1 5.997.125 4 4 0 0 1 2.526 5.77 4 4 0 0 1-.556 6.588A4 4 0 1 1 12 18Z"/><path d="M15 13a4.5 4.5 0 0 1-3-4 4.5 4.5 0 0 1-3 4"/><path d="M17.599 6.5a3 3 0 0 0 .399-1.375"/><path d="M6.003 5.125A3 3 0 0 0 6.401 6.5"/><path d="M3.477 10.896a4 4 0 0 1 .585-.396"/><path d="M19.938 10.5a4 4 0 0 1 .585.396"/><path d="M6 18a4 4 0 0 1-1.967-.516"/><path d="M19.967 17.484A4 4 0 0 1 18 18"/></svg></span></div>
         <div class="item-name label">Therapy Sessions</div>
         <div class="big-num">1,466,667</div>
-        <div class="per-label label">per day · at <span class="per-label-cost">$150</span>/session</div>
+        <div class="per-label label">sessions · at <span class="per-label-cost">$150</span>/session</div>
         <div class="cost-note">57M Americans say they can't afford mental health care (NAMI).</div>
       </div>
     </div>
@@ -1249,7 +1182,7 @@ window.va = window.va || function () { (window.vaq = window.vaq || []).push(argu
   <div class="container">
     <div class="section-header fade-in">
       <h1>INSURANCE-ADJUSTED EQUIVALENTS</h1>
-      <p>One day of war (<span class="color-war fw-600">$900</span>) compared to insured copay costs stretches astronomically further.</p>
+      <p>One day of war (<span class="color-war fw-600">$1B</span>) compared to insured copay costs stretches astronomically further.</p>
     </div>
     <div class="comparison-grid insured-grid">
       <div class="comp-card health-card fade-in">
@@ -1298,7 +1231,7 @@ window.va = window.va || function () { (window.vaq = window.vaq || []).push(argu
         <div class="card-header"><span class="icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 6 3 6 3s3 0 6-3v-5"/></svg></span></div>
         <div class="item-name label">Community College Tuitions</div>
         <div class="big-num"></div>
-        <div class="per-label label">per year · at <span class="per-label-cost">$4,150</span>/year</div>
+        <div class="per-label label">per day · at <span class="per-label-cost">$4,150</span>/year</div>
         <div class="cost-note">37% of 18–24 year olds have never attended college, often citing cost as the barrier.</div>
       </div>
       <div class="comp-card edu-card fade-in">
@@ -1312,35 +1245,35 @@ window.va = window.va || function () { (window.vaq = window.vaq || []).push(argu
         <div class="card-header"><span class="icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span></div>
         <div class="item-name label">Teacher Salaries (Avg)</div>
         <div class="big-num"></div>
-        <div class="per-label label">per year · at <span class="per-label-cost">$74,177</span>/year</div>
+        <div class="per-label label">per day · at <span class="per-label-cost">$74,177</span>/year</div>
         <div class="cost-note">There are 55,000–100,000 unfilled teaching positions nationwide. This daily rate closes the gap in about 7 days.</div>
       </div>
       <div class="comp-card edu-card fade-in">
         <div class="card-header"><span class="icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8"/><path d="M12 18V6"/></svg></span></div>
         <div class="item-name label">Student Loans Erased</div>
         <div class="big-num">5,587</div>
-        <div class="per-label label">per day · avg. <span class="per-label-cost">$39,375</span> balance</div>
+        <div class="per-label label">per day at an avg. <span class="per-label-cost">$39,375</span> balance</div>
         <div class="cost-note">42.8 million Americans carry federal student loans totaling $1.84 trillion.</div>
       </div>
       <div class="comp-card edu-card fade-in">
         <div class="card-header"><span class="icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20a8 8 0 1 0 0-16 8 8 0 0 0 0 16Z"/><path d="M12 14a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z"/><path d="M12 2v2"/><path d="M12 22v-2"/><path d="m17 20.66-1-1.73"/><path d="M11 10.27 7 3.34"/><path d="m20.66 17-1.73-1"/><path d="m3.34 7 1.73 1"/><path d="M14 12h8"/><path d="M2 12h2"/><path d="m20.66 7-1.73 1"/><path d="m3.34 17 1.73-1"/><path d="m17 3.34-1 1.73"/><path d="m11 13.73-4 6.93"/></svg></span></div>
         <div class="item-name label">Pell Grant Awards</div>
         <div class="big-num">29,749</div>
-        <div class="per-label label">per day · max <span class="per-label-cost">$7,395</span> each</div>
+        <div class="per-label label">awarded per day · at the max <span class="per-label-cost">$7,395</span> each</div>
         <div class="cost-note">Pell Grants are the largest source of federal aid for low-income college students.</div>
       </div>
       <div class="comp-card edu-card fade-in">
         <div class="card-header"><span class="icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2v0a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/></svg></span></div>
         <div class="item-name label">Free School Lunches</div>
         <div class="big-num">49,886,621</div>
-        <div class="per-label label">per day · at <span class="per-label-cost">$4.41</span>/meal</div>
+        <div class="per-label label">served per day · at <span class="per-label-cost">$4.41</span>/meal</div>
         <div class="cost-note">30 million children receive free/reduced lunch daily. This covers 49.9 million meals with surplus.</div>
       </div>
       <div class="comp-card edu-card fade-in">
         <div class="card-header"><span class="icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="16" height="20" x="4" y="2" rx="2"/><path d="M9 22v-4h6v4"/><path d="M8 6h.01"/><path d="M16 6h.01"/><path d="M12 6h.01"/><path d="M12 10h.01"/><path d="M12 14h.01"/><path d="M16 10h.01"/><path d="M16 14h.01"/><path d="M8 10h.01"/><path d="M8 14h.01"/></svg></span></div>
         <div class="item-name label">Head Start Slots</div>
         <div class="big-num">17,460</div>
-        <div class="per-label label">per day · at <span class="per-label-cost">~$12,600</span>/slot</div>
+        <div class="per-label label">granted per day · at <span class="per-label-cost">~$12,600</span>/slot</div>
         <div class="cost-note">Over 300,000 eligible children remain unserved. This rate closes the gap in ~19 days.</div>
       </div>
       <div class="comp-card edu-card fade-in">
@@ -1353,7 +1286,7 @@ window.va = window.va || function () { (window.vaq = window.vaq || []).push(argu
       <div class="comp-card edu-card fade-in">
         <div class="card-header"><span class="icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></span></div>
         <div class="item-name label">New Elementary Schools</div>
-        <div class="big-num">508</div>
+        <div class="big-num">58</div>
         <div class="per-label label">per day · at <span>~$17.7M</span> each</div>
         <div class="cost-note">53% of U.S. public school buildings need major repair (GAO). Over 4,100 new schools per year at this rate.</div>
       </div>
@@ -1361,8 +1294,8 @@ window.va = window.va || function () { (window.vaq = window.vaq || []).push(argu
 
     <!-- Education highlight -->
     <div class="highlight-bar edu-hl fade-in">
-      <div class="hl-num">7 days</div>
-      <div class="hl-text">At <span class="daily-cost daily-cost-short">$900M</span>/day the entire teacher shortage could be funded in under 7 days.</div>
+      <div class="hl-num">96,746,987</div>
+      <div class="hl-text">At <span class="daily-cost daily-cost-short">$900M</span>/day you could send 96,746,987 students to community.</div>
     </div>
   </div>
 </section>
@@ -1407,7 +1340,7 @@ window.va = window.va || function () { (window.vaq = window.vaq || []).push(argu
       <div class="comp-card infra-card fade-in">
         <div class="card-header"><span class="icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5s-3.5-4-4-6.5c-.5 2.5-2 4.9-4 6.5C6 11.1 5 13 5 15a7 7 0 0 0 7 7z"/></svg></span></div>
         <div class="item-name label">Drinking Water Gap</div>
-        <div class="big-num">343 days</div>
+        <div class="big-num">309 days</div>
         <div class="per-label label">to close the <span>$309B</span> investment gap</div>
         <div class="cost-note">The EPA projects $625 billion in drinking water infrastructure needs over 20 years. The current gap is $309B and growing.</div>
       </div>
@@ -1428,7 +1361,7 @@ window.va = window.va || function () { (window.vaq = window.vaq || []).push(argu
       <div class="comp-card infra-card fade-in">
         <div class="card-header"><span class="icon" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-2 2Zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2"/><path d="M18 14h-8"/><path d="M15 18h-5"/><path d="M10 6h8v4h-8V6Z"/></svg></span></div>
         <div class="item-name label">Wastewater Gap (Annual)</div>
-        <div class="big-num">77 days</div>
+        <div class="big-num">69 days</div>
         <div class="per-label label">to close the <span>$69B</span>/yr funding shortfall</div>
         <div class="cost-note">The national wastewater system is valued at over $1 trillion, with a gap projected to exceed $690B by 2044.</div>
       </div>
@@ -1436,53 +1369,11 @@ window.va = window.va || function () { (window.vaq = window.vaq || []).push(argu
   </div>
 </section>
 
-<!-- ═══════════ INFRA: $43B CUMULATIVE — PROGRESS RINGS ═══════════ -->
-<section class="section pt-0">
-  <div class="container">
-    <div class="infra-grid-header fade-in">
-      <h1>CUMULATIVE WAR SPEND: $52 BILLION</h1>
-      <p class="infra-grid-reference">Total conflict spending since April 2024, measured against America's infrastructure needs.</p>
-    </div>
-    <div class="progress-ring-grid fade-in">
-      <div class="progress-ring-container" data-target-dash="127.9" data-target-pct="37.7" data-pct-suffix="%">
-        <div class="progress-ring-title">Bridge Backlog</div>
-        <svg viewBox="0 0 120 120" class="progress-ring-svg" aria-hidden="true">
-          <circle cx="60" cy="60" r="54" class="progress-ring-bg"></circle>
-          <circle cx="60" cy="60" r="54" class="progress-ring-fill" style="stroke-dasharray: 0 339.3;"></circle>
-          <text x="60" y="60" text-anchor="middle" class="progress-ring-value">0%</text>
-        </svg>
-        <div class="progress-ring-desc">Would clear the $117.1B bridge repair backlog</div>
-      </div>
-      <div class="progress-ring-container" data-target-dash="339.3" data-target-pct="100" data-pct-suffix="%">
-        <div class="progress-ring-title">Broadband Program</div>
-        <svg viewBox="0 0 120 120" class="progress-ring-svg" aria-hidden="true">
-          <circle cx="60" cy="60" r="54" class="progress-ring-bg"></circle>
-          <circle cx="60" cy="60" r="54" class="progress-ring-fill" style="stroke-dasharray: 0 339.3;"></circle>
-          <text x="60" y="60" text-anchor="middle" class="progress-ring-value">0%</text>
-        </svg>
-        <div class="progress-ring-desc">Fully funds the $42B BEAD program</div>
-      </div>
-      <div class="progress-ring-container" data-target-dash="216.8" data-target-pct="63.9" data-pct-suffix="%">
-        <div class="progress-ring-title">Wastewater Shortfall</div>
-        <svg viewBox="0 0 120 120" class="progress-ring-svg" aria-hidden="true">
-          <circle cx="60" cy="60" r="54" class="progress-ring-bg"></circle>
-          <circle cx="60" cy="60" r="54" class="progress-ring-fill" style="stroke-dasharray: 0 339.3;"></circle>
-          <text x="60" y="60" text-anchor="middle" class="progress-ring-value">0%</text>
-        </svg>
-        <div class="progress-ring-desc">Would close the $69B/yr gap</div>
-      </div>
-      <div class="progress-ring-container" data-target-dash="360" data-target-pct="100" data-pct-prefix="~" data-pct-suffix="%">
-        <div class="progress-ring-title">Lead Pipe Replacement</div>
-        <svg viewBox="0 0 120 120" class="progress-ring-svg" aria-hidden="true">
-          <circle cx="60" cy="60" r="54" class="progress-ring-bg"></circle>
-          <circle cx="60" cy="60" r="54" class="progress-ring-fill" style="stroke-dasharray: 0 360;"></circle>
-          <text x="60" y="60" text-anchor="middle" class="progress-ring-value">0%</text>
-        </svg>
-        <div class="progress-ring-desc">Would replace 100% of all 9M lead service lines</div>
-      </div>
-    </div>
-  </div>
-</section>
+<!-- ═══════════ PULL QUOTE 3 ═══════════ -->
+<div class="pull-quote fade-in">
+  <blockquote>About a third of the nation's bridge inventory — 221,791 spans — needs repair work or replacement.</blockquote>
+  <div class="pq-source label">— ASCE, 2025 Report Card for America's Infrastructure</div>
+</div>
 
 
 <!-- ════════════════════════════════════════════════════ -->
@@ -1678,33 +1569,119 @@ window.va = window.va || function () { (window.vaq = window.vaq || []).push(argu
     ASCE 2025 Report Card · EPA · FHWA · Pew Charitable Trusts · NTIA · FCC ·
     IRS Statistics of Income · JINSA
   </div>
-  <p class="footer-pdf"><a href="/analysis.pdf" class="footer-nav-link" target="_blank">Full Analysis (PDF)</a> · Last updated: March 7, 2026</p>
+  <p class="footer-pdf"><a href="/analysis.pdf" class="footer-nav-link" target="_blank">Full Analysis (PDF)</a> · Last updated: March 11, 2026</p>
   <p class="footer-attribution">Built with Claude Code</p>
 </footer>
 
 <script>
-let baseCostPerDay = 900_000_000;
+let baseCostPerDay = 1_100_000_000;
+
+// ── Unique calculator functions for each comp-card ──
+// Each takes a budget (daily or yearly) and per-unit cost, returns the count for big-num.
+function calcInsulinPumps(budget, unitCost) { return Math.floor(budget / unitCost); }
+function calcCPAPMachines(budget, unitCost) { return Math.floor(budget / unitCost); }
+function calcPowerWheelchairs(budget, unitCost) { return Math.floor(budget / unitCost); }
+function calcHearingAids(budget, unitCost) { return Math.floor(budget / unitCost); }
+function calcProstheticLegs(budget, unitCost) { return Math.floor(budget / unitCost); }
+function calcTherapySessions(budget, unitCost) { return Math.floor(budget / unitCost); }
+function calcERVisits(budget, unitCost) { return Math.floor(budget / unitCost); }
+function calcKneeReplacements(budget, unitCost) { return Math.floor(budget / unitCost); }
+function calcHeartBypass(budget, unitCost) { return Math.floor(budget / unitCost); }
+function calcMRIScans(budget, unitCost) { return Math.floor(budget / unitCost); }
+function calcAmbulanceRides(budget, unitCost) { return Math.floor(budget / unitCost); }
+function calcHospitalChildbirths(budget, unitCost) { return Math.floor(budget / unitCost); }
+function calcInsuredInsulinPumps(budget, unitCost) { return Math.floor(budget / unitCost); }
+function calcInsuredTherapy(budget, unitCost) { return Math.floor(budget / unitCost); }
+function calcInsuredKnee(budget, unitCost) { return Math.floor(budget / unitCost); }
+function calcCommunityCollege(budget, unitCost) { return Math.floor(budget / unitCost); }
+function calcPublicTuition(budget, unitCost) { return Math.floor(budget / unitCost); }
+function calcTeacherSalaries(budget, unitCost) { return Math.floor(budget / unitCost); }
+function calcStudentLoans(budget, unitCost) { return Math.floor(budget / unitCost); }
+function calcPellGrants(budget, unitCost) { return Math.floor(budget / unitCost); }
+function calcSchoolLunches(budget, unitCost) { return Math.floor(budget / unitCost); }
+function calcHeadStart(budget, unitCost) { return Math.floor(budget / unitCost); }
+function calcTextbookSets(budget, unitCost) { return Math.floor(budget / unitCost); }
+function calcElementarySchools(budget, unitCost) { return Math.floor(budget / unitCost); }
+function calcLaneMiles(budget, unitCost) { return Math.floor(budget / unitCost); }
+
+// Registry: maps each card's item-name text to its calculator, unit cost, and interval.
+// interval "daily" uses baseCostPerDay; "yearly" uses baseCostPerDay * 365.
+const cardConfigs = {
+  'Insulin Pumps':              { calc: calcInsulinPumps, unitCost: 6_000, interval: 'daily' },
+  'CPAP Machines':              { calc: calcCPAPMachines, unitCost: 1_500, interval: 'daily' },
+  'Power Wheelchairs':          { calc: calcPowerWheelchairs, unitCost: 3_500, interval: 'daily' },
+  'Hearing Aid Pairs':          { calc: calcHearingAids, unitCost: 4_000, interval: 'daily' },
+  'Prosthetic Legs':            { calc: calcProstheticLegs, unitCost: 10_000, interval: 'daily' },
+  'Therapy Sessions':           { calc: calcTherapySessions, unitCost: 150, interval: 'daily' },
+  'ER Visits Covered':          { calc: calcERVisits, unitCost: 2_700, interval: 'daily' },
+  'Knee Replacements':          { calc: calcKneeReplacements, unitCost: 35_000, interval: 'daily' },
+  'Heart Bypass Surgeries':     { calc: calcHeartBypass, unitCost: 57_000, interval: 'daily' },
+  'MRI Scans':                  { calc: calcMRIScans, unitCost: 1_200, interval: 'daily' },
+  'Ambulance Rides':            { calc: calcAmbulanceRides, unitCost: 1_200, interval: 'daily' },
+  'Hospital Childbirths':       { calc: calcHospitalChildbirths, unitCost: 18_000, interval: 'daily' },
+  'Insured Insulin Pumps':      { calc: calcInsuredInsulinPumps, unitCost: 750, interval: 'daily' },
+  'Insured Therapy Sessions':   { calc: calcInsuredTherapy, unitCost: 35, interval: 'daily' },
+  'Insured Knee Replacements':  { calc: calcInsuredKnee, unitCost: 5_000, interval: 'daily' },
+  'Community College Tuitions': { calc: calcCommunityCollege, unitCost: 4_150, interval: 'daily' },
+  'Public In-State Tuitions':   { calc: calcPublicTuition, unitCost: 11_950, interval: 'daily' },
+  'Teacher Salaries (Avg)':     { calc: calcTeacherSalaries, unitCost: 74_177, interval: 'daily' },
+  'Student Loans Erased':       { calc: calcStudentLoans, unitCost: 39_375, interval: 'daily' },
+  'Pell Grant Awards':          { calc: calcPellGrants, unitCost: 7_395, interval: 'daily' },
+  'Free School Lunches':        { calc: calcSchoolLunches, unitCost: 4.41, interval: 'daily' },
+  'Head Start Slots':           { calc: calcHeadStart, unitCost: 12_600, interval: 'daily' },
+  'Textbook Sets':              { calc: calcTextbookSets, unitCost: 1_220, interval: 'yearly' },
+  'New Elementary Schools':     { calc: calcElementarySchools, unitCost: 17_700_000, interval: 'daily' },
+  'Lane-Miles Maintained':      { calc: calcLaneMiles, unitCost: 65.72, interval: 'daily' },
+};
+
+// Recalculates every comp-card big-num based on current baseCostPerDay.
+// Reads the interval (daily/yearly) from cardConfigs, applies the matching budget,
+// and calls the card's unique calculator function.
+function updateAllCardValues() {
+  document.querySelectorAll('.comp-card').forEach(card => {
+    const nameEl = card.querySelector('.item-name');
+    const numEl = card.querySelector('.big-num');
+    if (!nameEl || !numEl) return;
+
+    const config = cardConfigs[nameEl.textContent.trim()];
+    if (!config) return;
+
+    const budget = config.interval === 'yearly' ? baseCostPerDay * 365 : baseCostPerDay;
+    numEl.textContent = config.calc(budget, config.unitCost).toLocaleString();
+  });
+}
 
 function updateDailyCostDisplays() {
-  const millions = baseCostPerDay / 1_000_000;
+  const millions = baseCostPerDay / 1_000_000_000;
   const formatted = millions.toLocaleString();
 
   document.querySelectorAll('.daily-cost-short').forEach(el => {
-    el.textContent = '$' + formatted + 'M';
+    el.textContent = '$' + formatted + 'B';
   });
   document.querySelectorAll('.daily-cost-upper').forEach(el => {
-    el.textContent = '$' + formatted + ' MILLION';
+    el.textContent = '$' + formatted + ' BILLION';
   });
   document.querySelectorAll('.daily-cost-full').forEach(el => {
-    el.textContent = '$' + formatted + ' million';
+    el.textContent = '$' + formatted + ' billion';
   });
 
-  document.title = 'Iran War Cost: What $' + formatted + 'M/Day Could Buy Instead';
+  document.title = 'Iran War Cost: What $' + formatted + 'B/Day Could Buy Instead';
 }
 
-// Intersection Observer for fade-in animations
+function updateEducationHighlight() {
+  const millions = baseCostPerDay / 1_000_000_000;
+  const formatted = millions.toLocaleString();
+  const totalStudents = parseFloat(((baseCostPerDay * 365) / 4150).toFixed(0)).toLocaleString();
+
+  document.querySelector('.highlight-bar.edu-hl').querySelector('.hl-num').innerHTML = totalStudents;
+  document.querySelector('.highlight-bar.edu-hl').querySelector('.hl-text').innerHTML = `At ${'$' + formatted + 'B'}/day you could send ${totalStudents} students to community college every year.`
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   updateDailyCostDisplays();
+  updateAllCardValues();
+  updateEducationHighlight();
+
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -1717,60 +1694,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 
-  // Progress ring scroll animation
-  const RING_DURATION = 1200;
-  const CIRCUMFERENCE = 339.3;
 
   function easeOutCubic(t) {
     return 1 - Math.pow(1 - t, 3);
   }
-
-  function animateRing(container) {
-    const fill = container.querySelector('.progress-ring-fill');
-    const valueEl = container.querySelector('.progress-ring-value');
-    const targetDash = parseFloat(container.dataset.targetDash);
-    const targetPct = parseFloat(container.dataset.targetPct);
-    const prefix = container.dataset.pctPrefix || '';
-    const suffix = container.dataset.pctSuffix || '';
-
-    if (prefersReducedMotion.matches) {
-      fill.style.strokeDasharray = targetDash + ' ' + CIRCUMFERENCE;
-      valueEl.textContent = prefix + (targetPct % 1 === 0 ? targetPct : targetPct.toFixed(1)) + suffix;
-      return;
-    }
-
-    let start = 0;
-    function step(timestamp) {
-      if (!start) start = timestamp;
-      const elapsed = timestamp - start;
-      const progress = Math.min(elapsed / RING_DURATION, 1);
-      const eased = easeOutCubic(progress);
-
-      const currentDash = eased * targetDash;
-      fill.style.strokeDasharray = currentDash + ' ' + CIRCUMFERENCE;
-
-      const currentPct = eased * targetPct;
-      valueEl.textContent = prefix + (targetPct % 1 === 0 ? Math.round(currentPct) : currentPct.toFixed(1)) + suffix;
-
-      if (progress < 1) {
-        requestAnimationFrame(step);
-      }
-    }
-    requestAnimationFrame(step);
-  }
-
-  const ringObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        animateRing(entry.target);
-        ringObserver.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.3 });
-
-  document.querySelectorAll('.progress-ring-container[data-target-dash]').forEach(el => {
-    ringObserver.observe(el);
-  });
 
   // ── Bar chart animation (4-week campaign) ──
   const BAR_DURATION = 1200;
@@ -1971,15 +1898,18 @@ document.addEventListener('DOMContentLoaded', () => {
   let chartView = 'daily';
 
   function buildDailyData() {
+    const today = new Date();
     const out = [];
     const startTs = Date.UTC(2026, 1, 28); // Feb 28
-    const endTs   = Date.UTC(2026, 2, 10); // Mar 10
+    const endTs   = Date.UTC(today.getUTCFullYear(), today.getUTCMonth(), today.getUTCDate()); // Today
     const p2      = Date.UTC(2026, 2, 4);  // Mar 4
     const p3      = Date.UTC(2026, 2, 8);  // Mar 8
+    const p4      = Date.UTC(2026, 2, 12);  // Mar 12
 
     for (let ts = startTs; ts <= endTs; ts += MS_DAY) {
       let rate;
-      if (ts >= p3) rate = 900_000_000;
+      if (ts >= p4) rate = 1_100_000_000;
+      else if (ts >= p3) rate = 900_000_000;
       else if (ts >= p2) rate = 330_000_000;
       else rate = 220_000_000;
       out.push({ ts, value: rate });
@@ -2080,13 +2010,13 @@ document.addEventListener('DOMContentLoaded', () => {
       const ld = 'M' + data.map(d => sx(d.ts) + ',' + sy(d.value)).join('L');
       const last = data[data.length - 1], first = data[0];
 
-      s += '<path d="' + ld + 'L' + sx(last.ts) + ',' + sy(y0) + 'L' + sx(first.ts) + ',' + sy(y0) + 'Z" fill="#1a1a18" opacity="0.05"/>';
-      s += '<path d="' + ld + '" fill="none" stroke="#1a1a18" stroke-width="2" stroke-linejoin="round"/>';
+      s += '<path d="' + ld + 'L' + sx(last.ts) + ',' + sy(y0) + 'L' + sx(first.ts) + ',' + sy(y0) + 'Z" fill="#1a1a18" id="daily-cost-shadow" opacity="0.05"/>';
+      s += '<path d="' + ld + '" fill="none" stroke="#1a1a18" stroke-width="2" stroke-linejoin="round" id="daily-cost-line"/>';
 
       // Endpoint dot + value
       const cx = sx(last.ts), cy = sy(last.value);
-      s += '<circle cx="' + cx + '" cy="' + cy + '" r="4" fill="#1a1a18"/>';
-      s += '<text x="' + (cx - 8) + '" y="' + (cy - 12) + '" text-anchor="end" fill="#1a1a18" font-size="' + (mob ? 10 : 12) + '" font-family="\'DM Mono\',monospace" font-weight="500">' + fmtVal(last.value) + '</text>';
+      s += '<circle cx="' + cx + '" cy="' + cy + '" r="4" fill="#1a1a18" id="daily-cost-end"/>';
+      s += '<text x="' + (cx - 8) + '" y="' + (cy - 12) + '" text-anchor="end" fill="#1a1a18" font-size="' + (mob ? 10 : 12) + '" font-family="\'DM Mono\',monospace" font-weight="500" id="daily-cost-end-label">' + fmtVal(last.value) + '</text>';
 
       // Phase markers
       const phases = [
@@ -2430,16 +2360,6 @@ document.addEventListener('DOMContentLoaded', () => {
         btn.style.display = 'none';
       }
     }
-
-    function calculateCostOfCompItem(itemCost) {
-      return parseFloat((baseCostPerDay / parseFloat(itemCost)).toFixed(0));
-    }
-
-    document.querySelectorAll('.per-label-cost').forEach(cost => {
-      let amount = cost.innerText.replace(/[^0-9.]/g, '');
-
-      cost.closest('.comp-card').querySelector('.big-num').innerHTML = calculateCostOfCompItem(amount).toLocaleString();
-    })
 
     btn.addEventListener('click', () => {
       const expanded = btn.getAttribute('aria-expanded') === 'true';
